@@ -22,6 +22,8 @@ public class QPackageList extends JsonCom {
 	private static final String TAG_JSON_QVDOWN = "vdown";
 	private static final String TAG_JSON_QCONTENT = "content";
 	private static final String TAG_JSON_QNAME = "name";
+	private static final String TAG_RESULTOKCODE = "1";
+	
 	
 	JSONObject json = null;
 	

@@ -20,13 +20,18 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 public class QCreateActivity extends Activity {
 
+	private static final String TAG_RESULT = "result";
+	private static final String TAG_RESULTOKCODE = "1";
 	private static final String TAG_UNO = "uno";
 	private static final String TAG_PNO = "pno";
 	private static final String TAG_CODE_C = "cs";
@@ -66,6 +71,10 @@ public class QCreateActivity extends Activity {
 	TextView txtItem2 = null;
 	TextView txtItem3 = null;
 	TextView txtItem4 = null;
+	Button btn1 = null;
+	Button btn2 = null;
+	Button btn3 = null;
+	Button btn4 = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -81,11 +90,15 @@ public class QCreateActivity extends Activity {
 		sbDiff = (SeekBar)this.findViewById(R.id.sbDiff);
 		btnCreate = (Button)this.findViewById(R.id.btn_create);
 		btnCreateNext = (Button)this.findViewById(R.id.btn_createnext);
-		txtSummary = (Button)this.findViewById(R.id.txtSummary);
-		txtItem1 = (Button)this.findViewById(R.id.qitem1);
-		txtItem2 = (Button)this.findViewById(R.id.qitem2);
-		txtItem3 = (Button)this.findViewById(R.id.qitem3);
-		txtItem4 = (Button)this.findViewById(R.id.qitem4);
+		txtSummary = (EditText)this.findViewById(R.id.txtSummary);
+		txtItem1 = (EditText)this.findViewById(R.id.qitem1);
+		txtItem2 = (EditText)this.findViewById(R.id.qitem2);
+		txtItem3 = (EditText)this.findViewById(R.id.qitem3);
+		txtItem4 = (EditText)this.findViewById(R.id.qitem4);
+		btn1 = (Button)this.findViewById(R.id.tgl1);
+		btn2 = (Button)this.findViewById(R.id.tgl2);
+		btn3 = (Button)this.findViewById(R.id.tgl3);
+		btn4 = (Button)this.findViewById(R.id.tgl4);
 
 		if(mPNO != null)
 			GetPackageInfo();
@@ -106,6 +119,30 @@ public class QCreateActivity extends Activity {
 				}
 			}
 		});
+		btn1.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) { SetAllInCo(btn1); }
+		});
+		btn2.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) { SetAllInCo(btn2); }
+		});
+		btn3.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) { SetAllInCo(btn3); }
+		});
+		btn4.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) { SetAllInCo(btn4); }
+		});
+	}
+	
+	private void SetAllInCo(Button btn){
+        btn1.setText("오답");
+        btn2.setText("오답");
+        btn3.setText("오답");
+        btn4.setText("오답");
+        btn.setText("정답");
 	}
 	
 	private void Submit(){
@@ -116,33 +153,33 @@ public class QCreateActivity extends Activity {
 		params.put(TAG_PARAM_HINT, ((EditText)this.findViewById(R.id.txthint)).getText());
 		params.put(TAG_PARAM_SUMMARY, ((EditText)this.findViewById(R.id.txtSummary)).getText());
 		params.put(TAG_PARAM_TAG, ((EditText)this.findViewById(R.id.txttags)).getText());
-		params.put(TAG_PARAM_DIFFICULT, ((SeekBar)this.findViewById(R.id.cboCategory)).getProgress());
-		params.put(TAG_PARAM_CATEGORY, ((Spinner)this.findViewById(R.id.cboCategory)).getSelectedItem().toString());
-		params.put(TAG_PARAM_ITEMSUMMARY, mPNO);
+		params.put(TAG_PARAM_DIFFICULT, sbDiff.getProgress());
+		params.put(TAG_PARAM_CATEGORY, spCategory.getSelectedItem().toString());
+
+		params.put(TAG_PARAM_ITEMSUMMARY, ((EditText)this.findViewById(R.id.qitem1)).getText());
+		params.put(TAG_PARAM_ITEMSUMMARY, ((EditText)this.findViewById(R.id.qitem2)).getText());
+		params.put(TAG_PARAM_ITEMSUMMARY, ((EditText)this.findViewById(R.id.qitem3)).getText());
+		params.put(TAG_PARAM_ITEMSUMMARY, ((EditText)this.findViewById(R.id.qitem4)).getText());
+
+		params.put(TAG_PARAM_ITEMCORRECT, (btn1.getText() == "정답") ? "Y" : "N");
+		params.put(TAG_PARAM_ITEMCORRECT, (btn2.getText() == "정답") ? "Y" : "N");
+		params.put(TAG_PARAM_ITEMCORRECT, (btn3.getText() == "정답") ? "Y" : "N");
+		params.put(TAG_PARAM_ITEMCORRECT, (btn4.getText() == "정답") ? "Y" : "N");
+
 		params.put(TAG_PARAM_ITEMCORRECT, mPNO);
-		
-	/*
-	 * 
-	private static final String TAG_PARAM_PNO = "pno";
-	private static final String TAG_PARAM_REF = "ref";
-	private static final String TAG_PARAM_COMMENT = "comment";
-	private static final String TAG_PARAM_HINT = "hint";
-	private static final String TAG_PARAM_SUMMARY = "summary";
-	private static final String TAG_PARAM_TAG = "tag";
-	private static final String TAG_PARAM_DIFFICULT = "difficult";
-	private static final String TAG_PARAM_CATEGORY = "category";
-	private static final String TAG_PARAM_ITEMSUMMARY = "itemsummary";
-	private static final String TAG_PARAM_ITEMCORRECT = "itemcorrect";	
-	 */
-        Communication.post(TAG_SUBMIT, pack.GetParams(), new JsonHttpResponseHandler() {
+
+        Communication.post(TAG_SUBMIT, params, new JsonHttpResponseHandler() {
         	@Override
         	public void onSuccess(JSONObject json) {
         		try {
-					JSONObject pinfo = json.getJSONObject(TAG_CODE_P);
-					mTitle = "Create In " + pinfo.getString(TAG_C_NAME);
-					mCategory = pinfo.getString(TAG_P_CATEGROY);
-					Intent intent = getIntent();
-					getActionBar().setTitle(intent.getStringExtra(mTitle));
+        			if(json.getString(TAG_RESULT).equals(TAG_RESULTOKCODE)){
+						Intent intent = new Intent(QCreateActivity.this, QQMainActivity.class);
+						intent.putExtra("QNO", json.getString("q"));
+						startActivity(intent);
+						finish();
+        			}else{
+        				tool.showPop(QCreateActivity.this, "Error!!!", "OK");
+        			}
 				} catch (JSONException e) {
 					e.printStackTrace();
 				}

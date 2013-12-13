@@ -53,5 +53,6 @@
     <string name="title_createq_tag_place">Tag를 입력해주세요.(,로 구분)</string>
     <string name="txt_createnext">만들고 또 만들기</string>
     <string name="txt_create">만들기</string>
+    <string name="title_activity_qqmain">QQMainActivity</string>
 
 </resources>

@@ -34,7 +34,7 @@ public final class R {
     public static final class id {
         public static final int TextView01=0x7f09001c;
         public static final int ViewColorPickerHelper=0x7f090006;
-        public static final int action_settings=0x7f09002f;
+        public static final int action_settings=0x7f090030;
         public static final int btnAddinP=0x7f090018;
         public static final int btn_create=0x7f090016;
         public static final int btn_createnext=0x7f090015;
@@ -50,17 +50,18 @@ public final class R {
         public static final int login_txtemail=0x7f090001;
         public static final int login_txtpassword=0x7f090002;
         public static final int nowcom=0x7f090021;
-        public static final int option1=0x7f09002a;
-        public static final int option2=0x7f09002b;
-        public static final int option3=0x7f09002c;
-        public static final int option4=0x7f09002d;
+        public static final int option1=0x7f09002b;
+        public static final int option2=0x7f09002c;
+        public static final int option3=0x7f09002d;
+        public static final int option4=0x7f09002e;
         public static final int pager=0x7f090004;
+        public static final int pager_title_strip=0x7f090027;
         public static final int pcomment=0x7f09001b;
         public static final int pinfo_detail=0x7f090019;
         public static final int pinfo_summry=0x7f090017;
         public static final int pinfo_top=0x7f090005;
-        public static final int plist_Count=0x7f090029;
-        public static final int plist_name=0x7f090028;
+        public static final int plist_Count=0x7f09002a;
+        public static final int plist_name=0x7f090029;
         public static final int ptitle=0x7f09001a;
         public static final int qitem1=0x7f090008;
         public static final int qitem2=0x7f09000a;
@@ -69,8 +70,8 @@ public final class R {
         public static final int qplist=0x7f090026;
         public static final int qplist_top=0x7f090025;
         public static final int sbDiff=0x7f090011;
-        public static final int section_label=0x7f090027;
-        public static final int textView1=0x7f09002e;
+        public static final int section_label=0x7f090028;
+        public static final int textView1=0x7f09002f;
         public static final int tgl1=0x7f090009;
         public static final int tgl2=0x7f09000b;
         public static final int tgl3=0x7f09000d;
@@ -91,10 +92,12 @@ public final class R {
         public static final int activity_qmain=0x7f030006;
         public static final int activity_qp=0x7f030007;
         public static final int activity_qplist=0x7f030008;
-        public static final int fragment_package_dummy=0x7f030009;
-        public static final int lv_plist_normal=0x7f03000a;
-        public static final int uc_bottombar=0x7f03000b;
-        public static final int uc_spinner_item=0x7f03000c;
+        public static final int activity_qqmain=0x7f030009;
+        public static final int fragment_package_dummy=0x7f03000a;
+        public static final int fragment_qqmain_dummy=0x7f03000b;
+        public static final int lv_plist_normal=0x7f03000c;
+        public static final int uc_bottombar=0x7f03000d;
+        public static final int uc_spinner_item=0x7f03000e;
     }
     public static final class menu {
         public static final int login=0x7f080000;
@@ -106,6 +109,7 @@ public final class R {
         public static final int qmain=0x7f080006;
         public static final int qpackage=0x7f080007;
         public static final int qplist=0x7f080008;
+        public static final int qqmain=0x7f080009;
     }
     public static final class string {
         public static final int action_settings=0x7f060001;
@@ -122,6 +126,7 @@ public final class R {
         public static final int title_activity_qmain=0x7f060014;
         public static final int title_activity_qp=0x7f06000b;
         public static final int title_activity_qplist=0x7f060013;
+        public static final int title_activity_qqmain=0x7f060034;
         public static final int title_createq_basictop=0x7f060026;
         public static final int title_createq_cat=0x7f060028;
         public static final int title_createq_com_place=0x7f060030;

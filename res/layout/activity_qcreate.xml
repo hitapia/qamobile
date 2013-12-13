@@ -72,12 +72,11 @@
         android:layout_margin="0dip"
         android:background="?android:attr/dividerVertical" />
 
-                    <ToggleButton
+                    <Button
                         android:id="@+id/tgl1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textOff="오답"
-                        android:textOn="정답" />
+                        android:text="정답" />
 
         </LinearLayout>
 <LinearLayout
@@ -102,12 +101,12 @@
         android:layout_margin="0dip"
         android:background="?android:attr/dividerVertical" />
 
-                    <ToggleButton
+                    <Button
                         android:id="@+id/tgl2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textOn="정답"
-                        android:textOff="오답"/>
+                        android:text="오답" />
+
 
         </LinearLayout>
         <LinearLayout
@@ -132,12 +131,12 @@
         android:layout_margin="0dip"
         android:background="?android:attr/dividerVertical" />
 
-                    <ToggleButton
+                    <Button
                         android:id="@+id/tgl3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textOn="정답"
-                        android:textOff="오답"/>
+                        android:text="오답" />
+
 
         </LinearLayout>
          <LinearLayout
@@ -162,13 +161,12 @@
         android:layout_margin="0dip"
         android:background="?android:attr/dividerVertical" />
 
-                    <ToggleButton
+                    <Button
                         android:id="@+id/tgl4"
-                        android:layout_gravity="top"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textOn="정답"
-                        android:textOff="오답"/>
+                        android:text="오답" />
+
 
         </LinearLayout>
     <TextView

@@ -56,6 +56,10 @@
             android:name="com.mbine.qa.QCreateActivity"
             android:label="@string/title_activity_qcreate" >
         </activity>
+        <activity
+            android:name="com.mbine.qa.QQMainActivity"
+            android:label="@string/title_activity_qqmain" >
+        </activity>
     </application>
 
 </manifest>
