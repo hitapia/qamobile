@@ -45,7 +45,6 @@ public final class R {
         public static final int btn_qmain_prog=0x7f090020;
         public static final int btn_qmain_regq=0x7f09001e;
         public static final int cboCategory=0x7f090010;
-        public static final int editText1=0x7f090007;
         public static final int login_btnLogin=0x7f090003;
         public static final int login_lblname=0x7f090000;
         public static final int login_txtemail=0x7f090001;
@@ -76,6 +75,7 @@ public final class R {
         public static final int tgl2=0x7f09000b;
         public static final int tgl3=0x7f09000d;
         public static final int tgl4=0x7f09000f;
+        public static final int txtSummary=0x7f090007;
         public static final int txtcom=0x7f090012;
         public static final int txthint=0x7f090013;
         public static final int txttags=0x7f090014;

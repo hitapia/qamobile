@@ -32,11 +32,11 @@
         android:background="?android:attr/dividerVertical" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/txtSummary"
         android:layout_width="match_parent"
         android:layout_height="70dip"
-        android:hint="@string/title_createq_hint_title"
         android:ems="10"
+        android:hint="@string/title_createq_hint_title"
         android:inputType="textMultiLine" >
 
         <requestFocus />
