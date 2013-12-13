@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">qa</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_package">PackageActivity</string>
+    <string name="title_section1">Info</string>
+    <string name="title_section2">Q</string>
+    <string name="title_section3">Comment</string>
+    <string name="title_section4">Activity</string>
+    <string name="login">로그인</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="title_activity_qp">QPActivity</string>
+    <string name="title_activity_qc">QCActivity</string>
+    <string name="title_activity_qm">QMActivity</string>
+    <string name="title_activity_qi">QIActivity</string>
+    <string name="title_qp_m">My Activity</string>
+    <string name="title_qp_i">Package Info</string>
+    <string name="title_qp_q">Q List</string>
+    <string name="title_qp_c">Comments</string>
+    <string name="title_activity_qplist">QPListActivity</string>
+    <string name="title_activity_qmain">QMainActivity</string>
+    <string name="title_qmain_topheader">등록하고 풀고!</string>
+    <string name="title_qmain_top">모든 지식과 정보들을 퀴즈로 풀어보세요.</string>
+    <string name="title_qmain_topcomment">자신이 알고 있는 정보를 퀴즈로 만들어 공유할 수 있습니다.</string>
+    <string name="title_qmain_now">Now...</string>
+    <string name="title_qmain_stat">My Status</string>
+    <string name="title_qmain_myreg">등록개수</string>
+    <string name="title_qmain_myavg">정답률</string>
+    <string name="title_qmain_myprog">진도율</string>
+    <string name="title_qplist_top">Package List</string>
+    <string name="title_qi_summary">Summary</string>
+    <string name="title_qi_detail">Detail</string>
+    <string name="title_qi_addq">Add Q</string>
+    <string name="title_activity_qcreate">QCreateActivity</string>
+    <string name="title_createq_top">Create Q</string>
+    <string name="title_createq_q">Quiz</string>
+    <string name="title_createq_cor">정답</string>
+    <string name="title_createq_incor">오답</string>
+    <string name="title_createq_basictop">기본 정보 입력</string>
+    <string name="title_createq_diff">난이도</string>
+    <string name="title_createq_cat">분류</string>
+    <string name="title_createq_comment">설명</string>
+    <string name="title_createq_hint">힌트</string>
+    <string name="title_createq_tag">Tag</string>
+    <string name="title_createq_hint_title">질문을 입력해주세요.</string>
+    <string name="title_createq_item_name">답변 입력</string>
+    <string name="title_createq_item_desc">내용/힌트/Tag</string>
+    <string name="title_createq_hint_place">힌트를 입력해주세요.</string>
+    <string name="title_createq_com_place">내용을 입력해주세요.(문제 풀고 보입니다.)</string>
+    <string name="title_createq_tag_place">Tag를 입력해주세요.(,로 구분)</string>
+    <string name="txt_createnext">만들고 또 만들기</string>
+    <string name="txt_create">만들기</string>
+
+</resources>

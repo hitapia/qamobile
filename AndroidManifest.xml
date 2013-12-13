@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mbine.qa"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.mbine.qa.LoginActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.mbine.qa.QPackageActivity"
+            android:label="@string/title_activity_package" >
+        </activity>
+        <activity
+            android:name="com.mbine.qa.QQActivity"
+            android:label="@string/title_activity_qp" >
+        </activity>
+        <activity
+            android:name="com.mbine.qa.QCActivity"
+            android:label="@string/title_activity_qc" >
+        </activity>
+        <activity
+            android:name="com.mbine.qa.QMActivity"
+            android:label="@string/title_activity_qm" >
+        </activity>
+        <activity
+            android:name="com.mbine.qa.QIActivity"
+            android:label="@string/title_activity_qi" >
+        </activity>
+        <activity
+            android:name="com.mbine.qa.QPListActivity"
+            android:label="@string/title_activity_qplist" >
+        </activity>
+        <activity
+            android:name="com.mbine.qa.QMainActivity"
+            android:label="@string/title_activity_qmain" >
+        </activity>
+        <activity
+            android:name="com.mbine.qa.QCreateActivity"
+            android:label="@string/title_activity_qcreate" >
+        </activity>
+    </application>
+
+</manifest>

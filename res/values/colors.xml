@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+        <color name="white">#ffffff</color>
+        <color name="headerbg">#2C466B</color>
+        <color name="headerft">#ffffff</color>
+        <color name="boxbg">#C8CACC</color>
+        <color name="boxft">#000000</color>
+        <color name="btn">#323336</color>
+</resources>
