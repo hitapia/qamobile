@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
+        <color name="mainbg">#D6D6D6</color>
         <color name="white">#ffffff</color>
         <color name="headerbg">#2C466B</color>
-        <color name="headerft">#ffffff</color>
+        <color name="headerft">#000000</color>
         <color name="boxbg">#C8CACC</color>
         <color name="boxft">#000000</color>
         <color name="btn">#323336</color>
+        <color name="correct">#1A278F</color>
+        <color name="incorrect">#911C1C</color>
 </resources>

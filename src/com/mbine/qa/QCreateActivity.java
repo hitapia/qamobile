@@ -37,6 +37,7 @@ public class QCreateActivity extends Activity {
 	private static final String TAG_CODE_C = "cs";
 	private static final String TAG_CODE_P = "p";
 	private static final String TAG_C_NAME = "name";
+	private static final String TAG_C_NAMECODE = "seq";
 	private static final String TAG_P_CATEGROY = "category";
 	private static final String TAG_CATEGORY = "q/getCategory_";
 	private static final String TAG_PINFO = "q/qpinfo_";
@@ -60,17 +61,21 @@ public class QCreateActivity extends Activity {
 	private String mCategory = null;
 	Tools tool = new Tools();
 	QPackage pack = new QPackage();
+	HashMap<String,String> mCategoryList = new HashMap<String, String>();
 	
 	Spinner spCategory = null;
 	SeekBar sbDiff = null;
 	Button btnCreate = null;
 	Button btnCreateNext = null;
 	
-	TextView txtSummary = null;
-	TextView txtItem1 = null;
-	TextView txtItem2 = null;
-	TextView txtItem3 = null;
-	TextView txtItem4 = null;
+	EditText txtSummary = null;
+	EditText txtComment = null;
+	EditText txtTags = null;
+	EditText txtHint = null;
+	EditText txtItem1 = null;
+	EditText txtItem2 = null;
+	EditText txtItem3 = null;
+	EditText txtItem4 = null;
 	Button btn1 = null;
 	Button btn2 = null;
 	Button btn3 = null;
@@ -91,6 +96,9 @@ public class QCreateActivity extends Activity {
 		btnCreate = (Button)this.findViewById(R.id.btn_create);
 		btnCreateNext = (Button)this.findViewById(R.id.btn_createnext);
 		txtSummary = (EditText)this.findViewById(R.id.txtSummary);
+		txtTags = (EditText)this.findViewById(R.id.txttags);
+		txtComment = (EditText)this.findViewById(R.id.txtcom);
+		txtHint = (EditText)this.findViewById(R.id.txthint);
 		txtItem1 = (EditText)this.findViewById(R.id.qitem1);
 		txtItem2 = (EditText)this.findViewById(R.id.qitem2);
 		txtItem3 = (EditText)this.findViewById(R.id.qitem3);
@@ -145,28 +153,35 @@ public class QCreateActivity extends Activity {
         btn.setText("정답");
 	}
 	
+	private String chkField(EditText ed){
+		return (ed.getText() == null) ? "" : ed.getText().toString();
+	}
+	
 	private void Submit(){
 		RequestParams params = pack.GetParams();
 		params.put(TAG_PARAM_PNO, mPNO);
 		params.put(TAG_PARAM_REF, "");
-		params.put(TAG_PARAM_COMMENT, ((EditText)this.findViewById(R.id.txtcom)).getText());
-		params.put(TAG_PARAM_HINT, ((EditText)this.findViewById(R.id.txthint)).getText());
-		params.put(TAG_PARAM_SUMMARY, ((EditText)this.findViewById(R.id.txtSummary)).getText());
-		params.put(TAG_PARAM_TAG, ((EditText)this.findViewById(R.id.txttags)).getText());
-		params.put(TAG_PARAM_DIFFICULT, sbDiff.getProgress());
-		params.put(TAG_PARAM_CATEGORY, spCategory.getSelectedItem().toString());
+		params.put(TAG_PARAM_COMMENT, chkField(txtComment));
+		params.put(TAG_PARAM_HINT, chkField(txtHint));
+		params.put(TAG_PARAM_SUMMARY, chkField(txtSummary));
+		params.put(TAG_PARAM_TAG, chkField(txtTags));
+		int p = sbDiff.getProgress();
+		params.put(TAG_PARAM_DIFFICULT, String.valueOf(p));
+		params.put(TAG_PARAM_CATEGORY, mCategoryList.get(spCategory.getSelectedItem().toString()).toString());
+		
+		ArrayList<String> items = new ArrayList<String>();
+		items.add(chkField((EditText)this.findViewById(R.id.qitem1)));
+		items.add(chkField((EditText)this.findViewById(R.id.qitem2)));
+		items.add(chkField((EditText)this.findViewById(R.id.qitem3)));
+		items.add(chkField((EditText)this.findViewById(R.id.qitem4)));
+		params.put(TAG_PARAM_ITEMSUMMARY, items);
 
-		params.put(TAG_PARAM_ITEMSUMMARY, ((EditText)this.findViewById(R.id.qitem1)).getText());
-		params.put(TAG_PARAM_ITEMSUMMARY, ((EditText)this.findViewById(R.id.qitem2)).getText());
-		params.put(TAG_PARAM_ITEMSUMMARY, ((EditText)this.findViewById(R.id.qitem3)).getText());
-		params.put(TAG_PARAM_ITEMSUMMARY, ((EditText)this.findViewById(R.id.qitem4)).getText());
-
-		params.put(TAG_PARAM_ITEMCORRECT, (btn1.getText() == "정답") ? "Y" : "N");
-		params.put(TAG_PARAM_ITEMCORRECT, (btn2.getText() == "정답") ? "Y" : "N");
-		params.put(TAG_PARAM_ITEMCORRECT, (btn3.getText() == "정답") ? "Y" : "N");
-		params.put(TAG_PARAM_ITEMCORRECT, (btn4.getText() == "정답") ? "Y" : "N");
-
-		params.put(TAG_PARAM_ITEMCORRECT, mPNO);
+		ArrayList<String> itemCors = new ArrayList<String>();
+		itemCors.add((btn1.getText().toString() == "정답") ? "Y" : "N");
+		itemCors.add((btn2.getText().toString() == "정답") ? "Y" : "N");
+		itemCors.add((btn3.getText().toString() == "정답") ? "Y" : "N");
+		itemCors.add((btn4.getText().toString() == "정답") ? "Y" : "N");
+		params.put(TAG_PARAM_ITEMCORRECT, itemCors);
 
         Communication.post(TAG_SUBMIT, params, new JsonHttpResponseHandler() {
         	@Override
@@ -232,6 +247,7 @@ public class QCreateActivity extends Activity {
 					JSONArray clist = json.getJSONArray(TAG_CODE_C);
                     for(int i = 0; i < clist.length(); i++){
                         arrayList.add(clist.getJSONObject(i).getString(TAG_C_NAME));
+                        mCategoryList.put(clist.getJSONObject(i).getString(TAG_C_NAME), clist.getJSONObject(i).getString(TAG_C_NAMECODE));
                     }
                     ArrayAdapter<String> adapter = new ArrayAdapter<String>(QCreateActivity.this, R.layout.uc_spinner_item, arrayList);
                     spCategory.setAdapter(adapter);

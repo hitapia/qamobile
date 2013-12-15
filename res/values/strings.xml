@@ -54,5 +54,16 @@
     <string name="txt_createnext">만들고 또 만들기</string>
     <string name="txt_create">만들기</string>
     <string name="title_activity_qqmain">QQMainActivity</string>
+    <string name="title_activity_frag_qinfo">FragQInfoActivity</string>
+    <string name="title_activity_frag_qcomment">FragQCommentActivity</string>
+    <string name="title_activity_frag_qanswer">FragQAnswerActivity</string>
+    <string name="title_q_title">Info</string>
+    <string name="title_q_answer">Answers</string>
+    <string name="title_q_comment">Comments</string>
+
+    <string name="difficulty">난이도</string>
+    <string name="registermember">만든사람</string>
+    <string name="tags">Tags</string>
+    <string name="category">분류</string>
 
 </resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="0dip">
+                    <TextView
+                        android:id="@+id/qitem1"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="@string/title_createq_item_name"
+                        android:layout_alignParentLeft="true"
+                        android:textColor="@color/headerft"
+                        android:textSize="20sp" />
+
+    <View
+        android:layout_width="1dip"
+        android:layout_height="fill_parent"
+        android:layout_margin="0dip"
+        android:background="?android:attr/dividerVertical" />
+
+                    <TextView
+                        android:id="@+id/qitemper"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/title_createq_item_name"
+                        android:layout_alignParentLeft="true"
+                        android:textColor="@color/headerft"
+                        android:textSize="20sp" />
+
+        </LinearLayout>
+
+</LinearLayout>

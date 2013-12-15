@@ -60,6 +60,18 @@
             android:name="com.mbine.qa.QQMainActivity"
             android:label="@string/title_activity_qqmain" >
         </activity>
+        <activity
+            android:name="com.mbine.qa.qactivity.FragQInfoActivity"
+            android:label="@string/title_activity_frag_qinfo" >
+        </activity>
+        <activity
+            android:name="com.mbine.qa.qactivity.FragQCommentActivity"
+            android:label="@string/title_activity_frag_qcomment" >
+        </activity>
+        <activity
+            android:name="com.mbine.qa.qactivity.FragQAnswerActivity"
+            android:label="@string/title_activity_frag_qanswer" >
+        </activity>
     </application>
 
 </manifest>

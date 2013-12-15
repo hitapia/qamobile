@@ -2,6 +2,9 @@ package com.mbine.qa;
 
 import java.util.Locale;
 
+import com.mbine.qa.qactivity.*;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -33,6 +36,12 @@ public class QQMainActivity extends FragmentActivity {
 	 * The {@link ViewPager} that will host the section contents.
 	 */
 	ViewPager mViewPager;
+	private static final String TAG_UNO = "uno";
+	private static final String TAG_QNO = "qno";
+	private static final String TAG_PTITLE = "ptitle";
+
+	String mUNO = null;
+	String mQNO = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +57,12 @@ public class QQMainActivity extends FragmentActivity {
 		mViewPager = (ViewPager) findViewById(R.id.pager);
 		mViewPager.setAdapter(mSectionsPagerAdapter);
 
+		
+		Intent intent = getIntent();
+		
+		mUNO = intent.getStringExtra(TAG_UNO);
+		mQNO = intent.getStringExtra(TAG_QNO);
+		getActionBar().setTitle(intent.getStringExtra(TAG_PTITLE));
 	}
 
 	@Override
@@ -72,9 +87,25 @@ public class QQMainActivity extends FragmentActivity {
 			// getItem is called to instantiate the fragment for the given page.
 			// Return a DummySectionFragment (defined as a static inner class
 			// below) with the page number as its lone argument.
+			/*
 			Fragment fragment = new DummySectionFragment();
 			Bundle args = new Bundle();
 			args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, position + 1);
+			fragment.setArguments(args);
+			return fragment;
+			*/
+			Fragment fragment = null;
+			Bundle args= new Bundle();
+	        args.putString(TAG_UNO, mUNO);
+	        args.putString(TAG_QNO, mQNO);
+			switch(position) {
+			case 0:
+				fragment = new FragQInfoActivity(getBaseContext()); break;
+			case 1:
+				fragment = new FragQAnswerActivity(getBaseContext()); break;
+			case 2:
+				fragment = new FragQCommentActivity(getBaseContext()); break;
+			}
 			fragment.setArguments(args);
 			return fragment;
 		}
@@ -90,11 +121,11 @@ public class QQMainActivity extends FragmentActivity {
 			Locale l = Locale.getDefault();
 			switch (position) {
 			case 0:
-				return getString(R.string.title_section1).toUpperCase(l);
+				return getString(R.string.title_q_title).toUpperCase(l);
 			case 1:
-				return getString(R.string.title_section2).toUpperCase(l);
+				return getString(R.string.title_q_answer).toUpperCase(l);
 			case 2:
-				return getString(R.string.title_section3).toUpperCase(l);
+				return getString(R.string.title_q_comment).toUpperCase(l);
 			}
 			return null;
 		}

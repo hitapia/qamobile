@@ -28,7 +28,7 @@ public class QIActivity extends Fragment {
 	Context mContext;
 	private static final String TAG_UNO = "uno";
 	private static final String TAG_PNO = "pno";
-	private static final String TAG_PINFO = "q/mqp_";
+	private static final String TAG_PINFO = "q/packInfo_";
 	private static final String TAG_JSON_PCONTENT = "content";
 
 	String mUNO = null;
