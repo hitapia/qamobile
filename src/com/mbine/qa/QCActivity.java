@@ -8,6 +8,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 import com.mbine.qa.controls.QPackage;
 import com.mbine.qa.controls.QQuest;
 import com.mbine.qa.tool.Communication;
@@ -21,6 +22,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.AdapterView.OnItemClickListener;
@@ -32,6 +35,7 @@ public class QCActivity extends Fragment {
 	private static final String TAG_UNO = "uno";
 	private static final String TAG_PNO = "pno";
 	private static final String TAG_PCINFO = "q/getcommentqps_";
+	private static final String TAG_PCREG = "q/addcomqp_";
 	private static final String TAG_JSON_CMEMBER = "name";
 	private static final String TAG_JSON_CCOMMENT = "content";
 
@@ -43,6 +47,8 @@ public class QCActivity extends Fragment {
 	ArrayList<HashMap<String, String>> qList = new ArrayList<HashMap<String, String>>();
 	
 	ListView mQList = null;
+	Button mAdd = null;
+	EditText mComment = null;
 	
 	public QCActivity(Context context) {
 		mContext = context;
@@ -58,9 +64,33 @@ public class QCActivity extends Fragment {
 			mPNO = bundle.getString(TAG_PNO);
 			
 			mQList = (ListView)view.findViewById(R.id.qclist);
+			mAdd = (Button)view.findViewById(R.id.register);
+			mComment = (EditText)view.findViewById(R.id.comment);
 
+			SetEvent();
 			SetView();
 			return view;
+	}
+	
+	private void SetEvent(){
+		mAdd.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if(!mComment.getText().toString().equals("")){
+					RequestParams param = pack.GetParams();
+					param.put("txtcomment", mComment.getText().toString());
+					mComment.setText("");
+			        Communication.post(TAG_PCREG+"/"+mPNO, param, new JsonHttpResponseHandler() {
+			        	@Override
+			        	public void onSuccess(JSONObject json) {
+			        		SetView();
+			        	}
+			        });
+				}else{
+					tool.showPop(getActivity(), "댓글을 입력해주세요.", "OK");
+				}
+			}
+		});
 	}
 
 	private void SetView(){
@@ -69,6 +99,7 @@ public class QCActivity extends Fragment {
         	public void onSuccess(JSONObject json) {
                 JSONArray qs;
 				try {
+					qList.clear();
 					qs = json.getJSONArray("comments");
 					for(int i = 0; i < qs.length(); i++){
 						HashMap<String, String> com = new HashMap<String, String>();

@@ -73,6 +73,7 @@ public class QQActivity extends Fragment {
         	public void onSuccess(JSONObject json) {
                 JSONArray qs;
 				try {
+					qList.clear();
 					qs = json.getJSONArray("q");
 					for(int i = 0; i < qs.length(); i++){
                         QQuest quest = new QQuest();

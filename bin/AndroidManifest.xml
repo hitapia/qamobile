@@ -72,6 +72,14 @@
             android:name="com.mbine.qa.qactivity.FragQAnswerActivity"
             android:label="@string/title_activity_frag_qanswer" >
         </activity>
+        <activity
+            android:name="com.mbine.qa.QSearchActivity"
+            android:label="@string/title_activity_qsearch" >
+        </activity>
+        <activity
+            android:name="com.mbine.qa.PCreateActivity"
+            android:label="@string/title_activity_pcreate" >
+        </activity>
     </application>
 
 </manifest>

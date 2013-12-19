@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,26 +8,16 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".QIActivity" >
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentBottom="true" >
 
-<TextView
-        android:id="@+id/pinfo_top"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:focusable="false"
-        android:text="@string/title_qi_summary"
-        android:textColor="@color/headerft"
-        android:textSize="26sp" />
-<View
-            android:id="@+id/ViewColorPickerHelper"
-            android:layout_width="fill_parent"
-            android:layout_height="1dip"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:layout_margin="0dip"
-            android:background="?android:attr/dividerVertical" 
-            android:layout_centerHorizontal="true"/>
-
-<TextView
+        android:orientation="vertical" >
+	    <TextView
         android:id="@+id/pinfo_summry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -36,30 +26,29 @@
         android:textColor="@color/headerft"
         android:textSize="20sp" />
 
-<Button
-    android:id="@+id/btnAddinP"
-    android:background="?android:attr/dividerVertical" 
+    </LinearLayout>
+
+
+
+        </LinearLayout>
+
+<LinearLayout
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:text="@string/title_qi_addq" />
-
-<TextView
-        android:id="@+id/pinfo_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:focusable="false"
-        android:text="@string/title_qi_detail"
-        android:textColor="@color/headerft"
-        android:textSize="26sp" />
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical" >
 <View
             android:id="@+id/ViewColorPickerHelper"
             android:layout_width="fill_parent"
             android:layout_height="1dip"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
             android:layout_margin="0dip"
-            android:background="?android:attr/dividerVertical" 
-            android:layout_centerHorizontal="true"/>
-
+            android:background="?android:attr/dividerVertical"/>
+<Button
+    android:id="@+id/btnAddinP"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+    android:text="@string/title_qi_addq" />
 
 </LinearLayout>
+</RelativeLayout>

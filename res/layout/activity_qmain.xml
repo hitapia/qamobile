@@ -52,7 +52,42 @@
                     android:focusable="false"
                     android:text="@string/title_qmain_topcomment"
                     android:textSize="20sp" />
-                
+             <TextView
+        android:id="@+id/usercount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:focusable="false"
+        android:text="@string/title_q_searchmake"
+        android:textColor="@color/headerft"
+        android:textSize="26sp" />
+        <View
+            android:id="@+id/ViewColorPickerHelper"
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="0dip"
+            android:background="?android:attr/dividerVertical" 
+            android:layout_centerHorizontal="true"/>
+
+             <EditText
+                 android:id="@+id/txtsearch"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:hint="@string/title_q_searchment"
+                 android:ems="10" >
+
+             </EditText>
+             
+    <Button
+        android:id="@+id/btn_search"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/search"
+        android:background="?android:attr/selectableItemBackground" />
+    
  <TextView
         android:id="@+id/usercount"
         android:layout_width="wrap_content"

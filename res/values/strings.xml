@@ -53,6 +53,7 @@
     <string name="title_createq_tag_place">Tag를 입력해주세요.(,로 구분)</string>
     <string name="txt_createnext">만들고 또 만들기</string>
     <string name="txt_create">만들기</string>
+    <string name="register">등록</string>
     <string name="title_activity_qqmain">QQMainActivity</string>
     <string name="title_activity_frag_qinfo">FragQInfoActivity</string>
     <string name="title_activity_frag_qcomment">FragQCommentActivity</string>
@@ -60,10 +61,19 @@
     <string name="title_q_title">Info</string>
     <string name="title_q_answer">Answers</string>
     <string name="title_q_comment">Comments</string>
-
+    <string name="title_q_searchmake">문제 검색 및 만들기</string>
+    <string name="title_q_searchment">먼저 검색해주세요.</string>
+    <string name="neadsearchment">검색어를 입력해주세요.</string>
+    <string name="getcomment">댓글을 입력해주세요.</string>
+    <string name="keyword">키워드</string>
+    <string name="summary">요약</string>
+    <string name="summaryment">간단한 설명을 입력해주세요.</string>
+    <string name="search">검색</string>
     <string name="difficulty">난이도</string>
     <string name="registermember">만든사람</string>
     <string name="tags">Tags</string>
     <string name="category">분류</string>
+    <string name="title_activity_qsearch">QSearchActivity</string>
+    <string name="title_activity_pcreate">PCreateActivity</string>
 
 </resources>
