@@ -20,7 +20,6 @@
                 android:id="@+id/ptitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
                 android:focusable="false"
         		android:text="@string/title_qmain_topheader"
                 android:textColor="@color/headerft"
@@ -30,12 +29,9 @@
             android:id="@+id/ViewColorPickerHelper"
             android:layout_width="fill_parent"
             android:layout_height="1dip"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
             android:layout_marginBottom="10dip"
             android:layout_marginTop="10dip"
-            android:background="?android:attr/dividerVertical" 
-            android:layout_centerHorizontal="true"/>
+            android:background="?android:attr/dividerVertical"/>
 
                 <TextView
                     android:id="@+id/pcomment"
@@ -62,17 +58,15 @@
         android:textColor="@color/headerft"
         android:textSize="26sp" />
         <View
-            android:id="@+id/ViewColorPickerHelper"
+            android:id="@+id/ViewColorPickerHelper2"
             android:layout_width="fill_parent"
             android:layout_height="1dip"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
             android:layout_margin="0dip"
-            android:background="?android:attr/dividerVertical" 
-            android:layout_centerHorizontal="true"/>
+            android:background="?android:attr/dividerVertical"/>
 
              <EditText
                  android:id="@+id/txtsearch"
+                android:focusable="false"
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content"
                  android:hint="@string/title_q_searchment"
@@ -89,7 +83,7 @@
         android:background="?android:attr/selectableItemBackground" />
     
  <TextView
-        android:id="@+id/usercount"
+        android:id="@+id/usercount3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dip"
@@ -98,14 +92,11 @@
         android:textColor="@color/headerft"
         android:textSize="26sp" />
 <View
-            android:id="@+id/ViewColorPickerHelper"
+            android:id="@+id/ViewColorPickerHelper6"
             android:layout_width="fill_parent"
             android:layout_height="1dip"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
             android:layout_margin="0dip"
-            android:background="?android:attr/dividerVertical" 
-            android:layout_centerHorizontal="true"/>
+            android:background="?android:attr/dividerVertical"/>
 
 <LinearLayout
     android:layout_width="match_parent"
@@ -115,12 +106,9 @@
     android:padding="0dip" >
 
     <View
-        android:id="@+id/ViewColorPickerHelper"
+        android:id="@+id/ViewColorPickerHelper11"
         android:layout_width="1dip"
         android:layout_height="100dip"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:layout_margin="0dip"
         android:background="?android:attr/dividerVertical" />
 
@@ -133,12 +121,9 @@
         android:text="350" />
 
     <View
-        android:id="@+id/ViewColorPickerHelper"
+        android:id="@+id/ViewColorPickerHelpe4"
         android:layout_width="1dip"
         android:layout_height="100dip"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:layout_marginBottom="0dip"
         android:layout_marginTop="0dip"
         android:background="?android:attr/dividerVertical" />
@@ -152,12 +137,9 @@
         android:text="3050" />
 
     <View
-        android:id="@+id/ViewColorPickerHelper"
+        android:id="@+id/ViewColorPickerHelper99"
         android:layout_width="1dip"
         android:layout_height="100dip"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:layout_margin="0dip"
         android:background="?android:attr/dividerVertical" />
 
@@ -170,21 +152,16 @@
         android:text="3500" />
 
     <View
-        android:id="@+id/ViewColorPickerHelper"
+        android:id="@+id/ViewColorPickerHelperd7"
         android:layout_width="1dip"
         android:layout_height="100dip"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:layout_margin="0dip"
         android:background="?android:attr/dividerVertical" />
 </LinearLayout>
 <View
-            android:id="@+id/ViewColorPickerHelper"
+            android:id="@+id/ViewColorPickerHelperqbqh"
             android:layout_width="fill_parent"
             android:layout_height="1dip"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
             android:layout_margin="0dip"
             android:background="?android:attr/dividerVertical"/>
 
@@ -198,14 +175,11 @@
         android:textColor="@color/headerft"
         android:textSize="26sp" />
 <View
-            android:id="@+id/ViewColorPickerHelper"
+            android:id="@+id/ViewColorPickerHelpernjiwj"
             android:layout_width="fill_parent"
             android:layout_height="1dip"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
             android:layout_margin="0dip"
-            android:background="?android:attr/dividerVertical" 
-            android:layout_centerHorizontal="true"/>
+            android:background="?android:attr/dividerVertical"/>
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -214,14 +188,11 @@
     android:orientation="horizontal">
 
 <View
-            android:id="@+id/ViewColorPickerHelper"
+            android:id="@+id/ViewColorPickerHelpernjenj"
             android:layout_width="1dip"
             android:layout_height="100dip"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
             android:layout_margin="0dip"
-            android:background="?android:attr/dividerVertical" 
-            android:layout_centerHorizontal="true"/>
+            android:background="?android:attr/dividerVertical"/>
     <Button
         android:id="@+id/btn_pmain_cntp"
         android:layout_width="0dip"
@@ -230,15 +201,12 @@
         android:layout_weight="1"
         android:text="350&#10;Packages" />
 <View
-            android:id="@+id/ViewColorPickerHelper"
+            android:id="@+id/ViewColorPickerHelperduiwj"
             android:layout_width="1dip"
             android:layout_height="100dip"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
             android:layout_marginBottom="0dip"
             android:layout_marginTop="0dip"
-            android:background="?android:attr/dividerVertical" 
-            android:layout_centerHorizontal="true"/>
+            android:background="?android:attr/dividerVertical"/>
     <Button
         android:id="@+id/btn_pmain_cntq"
         android:layout_width="0dip"
@@ -247,11 +215,9 @@
         android:layout_height="100dip"
         android:text="3050&#10;Qs" />
 <View
-            android:id="@+id/ViewColorPickerHelper"
+            android:id="@+id/ViewColorPickerHelperdfej"
             android:layout_width="1dip"
             android:layout_height="100dip"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
             android:layout_margin="0dip"
             android:background="?android:attr/dividerVertical" 
             android:layout_centerHorizontal="true"/>
@@ -268,18 +234,13 @@
             android:id="@+id/ViewColorPickerHelper"
             android:layout_width="1dip"
             android:layout_height="100dip"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
             android:layout_margin="0dip"
-            android:background="?android:attr/dividerVertical" 
-            android:layout_centerHorizontal="true"/>
+            android:background="?android:attr/dividerVertical"/>
 </LinearLayout>
 <View
-            android:id="@+id/ViewColorPickerHelper"
+            android:id="@+id/ViewColorPickerHelperdf"
             android:layout_width="fill_parent"
             android:layout_height="1dip"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
             android:layout_margin="0dip"
             android:background="?android:attr/dividerVertical"/>
     

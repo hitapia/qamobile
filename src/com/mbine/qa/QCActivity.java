@@ -87,7 +87,7 @@ public class QCActivity extends Fragment {
 			        	}
 			        });
 				}else{
-					tool.showPop(getActivity(), "´ñ±ÛÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.", "OK");
+					tool.showPop(getActivity(), "ëŒ“ê¸€ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.", "OK");
 				}
 			}
 		});

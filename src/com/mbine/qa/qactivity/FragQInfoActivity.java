@@ -86,6 +86,7 @@ public class FragQInfoActivity extends Fragment {
 			mUNO = bundle.getString(TAG_UNO);
 			mQNO = bundle.getString(TAG_QNO);
 			
+			tool.ShowLoading(getActivity());
 			mSummary = (TextView)view.findViewById(R.id.pinfo_summry);
 			mBtnCor = (Button)view.findViewById(R.id.btn_cor);
 			mBtnInCor = (Button)view.findViewById(R.id.btn_incor);
@@ -110,6 +111,7 @@ public class FragQInfoActivity extends Fragment {
 			});
 			*/
 			SetView();
+			tool.ExitLoading();
 			return view;
 	}
 	
@@ -166,6 +168,7 @@ public class FragQInfoActivity extends Fragment {
                 JSONArray qs;
 				try {
 					qs = json.getJSONArray("a");
+					aList.clear();
 					for(int i = 0; i < qs.length(); i++){
 						HashMap<String, String> com = new HashMap<String, String>();
 						com.put(TAG_JSON_QSUMMARY, qs.getJSONObject(i).getString(TAG_JSON_QSUMMARY));

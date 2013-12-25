@@ -1,4 +1,5 @@
 <resources>
+<style name="ActionBar" parent="@android:style/Widget.Holo.ActionBar" />
 
     <!--
         Base application theme, dependent on API level. This theme is replaced

@@ -38,7 +38,7 @@ public class PCreateActivity extends Activity {
 	private static final String TAG_PARAM_SUMMARY = "summary";
 	private static final String TAG_PARAM_CATEGORY = "category";
 	private static final String TAG_CATEGORY = "q/getCategory_";
-	private static final String TAG_CATEGORY_SEL = "ºĞ·ù ¼±ÅÃ";
+	private static final String TAG_CATEGORY_SEL = "ë¶„ë¥˜ ì„ íƒ";
 	private static final String TAG_CODE_C = "cs";
 	private static final String TAG_C_NAME = "name";
 	private static final String TAG_C_NAMECODE = "seq";
@@ -72,12 +72,12 @@ public class PCreateActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				if(txtKeyword.getText().toString().equals("") || txtSummary.getText().toString().equals("")){
-					tool.showPop(PCreateActivity.this, "Å°¿öµå³ª ³»¿ëÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.", "OK");
+					tool.showPop(PCreateActivity.this, "ëª¨ë“  ì…ë ¥ê°’ì— ì…ë ¥í•´ì•¼í•©ë‹ˆë‹¤ ", "OK");
 					return;
 				}
 				String category = mCategoryList.get(spCategory.getSelectedItem().toString()).toString();
 				if (category.equals("")) {
-					tool.showPop(PCreateActivity.this, "ºĞ·ù¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä.", "OK");
+					tool.showPop(PCreateActivity.this, "ë¶„ë¥˜ë¥¼ ì„ íƒí•´ì£¼ì„¸ìš”.", "OK");
 					return;
 				}
 

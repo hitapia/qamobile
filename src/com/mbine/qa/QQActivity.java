@@ -46,6 +46,7 @@ public class QQActivity extends Fragment {
 	ArrayList<HashMap<String, String>> qList = new ArrayList<HashMap<String, String>>();
 	
 	ListView mQList = null;
+	Button mBtnAdd = null;
 
 	public QQActivity(Context context) {
 		mContext = context;
@@ -62,6 +63,17 @@ public class QQActivity extends Fragment {
 		mPNO = bundle.getString(TAG_PNO);
 		
 		mQList = (ListView)view.findViewById(R.id.qlist);
+		mBtnAdd = (Button)view.findViewById(R.id.btnAddinP);
+
+		mBtnAdd.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(getActivity(), QCreateActivity.class);
+				intent.putExtra(TAG_UNO, mUNO);
+				intent.putExtra(TAG_PNO, mPNO);
+				startActivity(intent);
+			}
+		});
 
 		SetView();
     	return view;

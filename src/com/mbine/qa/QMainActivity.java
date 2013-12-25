@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -62,6 +63,7 @@ public class QMainActivity extends Activity {
                         Intent intent = new Intent(QMainActivity.this, QPListActivity.class);
                         intent.putExtra(TAG_UNO, mUNO);
                         intent.putExtra(TAG_KEYWORD, txtSearch.getText().toString());
+                        txtSearch.setText("");
                         startActivity(intent);
 				}
 			}
@@ -81,8 +83,23 @@ public class QMainActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.qmain, menu);
+		getMenuInflater().inflate(R.menu.main_activity_actions, menu);
 		return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    // Handle presses on the action bar items
+	    switch (item.getItemId()) {
+	        case R.id.action_search:
+	            //openSearch();
+	            return true;
+	        case R.id.action_settings:
+	            //openSettings();
+	            return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
 	}
 
 }

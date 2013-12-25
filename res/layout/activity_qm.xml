@@ -8,9 +8,24 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".QMActivity" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/title_qp_m" />
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical" >
+<View
+            android:id="@+id/ViewColorPickerHelper"
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:layout_margin="0dip"
+            android:background="?android:attr/dividerVertical"/>
+<Button
+    android:id="@+id/btnAddinP"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+    android:text="@string/title_qi_addq" />
+
+</LinearLayout>
 
 </RelativeLayout>

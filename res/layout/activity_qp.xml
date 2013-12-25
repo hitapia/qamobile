@@ -8,10 +8,55 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".QQActivity" >
 
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="5dip"
+        android:focusable="false"
+        android:text="@string/showinlyasnwered"
+        android:textColor="@color/prog"
+        android:textSize="18sp" />
+
+<View
+            android:id="@+id/ViewColorPickerHelper"
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:layout_margin="0dip"
+            android:background="?android:attr/dividerVertical"/>
+
 <ListView
     android:id="@+id/qlist"
+    android:layout_marginBottom="50dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" >
 </ListView>
+        </LinearLayout>
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical" >
+<View
+            android:id="@+id/ViewColorPickerHelper8"
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:layout_margin="0dip"
+            android:background="?android:attr/dividerVertical"/>
+<Button
+    android:id="@+id/btnAddinP"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+    android:text="@string/title_qi_addq" />
+
+</LinearLayout>
 
 </RelativeLayout>

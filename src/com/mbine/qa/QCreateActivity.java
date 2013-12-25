@@ -42,7 +42,7 @@ public class QCreateActivity extends Activity {
 	private static final String TAG_CATEGORY = "q/getCategory_";
 	private static final String TAG_PINFO = "q/qpinfo_";
 	private static final String TAG_SUBMIT = "q/register_";
-	private static final String TAG_CATEGORY_SEL = "º±≈√«ÿ¡÷ººø‰.";
+	private static final String TAG_CATEGORY_SEL = "Î∂ÑÎ•ò ÏÑ†ÌÉù";
 	
 	private static final String TAG_PARAM_PNO = "pno";
 	private static final String TAG_PARAM_REF = "ref";
@@ -146,11 +146,11 @@ public class QCreateActivity extends Activity {
 	}
 	
 	private void SetAllInCo(Button btn){
-        btn1.setText("ø¿¥‰");
-        btn2.setText("ø¿¥‰");
-        btn3.setText("ø¿¥‰");
-        btn4.setText("ø¿¥‰");
-        btn.setText("¡§¥‰");
+        btn1.setText("Ïò§Îãµ");
+        btn2.setText("Ïò§Îãµ");
+        btn3.setText("Ïò§Îãµ");
+        btn4.setText("Ïò§Îãµ");
+        btn.setText("Ï†ïÎãµ");
 	}
 	
 	private String chkField(EditText ed){
@@ -177,10 +177,10 @@ public class QCreateActivity extends Activity {
 		params.put(TAG_PARAM_ITEMSUMMARY, items);
 
 		ArrayList<String> itemCors = new ArrayList<String>();
-		itemCors.add((btn1.getText().toString() == "¡§¥‰") ? "Y" : "N");
-		itemCors.add((btn2.getText().toString() == "¡§¥‰") ? "Y" : "N");
-		itemCors.add((btn3.getText().toString() == "¡§¥‰") ? "Y" : "N");
-		itemCors.add((btn4.getText().toString() == "¡§¥‰") ? "Y" : "N");
+		itemCors.add((btn1.getText().toString() == "Ï†ïÎãµ") ? "Y" : "N");
+		itemCors.add((btn2.getText().toString() == "Ï†ïÎãµ") ? "Y" : "N");
+		itemCors.add((btn3.getText().toString() == "Ï†ïÎãµ") ? "Y" : "N");
+		itemCors.add((btn4.getText().toString() == "Ï†ïÎãµ") ? "Y" : "N");
 		params.put(TAG_PARAM_ITEMCORRECT, itemCors);
 
         Communication.post(TAG_SUBMIT, params, new JsonHttpResponseHandler() {

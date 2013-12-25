@@ -46,7 +46,11 @@
         </activity>
         <activity
             android:name="com.mbine.qa.QPListActivity"
-            android:label="@string/title_activity_qplist" >
+            android:label="@string/title_activity_qplist"
+     		android:parentActivityName="com.mbine.qa.QPackageActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mbine.qa.QPackageActivity" />
         </activity>
         <activity
             android:name="com.mbine.qa.QMainActivity"
@@ -80,6 +84,16 @@
             android:name="com.mbine.qa.PCreateActivity"
             android:label="@string/title_activity_pcreate" >
         </activity>
+        <activity
+            android:name="com.mbine.qa.QAnswerActivity"
+            android:label="@string/title_activity_qanswer" >
+        </activity>
+        <activity
+            android:name="com.mbine.qa.QAnswerResultActivity"
+            android:label="@string/title_activity_qanswer_result" >
+        </activity>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
+        <activity android:name="com.facebook.LoginActivity"></activity>
     </application>
 
 </manifest>

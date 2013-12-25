@@ -49,7 +49,9 @@ public class QPListActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_qplist);
-		
+
+	    getActionBar().setDisplayHomeAsUpEnabled(true);
+
 		Intent intent = getIntent();
 		mUNO = intent.getStringExtra(TAG_UNO);
 		mKeyword = intent.getStringExtra(TAG_KEYWORD);
@@ -65,7 +67,7 @@ public class QPListActivity extends Activity {
 		btnNew = (Button)findViewById(R.id.btnnew);
 		if(!mKeyword.equals("")){
 			txtSearch.setText(mKeyword);
-			btnNew.setText(mKeyword + " Package ¸¸µé±â");
+			btnNew.setText(mKeyword + " Package ë§Œë“¤ê¸°");
 		}else{
 			btnNew.setVisibility(View.GONE);
 		}

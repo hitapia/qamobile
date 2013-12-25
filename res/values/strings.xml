@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+	<string name="action_search">Search</string>
     <string name="app_name">qa</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
@@ -27,8 +27,9 @@
     <string name="title_qmain_topcomment">자신이 알고 있는 정보를 퀴즈로 만들어 공유할 수 있습니다.</string>
     <string name="title_qmain_now">Now...</string>
     <string name="title_qmain_stat">My Status</string>
-    <string name="title_qmain_myreg">등록개수</string>
+    <string name="title_qmain_myregcnt">등록개수</string>
     <string name="title_qmain_myavg">정답률</string>
+    <string name="title_qmain_myreg">등록률</string>
     <string name="title_qmain_myprog">진도율</string>
     <string name="title_qplist_top">Package List</string>
     <string name="title_qi_summary">Summary</string>
@@ -65,6 +66,7 @@
     <string name="title_q_searchment">먼저 검색해주세요.</string>
     <string name="neadsearchment">검색어를 입력해주세요.</string>
     <string name="getcomment">댓글을 입력해주세요.</string>
+    <string name="startanswer">문제 풀기</string>
     <string name="keyword">키워드</string>
     <string name="summary">요약</string>
     <string name="summaryment">간단한 설명을 입력해주세요.</string>
@@ -73,7 +75,16 @@
     <string name="registermember">만든사람</string>
     <string name="tags">Tags</string>
     <string name="category">분류</string>
+    <string name="avg_cor">정답률</string>
+    <string name="avg_answer">응답률</string>
+    <string name="submitanswer">답변 제출</string>
+    <string name="showinfo">정보 보기</string>
+    <string name="nextq">다음문제 풀기</string>
+    <string name="showinlyasnwered">풀었거나 만든 문제만 보입니다.</string>
     <string name="title_activity_qsearch">QSearchActivity</string>
     <string name="title_activity_pcreate">PCreateActivity</string>
+    <string name="title_activity_qanswer">QAnswerActivity</string>
+    <string name="title_activity_qanswer_result">QAnswerResultActivity</string>
+    <string name="app_id">159081950969245</string>
 
 </resources>
