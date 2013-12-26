@@ -38,6 +38,9 @@ public class QQActivity extends Fragment {
 	private static final String TAG_JSON_QID = "seq";
 	private static final String TAG_PINFO = "q/packqlist_";
 	private static final String TAG_JSON_QSUMMARY = "summary";
+	private static final String TAG_JSON_AMEMBER = "ans_member";
+	private static final String TAG_JSON_ACOR = "ans_cor";
+	private static final String TAG_JSON_APOINT = "ans_point";
 
 	String mUNO = null;
 	String mPNO = null;
@@ -47,6 +50,7 @@ public class QQActivity extends Fragment {
 	
 	ListView mQList = null;
 	Button mBtnAdd = null;
+	View view = null;
 
 	public QQActivity(Context context) {
 		mContext = context;
@@ -55,16 +59,21 @@ public class QQActivity extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, 
 			ViewGroup container, Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.activity_qp, null);
+		view = inflater.inflate(R.layout.activity_qp, null);
 
+		GetControls();
+		SetEvents();
 
 		Bundle bundle = this.getArguments();
 		mUNO = bundle.getString(TAG_UNO);
 		mPNO = bundle.getString(TAG_PNO);
-		
-		mQList = (ListView)view.findViewById(R.id.qlist);
-		mBtnAdd = (Button)view.findViewById(R.id.btnAddinP);
 
+		SetView();
+
+    	return view;
+	}
+	
+	private void SetEvents(){
 		mBtnAdd.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -74,12 +83,15 @@ public class QQActivity extends Fragment {
 				startActivity(intent);
 			}
 		});
-
-		SetView();
-    	return view;
+	}
+	
+	private void GetControls(){
+		mQList = (ListView)view.findViewById(R.id.qlist);
+		mBtnAdd = (Button)view.findViewById(R.id.btnAddinP);
 	}
 
 	private void SetView(){
+		tool.ShowLoading(getActivity());
         Communication.post(TAG_PINFO+"/"+mPNO, pack.GetParams(), new JsonHttpResponseHandler() {
         	@Override
         	public void onSuccess(JSONObject json) {
@@ -92,11 +104,12 @@ public class QQActivity extends Fragment {
                         try {
 							qList.add(quest.MakeQInfo(qs.getJSONObject(i)));
 						} catch (JSONException e) {
-							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
 					}
-					SimpleAdapter adapter = new SimpleAdapter(getActivity(), qList, R.layout.lv_qlist_nomal, new String[] { TAG_JSON_QSUMMARY }, new int[] { R.id.qlist_name });
+					SimpleAdapter adapter = new SimpleAdapter(getActivity(), qList, R.layout.lv_q_with_info
+                        , new String[] { TAG_JSON_QSUMMARY }
+                        , new int[] { R.id.qlist_name, R.id.txtpercor, R.id.txtresult });
 	                mQList.setAdapter(adapter);
 	                mQList.setOnItemClickListener(new OnItemClickListener() {
 	                        @Override
@@ -109,11 +122,9 @@ public class QQActivity extends Fragment {
 	                        }
 	                });
 				} catch (JSONException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-                
-                
+				tool.ExitLoading();
         	}
         });	
 	}

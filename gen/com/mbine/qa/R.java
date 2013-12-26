@@ -115,6 +115,7 @@ containing a value of this type.
     public static final class color {
         public static final int an_co=0x7f04000d;
         public static final int an_inco=0x7f04000c;
+        public static final int an_info=0x7f04000e;
         public static final int boxbg=0x7f040004;
         public static final int boxft=0x7f040005;
         public static final int btn=0x7f040006;
@@ -129,25 +130,35 @@ containing a value of this type.
         public static final int white=0x7f040001;
     }
     public static final class dimen {
-        /**  Default screen margins, per the Android Design guidelines. 
-
+        /** 
          Customize dimensions originally defined in res/values/dimens.xml (such as
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f050000;
-        public static final int activity_vertical_margin=0x7f050001;
-        public static final int info_detail_ftsize=0x7f050004;
-        public static final int info_main_ftsize=0x7f050005;
-        public static final int list_item_marginbottom=0x7f050003;
-        public static final int list_item_margintop=0x7f050002;
+        public static final int activity_horizontal_margin=0x7f050001;
+        public static final int activity_vertical_margin=0x7f050002;
+        public static final int info_detail_ftsize=0x7f050005;
+        public static final int info_main_ftsize=0x7f050006;
+        public static final int list_item_marginbottom=0x7f050004;
+        public static final int list_item_margintop=0x7f050003;
+        /**  Default screen margins, per the Android Design guidelines. 
+         */
+        public static final int padd_5=0x7f050000;
     }
     public static final class drawable {
         public static final int bg_card=0x7f020000;
         public static final int ic_action_search=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
-        public static final int row_selector=0x7f020003;
-        public static final int selector=0x7f020004;
+        public static final int ic_friends=0x7f020002;
+        public static final int ic_launcher=0x7f020003;
+        public static final int ic_new=0x7f020004;
+        public static final int ic_setting=0x7f020005;
+        public static final int ic_share=0x7f020006;
+        public static final int ic_star=0x7f020007;
+        public static final int ic_unstar=0x7f020008;
+        public static final int ic_votedown=0x7f020009;
+        public static final int ic_voteup=0x7f02000a;
+        public static final int row_selector=0x7f02000b;
+        public static final int selector=0x7f02000c;
     }
     public static final class id {
         public static final int TextView01=0x7f09003d;
@@ -167,8 +178,8 @@ containing a value of this type.
         public static final int ViewColorPickerHelpernjenj=0x7f09004c;
         public static final int ViewColorPickerHelpernjiwj=0x7f09004b;
         public static final int ViewColorPickerHelperqbqh=0x7f090049;
-        public static final int action_search=0x7f090068;
-        public static final int action_settings=0x7f090067;
+        public static final int action_search=0x7f09006a;
+        public static final int action_settings=0x7f090069;
         public static final int answerbg=0x7f090018;
         public static final int avg_answer=0x7f090033;
         public static final int avg_answer_text=0x7f090032;
@@ -207,10 +218,10 @@ containing a value of this type.
         public static final int login_txtemail=0x7f09000e;
         public static final int login_txtpassword=0x7f09000f;
         public static final int nowcom=0x7f09004a;
-        public static final int option1=0x7f090063;
-        public static final int option2=0x7f090064;
-        public static final int option3=0x7f090065;
-        public static final int option4=0x7f090066;
+        public static final int option1=0x7f090065;
+        public static final int option2=0x7f090066;
+        public static final int option3=0x7f090067;
+        public static final int option4=0x7f090068;
         public static final int pager=0x7f090011;
         public static final int pager_title_strip=0x7f090058;
         public static final int pcomment=0x7f09003c;
@@ -224,9 +235,9 @@ containing a value of this type.
         public static final int qitem2=0x7f090026;
         public static final int qitem3=0x7f090028;
         public static final int qitem4=0x7f09002a;
-        public static final int qitemper=0x7f090061;
+        public static final int qitemper=0x7f090064;
         public static final int qlist=0x7f090054;
-        public static final int qlist_name=0x7f090062;
+        public static final int qlist_name=0x7f090061;
         public static final int qplist=0x7f090057;
         public static final int register=0x7f090021;
         public static final int result=0x7f090019;
@@ -249,6 +260,8 @@ containing a value of this type.
         public static final int txt_member=0x7f090008;
         public static final int txtcom=0x7f09002d;
         public static final int txthint=0x7f09002e;
+        public static final int txtpercor=0x7f090062;
+        public static final int txtresult=0x7f090063;
         public static final int txtsearch=0x7f09003f;
         public static final int txttags=0x7f09002f;
         public static final int usercount=0x7f09003e;
@@ -278,12 +291,13 @@ containing a value of this type.
         public static final int fragment_qqmain_dummy=0x7f030012;
         public static final int lv_comments=0x7f030013;
         public static final int lv_plist_normal=0x7f030014;
-        public static final int lv_qitem_normal=0x7f030015;
-        public static final int lv_qitem_only=0x7f030016;
-        public static final int lv_qitemlist_normal=0x7f030017;
-        public static final int lv_qlist_nomal=0x7f030018;
-        public static final int uc_bottombar=0x7f030019;
-        public static final int uc_spinner_item=0x7f03001a;
+        public static final int lv_q_with_info=0x7f030015;
+        public static final int lv_qitem_normal=0x7f030016;
+        public static final int lv_qitem_only=0x7f030017;
+        public static final int lv_qitemlist_normal=0x7f030018;
+        public static final int lv_qlist_nomal=0x7f030019;
+        public static final int uc_bottombar=0x7f03001a;
+        public static final int uc_spinner_item=0x7f03001b;
     }
     public static final class menu {
         public static final int frag_qanswer=0x7f080000;
@@ -291,19 +305,20 @@ containing a value of this type.
         public static final int frag_qinfo=0x7f080002;
         public static final int login=0x7f080003;
         public static final int main_activity_actions=0x7f080004;
-        public static final int pcreate=0x7f080005;
-        public static final int q=0x7f080006;
-        public static final int qanswer=0x7f080007;
-        public static final int qanswer_result=0x7f080008;
-        public static final int qc=0x7f080009;
-        public static final int qcreate=0x7f08000a;
-        public static final int qi=0x7f08000b;
-        public static final int qm=0x7f08000c;
-        public static final int qmain=0x7f08000d;
-        public static final int qpackage=0x7f08000e;
-        public static final int qplist=0x7f08000f;
-        public static final int qqmain=0x7f080010;
-        public static final int qsearch=0x7f080011;
+        public static final int main_only_set=0x7f080005;
+        public static final int pcreate=0x7f080006;
+        public static final int q=0x7f080007;
+        public static final int qanswer=0x7f080008;
+        public static final int qanswer_result=0x7f080009;
+        public static final int qc=0x7f08000a;
+        public static final int qcreate=0x7f08000b;
+        public static final int qi=0x7f08000c;
+        public static final int qm=0x7f08000d;
+        public static final int qmain=0x7f08000e;
+        public static final int qpackage=0x7f08000f;
+        public static final int qplist=0x7f080010;
+        public static final int qqmain=0x7f080011;
+        public static final int qsearch=0x7f080012;
     }
     public static final class string {
         public static final int action_search=0x7f060000;
@@ -470,7 +485,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.mbine.qa:barColor
+          @attr name android:barColor
         */
         public static final int ProgressWheel_barColor = 3;
         /**
@@ -486,7 +501,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.mbine.qa:barLength
+          @attr name android:barLength
         */
         public static final int ProgressWheel_barLength = 10;
         /**
@@ -502,7 +517,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.mbine.qa:barWidth
+          @attr name android:barWidth
         */
         public static final int ProgressWheel_barWidth = 9;
         /**
@@ -517,7 +532,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.mbine.qa:circleColor
+          @attr name android:circleColor
         */
         public static final int ProgressWheel_circleColor = 7;
         /**
@@ -533,7 +548,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.mbine.qa:radius
+          @attr name android:radius
         */
         public static final int ProgressWheel_radius = 8;
         /**
@@ -548,7 +563,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.mbine.qa:rimColor
+          @attr name android:rimColor
         */
         public static final int ProgressWheel_rimColor = 4;
         /**
@@ -564,7 +579,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.mbine.qa:rimWidth
+          @attr name android:rimWidth
         */
         public static final int ProgressWheel_rimWidth = 5;
         /**
@@ -578,7 +593,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.mbine.qa:spinSpeed
+          @attr name android:spinSpeed
         */
         public static final int ProgressWheel_spinSpeed = 6;
         /**
@@ -592,7 +607,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.mbine.qa:text
+          @attr name android:text
         */
         public static final int ProgressWheel_text = 0;
         /**
@@ -607,7 +622,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.mbine.qa:textColor
+          @attr name android:textColor
         */
         public static final int ProgressWheel_textColor = 1;
         /**
@@ -623,7 +638,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.mbine.qa:textSize
+          @attr name android:textSize
         */
         public static final int ProgressWheel_textSize = 2;
     };

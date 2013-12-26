@@ -88,7 +88,7 @@ public class QPackageActivity extends FragmentActivity implements
 		
 		mUNO = intent.getStringExtra(TAG_UNO);
 		mPNO = intent.getStringExtra(TAG_PNO);
-		getActionBar().setTitle(intent.getStringExtra(TAG_PTITLE));
+		//getActionBar().setTitle(intent.getStringExtra(TAG_PTITLE));
 	}
 
 	@Override

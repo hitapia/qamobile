@@ -34,6 +34,7 @@ public class QIActivity extends Fragment {
 	private static final String TAG_PMYINFO = "a/mypackinfo_";
 	private static final String TAG_NEXTQ = "q/getNextQPackage_";
 	private static final String TAG_JSON_PCONTENT = "content";
+	private static final String TAG_JSON_PNAME = "name";
 
 	String mUNO = null;
 	String mPNO = null;
@@ -46,6 +47,7 @@ public class QIActivity extends Fragment {
 	TextView mProfReg = null;
 	Button mBtnAdd = null;
 	Button mBtnStart = null;
+	View view = null;
 	boolean get1 = false, get2 = false;
 	
 	public QIActivity(Context context) {
@@ -55,19 +57,15 @@ public class QIActivity extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, 
         ViewGroup container, Bundle savedInstanceState) {
-			View view = inflater.inflate(R.layout.activity_qi, container, false);
+			view = inflater.inflate(R.layout.activity_qi, container, false);
+			
+			GetControls();
 
-			tool.ShowLoading(getActivity());
 			Bundle bundle = this.getArguments();
 			mUNO = bundle.getString(TAG_UNO);
 			mPNO = bundle.getString(TAG_PNO);
-			
-			mSummary = (TextView)view.findViewById(R.id.pinfo_summry);
-			mBtnAdd = (Button)view.findViewById(R.id.btnAddinP);
-			mBtnStart = (Button)view.findViewById(R.id.btnstartanswer);
-			mProgAn = (TextView)view.findViewById(R.id.avg_answer);
-			mProfCo = (TextView)view.findViewById(R.id.avg_cor);
-			mProfReg = (TextView)view.findViewById(R.id.avg_reg);
+
+			tool.ShowLoading(getActivity());
 
 			mBtnStart.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -90,6 +88,15 @@ public class QIActivity extends Fragment {
 			SetMyView();
 			return view;
 	}
+	
+	private void GetControls(){
+        mSummary = (TextView)view.findViewById(R.id.pinfo_summry);
+        mBtnAdd = (Button)view.findViewById(R.id.btnAddinP);
+        mBtnStart = (Button)view.findViewById(R.id.btnstartanswer);
+        mProgAn = (TextView)view.findViewById(R.id.avg_answer);
+        mProfCo = (TextView)view.findViewById(R.id.avg_cor);
+        mProfReg = (TextView)view.findViewById(R.id.avg_reg);
+	}
 
 	private void GetNextQ(){
         Communication.post(TAG_NEXTQ+"/"+mPNO, pack.GetParams(), new JsonHttpResponseHandler() {
@@ -107,7 +114,6 @@ public class QIActivity extends Fragment {
                         startActivity(intent);
         			}
 				} catch (JSONException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
         	}
@@ -141,6 +147,7 @@ public class QIActivity extends Fragment {
         		ArrayList<HashMap<String,String>> pbasic = pinfo.get("p");
 
         		mSummary.setText(((HashMap<String,String>)pbasic.get(0)).get(TAG_JSON_PCONTENT));
+                ((QPackageActivity)getActivity()).getActionBar().setTitle(((HashMap<String,String>)pbasic.get(0)).get(TAG_JSON_PNAME));
                 get2 = true;
                 if(get1 && get2)
                 	tool.ExitLoading();

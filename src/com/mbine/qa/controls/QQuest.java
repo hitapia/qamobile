@@ -20,7 +20,12 @@ public class QQuest extends JsonCom {
 	private static final String TAG_JSON_QREGDATE = "regdate";
 	private static final String TAG_JSON_QCATEGORY = "category";
 
-	public HashMap<String,String> MakeQInfo(JSONObject c) throws JSONException{
+	private static final String TAG_JSON_AMEMBER = "ans_member";
+	private static final String TAG_JSON_ACOR = "ans_cor";
+	private static final String TAG_JSON_APOINT = "ans_point";
+	private static final String TAG_JSON_APER = "ans_per";
+
+	public HashMap<String,String> MakeQInfo(JSONObject c, String _loguser) throws JSONException{
         HashMap<String,String> info = new HashMap<String,String>();
 
         info.put(TAG_JSON_QID, c.getString(TAG_JSON_QID));
@@ -35,6 +40,22 @@ public class QQuest extends JsonCom {
         info.put(TAG_JSON_QDIFFICULT, c.getString(TAG_JSON_QDIFFICULT));
         info.put(TAG_JSON_QREGDATE, c.getString(TAG_JSON_QREGDATE));
         info.put(TAG_JSON_QCATEGORY, c.getString(TAG_JSON_QCATEGORY));
+        
+        String mem = null;
+        if(c.getString(TAG_JSON_AMEMBER).equals(_loguser)){
+        	mem = "OWNER";
+        }else{
+        	if(c.getString(TAG_JSON_ACOR).equals("Y")){
+                mem = "O";
+        	}else{
+                mem = "X";
+        	}
+        }
+
+        info.put(TAG_JSON_AMEMBER, mem);
+        info.put(TAG_JSON_ACOR, c.getString(TAG_JSON_ACOR));
+        info.put(TAG_JSON_APOINT, c.getString(TAG_JSON_APOINT));
+        info.put(TAG_JSON_APER, c.getString(TAG_JSON_APOINT));
         
         return info;
 	}

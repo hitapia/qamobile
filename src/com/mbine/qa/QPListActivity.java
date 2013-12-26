@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -34,6 +35,7 @@ public class QPListActivity extends Activity {
 	private static final String TAG_JSON_QCOUNT = "questcount";
 	private static final String TAG_KEYWORD = "keyword";
 
+	SimpleAdapter adapter = null;
 	JSONArray qs = null;
 	Tools tool = new Tools();
 	QPackageList pack = new QPackageList();
@@ -57,21 +59,13 @@ public class QPListActivity extends Activity {
 		mKeyword = intent.getStringExtra(TAG_KEYWORD);
 		
 		GetControls();
-		tool.ShowLoading(QPListActivity.this);
-		DataBinding();
-		tool.ExitLoading();
-		getActionBar().setTitle(intent.getStringExtra("Q Package List"));
-
-		txtSearch = (EditText)findViewById(R.id.txtsearch);
-		btnSearch = (Button)findViewById(R.id.btn_search);
-		btnNew = (Button)findViewById(R.id.btnnew);
-		if(!mKeyword.equals("")){
-			txtSearch.setText(mKeyword);
-			btnNew.setText(mKeyword + " Package 만들기");
-		}else{
-			btnNew.setVisibility(View.GONE);
-		}
 		CreateEvent();
+
+		if(!mKeyword.equals("")){
+			DataBinding();
+		}
+
+		getActionBar().setTitle("Q Package List");
 	}
 
 	private void CreateEvent(){
@@ -80,9 +74,7 @@ public class QPListActivity extends Activity {
 			public void onClick(View v) {
 				if(!txtSearch.getText().toString().equals("")){
 					mKeyword = txtSearch.getText().toString();
-					tool.ShowLoading(QPListActivity.this);
 					DataBinding();
-					tool.ExitLoading();
 				}
 			}
 		});
@@ -97,19 +89,40 @@ public class QPListActivity extends Activity {
 			}
 		});
 	}
+	
+	private void SetNewQ(boolean blnew){
+		if(blnew){
+			txtSearch.setText(mKeyword);
+			btnNew.setText(mKeyword + " Package 만들기");
+			btnNew.setVisibility(View.VISIBLE);
+		}
+	}
+	
+	private void Initialize(){
+        mKeyword = "";
+        txtSearch.setText(mKeyword);
+        qList.clear();
+        adapter.notifyDataSetChanged();
+        btnNew.setVisibility(View.GONE);
+	}
 
 	private void DataBinding(){
+		if(mKeyword.equals(""))
+			return;
+
+		tool.ShowLoading(QPListActivity.this);
 		RequestParams params = pack.GetParams();
 		params.put(TAG_KEYWORD, mKeyword);
         Communication.post(TAG_QLIST, params, new JsonHttpResponseHandler() {
         	@Override
         	public void onSuccess(JSONObject json) {
         		qList = pack.MakeList(json);
-                SimpleAdapter adapter = new SimpleAdapter(QPListActivity.this, qList, R.layout.lv_plist_normal, new String[] { TAG_JSON_QNAME, TAG_JSON_QCOUNT }, new int[] { R.id.plist_name, R.id.plist_Count });
+                adapter = new SimpleAdapter(QPListActivity.this, qList, R.layout.lv_plist_normal, new String[] { TAG_JSON_QNAME, TAG_JSON_QCOUNT }, new int[] { R.id.plist_name, R.id.plist_Count });
                 qplist.setAdapter(adapter);
                 qplist.setOnItemClickListener(new OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+                        	Initialize();
                         	HashMap<String,String> map = (HashMap<String,String>)arg0.getItemAtPosition(arg2);
     						Intent intent = new Intent(QPListActivity.this, QPackageActivity.class);
     						intent.putExtra(TAG_PNO, map.get(TAG_JSON_QID));
@@ -118,19 +131,35 @@ public class QPListActivity extends Activity {
     						startActivity(intent);
                         }
                 });
+                SetNewQ(true);
+                tool.ExitLoading();
         	}
         });	
 	}	
 
 	private void GetControls(){
 		qplist = (ListView)findViewById(R.id.qplist);
+		txtSearch = (EditText)findViewById(R.id.txtsearch);
+		btnSearch = (Button)findViewById(R.id.btn_search);
+		btnNew = (Button)findViewById(R.id.btnnew);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.qplist, menu);
+		getMenuInflater().inflate(R.menu.main_only_set, menu);
 		return true;
 	}
 
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    // Handle presses on the action bar items
+	    switch (item.getItemId()) {
+	        case R.id.action_settings:
+	            //openSettings();
+	            return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+	}
 }

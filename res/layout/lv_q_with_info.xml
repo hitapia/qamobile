@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/list_item_margintop"
+    android:layout_marginBottom="@dimen/list_item_marginbottom"
+	android:paddingLeft="@dimen/padd_5"
+	android:paddingRight="@dimen/padd_5"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/qlist_name"
+        android:text="this is a test message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true" 
+        android:singleLine="true"
+        android:focusable="false"
+        android:ellipsize="marquee"
+        android:textSize="20sp" />
+
+    <LinearLayout 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true" 
+    android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/txtpercor"
+                android:text="30%"
+                android:padding="@dimen/padd_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="20sp" 
+                android:background="@color/an_info" />
+            <TextView
+                android:id="@+id/txtresult"
+                android:text="  O  "
+                android:padding="@dimen/padd_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="20sp" 
+                android:background="@color/an_co" />
+        
+    </LinearLayout>
+
+</RelativeLayout>

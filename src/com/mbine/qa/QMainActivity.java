@@ -14,6 +14,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+/**
+ * @author Bang
+ *
+ */
+/**
+ * @author Bang
+ *
+ */
 public class QMainActivity extends Activity {
 
 	String mUNO = null;
@@ -42,6 +50,9 @@ public class QMainActivity extends Activity {
 		CreateEvent();
 	}
 	
+	/**
+	 * Control Mapping
+	 */
 	private void GetControls(){
 		btnPList = (Button)findViewById(R.id.btn_pmain_cntp);
 		btnQList = (Button)findViewById(R.id.btn_pmain_cntq);
@@ -55,6 +66,9 @@ public class QMainActivity extends Activity {
 		txtSearch = (EditText)findViewById(R.id.txtsearch);
 	}
 	
+	/**
+	 * Create Event Handlers
+	 */
 	private void CreateEvent(){
 		btnSearch.setOnClickListener(new View.OnClickListener() {
 			@Override
