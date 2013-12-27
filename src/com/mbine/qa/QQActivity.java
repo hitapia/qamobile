@@ -11,6 +11,7 @@ import com.loopj.android.http.JsonHttpResponseHandler;
 import com.mbine.qa.controls.QPackage;
 import com.mbine.qa.controls.QQuest;
 import com.mbine.qa.tool.Communication;
+import com.mbine.qa.tool.Storage;
 import com.mbine.qa.tool.Tools;
 
 import android.os.Bundle;
@@ -38,12 +39,15 @@ public class QQActivity extends Fragment {
 	private static final String TAG_JSON_QID = "seq";
 	private static final String TAG_PINFO = "q/packqlist_";
 	private static final String TAG_JSON_QSUMMARY = "summary";
-	private static final String TAG_JSON_AMEMBER = "ans_member";
 	private static final String TAG_JSON_ACOR = "ans_cor";
-	private static final String TAG_JSON_APOINT = "ans_point";
+	private static final String TAG_JSON_QMEMBER = "regname";
+	private static final String TAG_JSON_QCORRECT = "correct";
+	private static final String TAG_JSON_QINCORRECT = "incorrect";
+
 
 	String mUNO = null;
 	String mPNO = null;
+	String mQNO = null;
 	Tools tool = new Tools();
 	QPackage pack = new QPackage();
 	ArrayList<HashMap<String, String>> qList = new ArrayList<HashMap<String, String>>();
@@ -65,7 +69,9 @@ public class QQActivity extends Fragment {
 		SetEvents();
 
 		Bundle bundle = this.getArguments();
-		mUNO = bundle.getString(TAG_UNO);
+
+		Storage str = new Storage(getActivity());
+		mUNO = str.pull(TAG_UNO, "");
 		mPNO = bundle.getString(TAG_PNO);
 
 		SetView();
@@ -102,14 +108,14 @@ public class QQActivity extends Fragment {
 					for(int i = 0; i < qs.length(); i++){
                         QQuest quest = new QQuest();
                         try {
-							qList.add(quest.MakeQInfo(qs.getJSONObject(i)));
+							qList.add(quest.MakeQInfo(qs.getJSONObject(i), mUNO));
 						} catch (JSONException e) {
 							e.printStackTrace();
 						}
 					}
 					SimpleAdapter adapter = new SimpleAdapter(getActivity(), qList, R.layout.lv_q_with_info
-                        , new String[] { TAG_JSON_QSUMMARY }
-                        , new int[] { R.id.qlist_name, R.id.txtpercor, R.id.txtresult });
+                        , new String[] { TAG_JSON_QSUMMARY, TAG_JSON_QMEMBER, TAG_JSON_ACOR, TAG_JSON_QCORRECT, TAG_JSON_QINCORRECT }
+                        , new int[] { R.id.qlist_name, R.id.regname, R.id.ans_iscor, R.id.txtcor, R.id.txtincor });
 	                mQList.setAdapter(adapter);
 	                mQList.setOnItemClickListener(new OnItemClickListener() {
 	                        @Override
@@ -117,6 +123,7 @@ public class QQActivity extends Fragment {
 	                        	HashMap<String,String> map = (HashMap<String,String>)arg0.getItemAtPosition(arg2);
 	    						Intent intent = new Intent(getActivity(), QQMainActivity.class);
 	    						intent.putExtra(TAG_QNO, map.get(TAG_JSON_QID));
+	    						intent.putExtra(TAG_PNO, mPNO);
 	    						intent.putExtra(TAG_UNO, mUNO);
 	    						startActivity(intent);
 	                        }

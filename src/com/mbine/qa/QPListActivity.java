@@ -59,6 +59,7 @@ public class QPListActivity extends Activity {
 		mKeyword = intent.getStringExtra(TAG_KEYWORD);
 		
 		GetControls();
+        btnNew.setVisibility(View.GONE);
 		CreateEvent();
 
 		if(!mKeyword.equals("")){
@@ -122,13 +123,13 @@ public class QPListActivity extends Activity {
                 qplist.setOnItemClickListener(new OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-                        	Initialize();
                         	HashMap<String,String> map = (HashMap<String,String>)arg0.getItemAtPosition(arg2);
     						Intent intent = new Intent(QPListActivity.this, QPackageActivity.class);
     						intent.putExtra(TAG_PNO, map.get(TAG_JSON_QID));
     						intent.putExtra(TAG_PTITLE, map.get(TAG_JSON_QNAME));
     						intent.putExtra(TAG_UNO, mUNO);
     						startActivity(intent);
+                        	Initialize();
                         }
                 });
                 SetNewQ(true);

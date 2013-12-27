@@ -147,9 +147,9 @@ public class QPackageActivity extends FragmentActivity implements
 			case 1:
 				fragment = new QQActivity(getBaseContext()); break;
 			case 2:
-				fragment = new QCActivity(getBaseContext()); break;
-			case 3:
 				fragment = new QMActivity(getBaseContext()); break;
+			case 3:
+				fragment = new QCActivity(getBaseContext()); break;
 			}
 			fragment.setArguments(args);
 			return fragment;

@@ -45,15 +45,6 @@ public class QPackage extends JsonCom {
 
                 JSONArray jm = json.getJSONArray(TAG_JSON_M);
                 qInfo.put("m", member.MakePMember(jm.getJSONObject(0)));
-
-                JSONArray jq = json.getJSONArray(TAG_JSON_Q);
-                ArrayList<HashMap<String,String>> qlist = new ArrayList<HashMap<String,String>>();
-                for(int i = 0; i < jq.length(); i++){
-                	JSONObject q = jq.getJSONObject(i);
-                	qlist.add(quest.MakeQInfo(q));
-                }
-                qInfo.put("q", qlist);
-
         	 } catch (JSONException e) {
         		 e.printStackTrace();
         	 }

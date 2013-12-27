@@ -68,6 +68,9 @@ public class LoginActivity extends Activity {
                 try {
 					String result = data.getString("result");
 					if(result.equals("1")){
+						Storage str = new Storage(LoginActivity.this);
+						str.put("uno", data.getString("userseq"));
+						str.put("uemail", data.getString("useremail"));
 						tool.ExitLoading();
 						Intent portal = new Intent(LoginActivity.this, QMainActivity.class);
 						startActivity(portal);

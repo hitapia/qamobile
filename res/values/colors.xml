@@ -15,4 +15,8 @@
         <color name="an_inco">#F27C7C</color>
         <color name="an_co">#817CF2</color>
         <color name="an_info">#267530</color>
+        <color name="dblue">#011473</color>
+        <color name="dred">#BA0C00</color>
+        <color name="dgreen">#007804</color>
+        <color name="lgreen">#40A357</color>
 </resources>

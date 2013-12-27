@@ -7,8 +7,8 @@
     <string name="title_activity_package">PackageActivity</string>
     <string name="title_section1">Info</string>
     <string name="title_section2">Q</string>
-    <string name="title_section3">Comment</string>
-    <string name="title_section4">Activity</string>
+    <string name="title_section3">A</string>
+    <string name="title_section4">Comment</string>
     <string name="login">로그인</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
