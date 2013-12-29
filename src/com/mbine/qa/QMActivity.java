@@ -8,6 +8,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.loopj.android.http.JsonHttpResponseHandler;
+import com.mbine.qa.adapter.Answerlist;
 import com.mbine.qa.controls.QAnswer;
 import com.mbine.qa.controls.QPackage;
 import com.mbine.qa.controls.QQuest;
@@ -101,7 +102,7 @@ public class QMActivity extends Fragment {
                 JSONArray qs;
 				try {
 					aList.clear();
-					qs = json.getJSONArray("q");
+					qs = json.getJSONArray("a");
 					for(int i = 0; i < qs.length(); i++){
                         QAnswer answer = new QAnswer();
                         try {
@@ -110,10 +111,12 @@ public class QMActivity extends Fragment {
 							e.printStackTrace();
 						}
 					}
-					SimpleAdapter adapter = new SimpleAdapter(getActivity(), aList, R.layout.lv_q_with_info
+					/*
+					SimpleAdapter adapter = new SimpleAdapter(getActivity(), aList, R.layout.lv_a_with_info
                         , new String[] { TAG_JSON_AEMAIL, TAG_JSON_ASUMMARY, TAG_JSON_AISCORRECT, TAG_JSON_AREGDATE, TAG_JSON_AITEM }
                         , new int[] { R.id.regemail, R.id.qsummary, R.id.ans_iscor, R.id.regdate, R.id.aitem });
-	                mAList.setAdapter(adapter);
+                        */
+	                mAList.setAdapter(new Answerlist(getActivity(), R.layout.lv_a_with_info, aList));
 	                mAList.setOnItemClickListener(new OnItemClickListener() {
 	                        @Override
 	                        public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {

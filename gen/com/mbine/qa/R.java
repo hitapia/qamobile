@@ -500,7 +500,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:barColor
+          @attr name com.mbine.qa:barColor
         */
         public static final int ProgressWheel_barColor = 3;
         /**
@@ -516,7 +516,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:barLength
+          @attr name com.mbine.qa:barLength
         */
         public static final int ProgressWheel_barLength = 10;
         /**
@@ -532,7 +532,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:barWidth
+          @attr name com.mbine.qa:barWidth
         */
         public static final int ProgressWheel_barWidth = 9;
         /**
@@ -547,7 +547,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:circleColor
+          @attr name com.mbine.qa:circleColor
         */
         public static final int ProgressWheel_circleColor = 7;
         /**
@@ -563,7 +563,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:radius
+          @attr name com.mbine.qa:radius
         */
         public static final int ProgressWheel_radius = 8;
         /**
@@ -578,7 +578,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:rimColor
+          @attr name com.mbine.qa:rimColor
         */
         public static final int ProgressWheel_rimColor = 4;
         /**
@@ -594,7 +594,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:rimWidth
+          @attr name com.mbine.qa:rimWidth
         */
         public static final int ProgressWheel_rimWidth = 5;
         /**
@@ -608,7 +608,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:spinSpeed
+          @attr name com.mbine.qa:spinSpeed
         */
         public static final int ProgressWheel_spinSpeed = 6;
         /**
@@ -622,7 +622,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:text
+          @attr name com.mbine.qa:text
         */
         public static final int ProgressWheel_text = 0;
         /**
@@ -637,7 +637,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:textColor
+          @attr name com.mbine.qa:textColor
         */
         public static final int ProgressWheel_textColor = 1;
         /**
@@ -653,7 +653,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:textSize
+          @attr name com.mbine.qa:textSize
         */
         public static final int ProgressWheel_textSize = 2;
     };
