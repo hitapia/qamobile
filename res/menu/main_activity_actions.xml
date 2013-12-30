@@ -5,9 +5,4 @@
         android:icon="@drawable/ic_action_search"
         android:title="@string/action_search"
         android:showAsAction="ifRoom" />
-  <!-- Settings, should always be in the overflow -->
-  <item android:id="@+id/action_settings"
-        android:icon="@drawable/ic_setting"
-        android:title="@string/action_settings"
-        android:showAsAction="ifRoom" />
 </menu>

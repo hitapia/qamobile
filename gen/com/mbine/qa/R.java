@@ -8,6 +8,12 @@
 package com.mbine.qa;
 
 public final class R {
+    public static final class array {
+        public static final int pref_example_list_titles=0x7f080000;
+        public static final int pref_example_list_values=0x7f080001;
+        public static final int pref_sync_frequency_titles=0x7f080002;
+        public static final int pref_sync_frequency_values=0x7f080003;
+    }
     public static final class attr {
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
@@ -113,25 +119,28 @@ containing a value of this type.
         public static final int textSize=0x7f010002;
     }
     public static final class color {
-        public static final int an_co=0x7f04000d;
-        public static final int an_inco=0x7f04000c;
-        public static final int an_info=0x7f04000e;
-        public static final int boxbg=0x7f040004;
-        public static final int boxft=0x7f040005;
-        public static final int btn=0x7f040006;
-        public static final int correct=0x7f040007;
-        public static final int dblue=0x7f04000f;
-        public static final int dgreen=0x7f040011;
-        public static final int dred=0x7f040010;
-        public static final int headerbg=0x7f040002;
-        public static final int headerft=0x7f040003;
-        public static final int incorrect=0x7f040008;
-        public static final int itemselect=0x7f04000b;
-        public static final int lgreen=0x7f040012;
-        public static final int mainbg=0x7f040000;
-        public static final int prog=0x7f040009;
-        public static final int progbg=0x7f04000a;
-        public static final int white=0x7f040001;
+        public static final int actionbar=0x7f050013;
+        public static final int an_co=0x7f05000d;
+        public static final int an_inco=0x7f05000c;
+        public static final int an_info=0x7f05000e;
+        public static final int boxbg=0x7f050004;
+        public static final int boxft=0x7f050005;
+        public static final int btn=0x7f050006;
+        public static final int correct=0x7f050007;
+        public static final int dblue=0x7f05000f;
+        public static final int dgreen=0x7f050011;
+        public static final int divider=0x7f050015;
+        public static final int drawerbg=0x7f050014;
+        public static final int dred=0x7f050010;
+        public static final int headerbg=0x7f050002;
+        public static final int headerft=0x7f050003;
+        public static final int incorrect=0x7f050008;
+        public static final int itemselect=0x7f05000b;
+        public static final int lgreen=0x7f050012;
+        public static final int mainbg=0x7f050000;
+        public static final int prog=0x7f050009;
+        public static final int progbg=0x7f05000a;
+        public static final int white=0x7f050001;
     }
     public static final class dimen {
         /** 
@@ -139,302 +148,351 @@ containing a value of this type.
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f050001;
-        public static final int activity_vertical_margin=0x7f050002;
-        public static final int info_detail_ftsize=0x7f050005;
-        public static final int info_main_ftsize=0x7f050006;
-        public static final int list_item_marginbottom=0x7f050004;
-        public static final int list_item_margintop=0x7f050003;
+        public static final int activity_horizontal_margin=0x7f060001;
+        public static final int activity_vertical_margin=0x7f060002;
+        public static final int info_detail_ftsize=0x7f060005;
+        public static final int info_main_ftsize=0x7f060006;
+        public static final int list_item_marginbottom=0x7f060004;
+        public static final int list_item_margintop=0x7f060003;
+        public static final int main_item_title=0x7f060007;
         /**  Default screen margins, per the Android Design guidelines. 
          */
-        public static final int padd_5=0x7f050000;
+        public static final int padd_5=0x7f060000;
     }
     public static final class drawable {
-        public static final int bg_card=0x7f020000;
-        public static final int blueborder=0x7f020001;
-        public static final int ic_action_search=0x7f020002;
-        public static final int ic_friends=0x7f020003;
-        public static final int ic_launcher=0x7f020004;
-        public static final int ic_new=0x7f020005;
-        public static final int ic_setting=0x7f020006;
-        public static final int ic_share=0x7f020007;
-        public static final int ic_star=0x7f020008;
-        public static final int ic_unstar=0x7f020009;
-        public static final int ic_votedown=0x7f02000a;
-        public static final int ic_voteup=0x7f02000b;
-        public static final int redborder=0x7f02000c;
-        public static final int row_selector=0x7f02000d;
-        public static final int selector=0x7f02000e;
+        public static final int actionbar_background=0x7f020000;
+        public static final int bg_card=0x7f020001;
+        public static final int blueborder=0x7f020002;
+        public static final int ic_action_search=0x7f020003;
+        public static final int ic_appinfo=0x7f020004;
+        public static final int ic_drawer=0x7f020005;
+        public static final int ic_exit=0x7f020006;
+        public static final int ic_friends=0x7f020007;
+        public static final int ic_friends_b=0x7f020008;
+        public static final int ic_home=0x7f020009;
+        public static final int ic_launcher=0x7f02000a;
+        public static final int ic_me=0x7f02000b;
+        public static final int ic_new=0x7f02000c;
+        public static final int ic_search_top=0x7f02000d;
+        public static final int ic_setting=0x7f02000e;
+        public static final int ic_setting_b=0x7f02000f;
+        public static final int ic_share=0x7f020010;
+        public static final int ic_star=0x7f020011;
+        public static final int ic_star_b=0x7f020012;
+        public static final int ic_unstar=0x7f020013;
+        public static final int ic_votedown=0x7f020014;
+        public static final int ic_voteup=0x7f020015;
+        public static final int list_selector=0x7f020016;
+        public static final int redborder=0x7f020017;
+        public static final int row_selector=0x7f020018;
+        public static final int selector=0x7f020019;
     }
     public static final class id {
-        public static final int TextView01=0x7f09003e;
-        public static final int ViewColorPickerHelpe4=0x7f09001c;
-        public static final int ViewColorPickerHelpe8=0x7f09001a;
-        public static final int ViewColorPickerHelper=0x7f090001;
-        public static final int ViewColorPickerHelper1=0x7f090016;
-        public static final int ViewColorPickerHelper11=0x7f090044;
-        public static final int ViewColorPickerHelper2=0x7f090020;
-        public static final int ViewColorPickerHelper6=0x7f090043;
-        public static final int ViewColorPickerHelper8=0x7f090055;
-        public static final int ViewColorPickerHelper99=0x7f090047;
-        public static final int ViewColorPickerHelperd7=0x7f090049;
-        public static final int ViewColorPickerHelperdf=0x7f090053;
-        public static final int ViewColorPickerHelperdfej=0x7f090051;
-        public static final int ViewColorPickerHelperduiwj=0x7f09004f;
-        public static final int ViewColorPickerHelpernjenj=0x7f09004d;
-        public static final int ViewColorPickerHelpernjiwj=0x7f09004c;
-        public static final int ViewColorPickerHelperqbqh=0x7f09004a;
-        public static final int action_search=0x7f090072;
-        public static final int action_settings=0x7f090071;
-        public static final int aitem=0x7f09005c;
-        public static final int alist=0x7f09003b;
-        public static final int ans_iscor=0x7f09005b;
-        public static final int answerbg=0x7f090018;
-        public static final int avg_answer=0x7f090033;
-        public static final int avg_answer_text=0x7f090032;
-        public static final int avg_answer_text1=0x7f090034;
-        public static final int avg_answer_text2=0x7f090036;
-        public static final int avg_cor=0x7f090035;
-        public static final int avg_reg=0x7f090037;
-        public static final int btnAddinP=0x7f09003a;
-        public static final int btnAnswer=0x7f090017;
-        public static final int btnNext=0x7f09001d;
-        public static final int btnShowInfo=0x7f09001b;
-        public static final int btn_cor=0x7f090004;
-        public static final int btn_create=0x7f090015;
-        public static final int btn_createnext=0x7f090030;
-        public static final int btn_incor=0x7f090003;
-        public static final int btn_pmain_cnta=0x7f090052;
-        public static final int btn_pmain_cntp=0x7f09004e;
-        public static final int btn_pmain_cntq=0x7f090050;
-        public static final int btn_qmain_avga=0x7f090046;
-        public static final int btn_qmain_prog=0x7f090048;
-        public static final int btn_qmain_regq=0x7f090045;
-        public static final int btn_search=0x7f090041;
-        public static final int btnnew=0x7f090056;
-        public static final int btnstartanswer=0x7f090039;
-        public static final int cboCategory=0x7f090013;
-        public static final int com_avatar=0x7f09005f;
-        public static final int com_comment=0x7f090063;
-        public static final int com_name=0x7f090061;
-        public static final int comment=0x7f09001f;
-        public static final int itemlist=0x7f090002;
-        public static final int labelcategory=0x7f090005;
-        public static final int labeldiff=0x7f090009;
-        public static final int labelwho=0x7f090007;
-        public static final int login_btnLogin=0x7f090010;
-        public static final int login_lblname=0x7f09000d;
-        public static final int login_txtemail=0x7f09000e;
-        public static final int login_txtpassword=0x7f09000f;
-        public static final int nowcom=0x7f09004b;
-        public static final int option1=0x7f09006c;
-        public static final int option2=0x7f09006d;
-        public static final int option3=0x7f09006e;
-        public static final int option4=0x7f09006f;
-        public static final int pager=0x7f090011;
-        public static final int pager_title_strip=0x7f090058;
-        public static final int pcomment=0x7f09003d;
-        public static final int pinfo_summry=0x7f090000;
-        public static final int pinfo_top=0x7f090022;
-        public static final int plist_Count=0x7f090065;
-        public static final int plist_name=0x7f090064;
-        public static final int ptitle=0x7f09003c;
-        public static final int qclist=0x7f09001e;
-        public static final int qitem1=0x7f090024;
-        public static final int qitem2=0x7f090026;
-        public static final int qitem3=0x7f090028;
-        public static final int qitem4=0x7f09002a;
-        public static final int qitemper=0x7f09006b;
-        public static final int qlist=0x7f090054;
-        public static final int qlist_name=0x7f090066;
-        public static final int qplist=0x7f090057;
-        public static final int qsummary=0x7f09005a;
-        public static final int regdate=0x7f09005e;
-        public static final int regemail=0x7f09005d;
-        public static final int register=0x7f090021;
-        public static final int regname=0x7f090067;
-        public static final int result=0x7f090019;
-        public static final int sbDiff=0x7f09002c;
-        public static final int section_label=0x7f090059;
-        public static final int summary=0x7f090014;
-        public static final int tableRow1=0x7f090060;
-        public static final int tableRow2=0x7f090062;
-        public static final int textView1=0x7f090070;
-        public static final int tgl1=0x7f090025;
-        public static final int tgl2=0x7f090027;
-        public static final int tgl3=0x7f090029;
-        public static final int tgl4=0x7f09002b;
-        public static final int txtKeyword=0x7f090012;
-        public static final int txtSummary=0x7f090023;
-        public static final int txt_category=0x7f090006;
-        public static final int txt_comment=0x7f09000b;
-        public static final int txt_difficulty=0x7f09000a;
-        public static final int txt_hint=0x7f09000c;
-        public static final int txt_member=0x7f090008;
-        public static final int txtcom=0x7f09002d;
-        public static final int txtcor=0x7f090069;
-        public static final int txtcor1=0x7f090068;
-        public static final int txthint=0x7f09002e;
-        public static final int txtincor=0x7f09006a;
-        public static final int txtsearch=0x7f090040;
-        public static final int txttags=0x7f09002f;
-        public static final int usercount=0x7f09003f;
-        public static final int usercount3=0x7f090042;
-        public static final int v5=0x7f090038;
-        public static final int v6=0x7f090031;
+        public static final int ViewColorPickerHelpe4=0x7f0b001f;
+        public static final int ViewColorPickerHelpe8=0x7f0b001d;
+        public static final int ViewColorPickerHelper=0x7f0b0004;
+        public static final int ViewColorPickerHelper1=0x7f0b0019;
+        public static final int ViewColorPickerHelper2=0x7f0b0023;
+        public static final int ViewColorPickerHelper8=0x7f0b0045;
+        public static final int action_search=0x7f0b0066;
+        public static final int action_settings=0x7f0b0065;
+        public static final int aitem=0x7f0b0050;
+        public static final int alist=0x7f0b003e;
+        public static final int ans_iscor=0x7f0b004f;
+        public static final int answerbg=0x7f0b001b;
+        public static final int apptitle=0x7f0b0001;
+        public static final int avg_answer=0x7f0b0036;
+        public static final int avg_answer_text=0x7f0b0035;
+        public static final int avg_answer_text1=0x7f0b0037;
+        public static final int avg_answer_text2=0x7f0b0039;
+        public static final int avg_cor=0x7f0b0038;
+        public static final int avg_reg=0x7f0b003a;
+        public static final int btnAddinP=0x7f0b003d;
+        public static final int btnAnswer=0x7f0b001a;
+        public static final int btnNext=0x7f0b0020;
+        public static final int btnShowInfo=0x7f0b001e;
+        public static final int btn_cor=0x7f0b0007;
+        public static final int btn_create=0x7f0b0018;
+        public static final int btn_createnext=0x7f0b0033;
+        public static final int btn_incor=0x7f0b0006;
+        public static final int btn_make=0x7f0b0042;
+        public static final int btn_me=0x7f0b0000;
+        public static final int btn_search=0x7f0b0002;
+        public static final int btnnew=0x7f0b0047;
+        public static final int btnstartanswer=0x7f0b003c;
+        public static final int cboCategory=0x7f0b0016;
+        public static final int com_avatar=0x7f0b0053;
+        public static final int com_comment=0x7f0b0057;
+        public static final int com_name=0x7f0b0055;
+        public static final int comment=0x7f0b0022;
+        public static final int counter=0x7f0b004c;
+        public static final int drawer_layout=0x7f0b003f;
+        public static final int frame_container=0x7f0b0040;
+        public static final int icon=0x7f0b004a;
+        public static final int itemlist=0x7f0b0005;
+        public static final int labelcategory=0x7f0b0008;
+        public static final int labeldiff=0x7f0b000c;
+        public static final int labelwho=0x7f0b000a;
+        public static final int list_slidermenu=0x7f0b0043;
+        public static final int login_btnLogin=0x7f0b0013;
+        public static final int login_lblname=0x7f0b0010;
+        public static final int login_txtemail=0x7f0b0011;
+        public static final int login_txtpassword=0x7f0b0012;
+        public static final int main_menu=0x7f0b0041;
+        public static final int option1=0x7f0b0060;
+        public static final int option2=0x7f0b0061;
+        public static final int option3=0x7f0b0062;
+        public static final int option4=0x7f0b0063;
+        public static final int pager=0x7f0b0014;
+        public static final int pager_title_strip=0x7f0b0049;
+        public static final int pinfo_summry=0x7f0b0003;
+        public static final int pinfo_top=0x7f0b0025;
+        public static final int plist_Count=0x7f0b0059;
+        public static final int plist_name=0x7f0b0058;
+        public static final int qclist=0x7f0b0021;
+        public static final int qitem1=0x7f0b0027;
+        public static final int qitem2=0x7f0b0029;
+        public static final int qitem3=0x7f0b002b;
+        public static final int qitem4=0x7f0b002d;
+        public static final int qitemper=0x7f0b005f;
+        public static final int qlist=0x7f0b0044;
+        public static final int qlist_name=0x7f0b005a;
+        public static final int qplist=0x7f0b0048;
+        public static final int qsummary=0x7f0b004e;
+        public static final int regdate=0x7f0b0052;
+        public static final int regemail=0x7f0b0051;
+        public static final int register=0x7f0b0024;
+        public static final int regname=0x7f0b005b;
+        public static final int result=0x7f0b001c;
+        public static final int sbDiff=0x7f0b002f;
+        public static final int section_label=0x7f0b004d;
+        public static final int summary=0x7f0b0017;
+        public static final int tableRow1=0x7f0b0054;
+        public static final int tableRow2=0x7f0b0056;
+        public static final int textView1=0x7f0b0064;
+        public static final int tgl1=0x7f0b0028;
+        public static final int tgl2=0x7f0b002a;
+        public static final int tgl3=0x7f0b002c;
+        public static final int tgl4=0x7f0b002e;
+        public static final int title=0x7f0b004b;
+        public static final int txtKeyword=0x7f0b0015;
+        public static final int txtSummary=0x7f0b0026;
+        public static final int txt_category=0x7f0b0009;
+        public static final int txt_comment=0x7f0b000e;
+        public static final int txt_difficulty=0x7f0b000d;
+        public static final int txt_hint=0x7f0b000f;
+        public static final int txt_member=0x7f0b000b;
+        public static final int txtcom=0x7f0b0030;
+        public static final int txtcor=0x7f0b005d;
+        public static final int txtcor1=0x7f0b005c;
+        public static final int txthint=0x7f0b0031;
+        public static final int txtincor=0x7f0b005e;
+        public static final int txtsearch=0x7f0b0046;
+        public static final int txttags=0x7f0b0032;
+        public static final int v5=0x7f0b003b;
+        public static final int v6=0x7f0b0034;
     }
     public static final class layout {
-        public static final int activity_frag_qanswer=0x7f030000;
-        public static final int activity_frag_qcomment=0x7f030001;
-        public static final int activity_frag_qinfo=0x7f030002;
-        public static final int activity_login=0x7f030003;
-        public static final int activity_package=0x7f030004;
-        public static final int activity_pcreate=0x7f030005;
-        public static final int activity_qanswer=0x7f030006;
-        public static final int activity_qanswer_result=0x7f030007;
-        public static final int activity_qc=0x7f030008;
-        public static final int activity_qcreate=0x7f030009;
-        public static final int activity_qi=0x7f03000a;
-        public static final int activity_qm=0x7f03000b;
-        public static final int activity_qmain=0x7f03000c;
-        public static final int activity_qp=0x7f03000d;
-        public static final int activity_qplist=0x7f03000e;
-        public static final int activity_qqmain=0x7f03000f;
-        public static final int activity_qsearch=0x7f030010;
-        public static final int fragment_package_dummy=0x7f030011;
-        public static final int fragment_qqmain_dummy=0x7f030012;
-        public static final int lv_a_with_info=0x7f030013;
-        public static final int lv_comments=0x7f030014;
-        public static final int lv_plist_normal=0x7f030015;
-        public static final int lv_q_with_info=0x7f030016;
-        public static final int lv_qitem_normal=0x7f030017;
-        public static final int lv_qitem_only=0x7f030018;
-        public static final int lv_qitemlist_normal=0x7f030019;
-        public static final int lv_qlist_nomal=0x7f03001a;
-        public static final int uc_bottombar=0x7f03001b;
-        public static final int uc_spinner_item=0x7f03001c;
+        public static final int actionbar=0x7f030000;
+        public static final int actionbar_title=0x7f030001;
+        public static final int activity_dabout=0x7f030002;
+        public static final int activity_dfav=0x7f030003;
+        public static final int activity_dfriends=0x7f030004;
+        public static final int activity_dmy_page=0x7f030005;
+        public static final int activity_frag_qanswer=0x7f030006;
+        public static final int activity_frag_qcomment=0x7f030007;
+        public static final int activity_frag_qinfo=0x7f030008;
+        public static final int activity_login=0x7f030009;
+        public static final int activity_package=0x7f03000a;
+        public static final int activity_pcreate=0x7f03000b;
+        public static final int activity_qanswer=0x7f03000c;
+        public static final int activity_qanswer_result=0x7f03000d;
+        public static final int activity_qc=0x7f03000e;
+        public static final int activity_qcategory_list=0x7f03000f;
+        public static final int activity_qcreate=0x7f030010;
+        public static final int activity_qi=0x7f030011;
+        public static final int activity_qm=0x7f030012;
+        public static final int activity_qmain=0x7f030013;
+        public static final int activity_qp=0x7f030014;
+        public static final int activity_qplist=0x7f030015;
+        public static final int activity_qqmain=0x7f030016;
+        public static final int activity_qquiz_list=0x7f030017;
+        public static final int activity_qsearch=0x7f030018;
+        public static final int drawer_list_item=0x7f030019;
+        public static final int fragment_package_dummy=0x7f03001a;
+        public static final int fragment_qqmain_dummy=0x7f03001b;
+        public static final int lv_a_with_info=0x7f03001c;
+        public static final int lv_comments=0x7f03001d;
+        public static final int lv_main_menu=0x7f03001e;
+        public static final int lv_plist_normal=0x7f03001f;
+        public static final int lv_q_with_info=0x7f030020;
+        public static final int lv_qitem_normal=0x7f030021;
+        public static final int lv_qitem_only=0x7f030022;
+        public static final int lv_qitemlist_normal=0x7f030023;
+        public static final int lv_qlist_nomal=0x7f030024;
+        public static final int uc_bottombar=0x7f030025;
+        public static final int uc_spinner_item=0x7f030026;
     }
     public static final class menu {
-        public static final int frag_qanswer=0x7f080000;
-        public static final int frag_qcomment=0x7f080001;
-        public static final int frag_qinfo=0x7f080002;
-        public static final int login=0x7f080003;
-        public static final int main_activity_actions=0x7f080004;
-        public static final int main_only_set=0x7f080005;
-        public static final int pcreate=0x7f080006;
-        public static final int q=0x7f080007;
-        public static final int qanswer=0x7f080008;
-        public static final int qanswer_result=0x7f080009;
-        public static final int qc=0x7f08000a;
-        public static final int qcreate=0x7f08000b;
-        public static final int qi=0x7f08000c;
-        public static final int qm=0x7f08000d;
-        public static final int qmain=0x7f08000e;
-        public static final int qpackage=0x7f08000f;
-        public static final int qplist=0x7f080010;
-        public static final int qqmain=0x7f080011;
-        public static final int qsearch=0x7f080012;
+        public static final int dabout=0x7f0a0000;
+        public static final int dfav=0x7f0a0001;
+        public static final int dfriends=0x7f0a0002;
+        public static final int dmy_page=0x7f0a0003;
+        public static final int frag_qanswer=0x7f0a0004;
+        public static final int frag_qcomment=0x7f0a0005;
+        public static final int frag_qinfo=0x7f0a0006;
+        public static final int login=0x7f0a0007;
+        public static final int main_activity_actions=0x7f0a0008;
+        public static final int main_only_set=0x7f0a0009;
+        public static final int pcreate=0x7f0a000a;
+        public static final int q=0x7f0a000b;
+        public static final int qanswer=0x7f0a000c;
+        public static final int qanswer_result=0x7f0a000d;
+        public static final int qc=0x7f0a000e;
+        public static final int qcategory_list=0x7f0a000f;
+        public static final int qcreate=0x7f0a0010;
+        public static final int qi=0x7f0a0011;
+        public static final int qm=0x7f0a0012;
+        public static final int qmain=0x7f0a0013;
+        public static final int qpackage=0x7f0a0014;
+        public static final int qplist=0x7f0a0015;
+        public static final int qqmain=0x7f0a0016;
+        public static final int qquiz_list=0x7f0a0017;
+        public static final int qsearch=0x7f0a0018;
     }
     public static final class string {
-        public static final int action_search=0x7f060000;
-        public static final int action_settings=0x7f060002;
-        public static final int app_id=0x7f060055;
-        public static final int app_name=0x7f060001;
-        public static final int avg_answer=0x7f06004c;
-        public static final int avg_cor=0x7f06004b;
-        public static final int category=0x7f06004a;
-        public static final int difficulty=0x7f060047;
-        public static final int email=0x7f06000a;
-        public static final int getcomment=0x7f060041;
-        public static final int hello_world=0x7f060003;
-        public static final int keyword=0x7f060043;
-        public static final int login=0x7f060009;
-        public static final int neadsearchment=0x7f060040;
-        public static final int nextq=0x7f06004f;
-        public static final int password=0x7f06000b;
-        public static final int register=0x7f060036;
-        public static final int registermember=0x7f060048;
-        public static final int search=0x7f060046;
-        public static final int showinfo=0x7f06004e;
-        public static final int showinlyasnwered=0x7f060050;
-        public static final int startanswer=0x7f060042;
-        public static final int submitanswer=0x7f06004d;
-        public static final int summary=0x7f060044;
-        public static final int summaryment=0x7f060045;
-        public static final int tags=0x7f060049;
-        public static final int title_activity_frag_qanswer=0x7f06003a;
-        public static final int title_activity_frag_qcomment=0x7f060039;
-        public static final int title_activity_frag_qinfo=0x7f060038;
-        public static final int title_activity_package=0x7f060004;
-        public static final int title_activity_pcreate=0x7f060052;
-        public static final int title_activity_qanswer=0x7f060053;
-        public static final int title_activity_qanswer_result=0x7f060054;
-        public static final int title_activity_qc=0x7f06000d;
-        public static final int title_activity_qcreate=0x7f060023;
-        public static final int title_activity_qi=0x7f06000f;
-        public static final int title_activity_qm=0x7f06000e;
-        public static final int title_activity_qmain=0x7f060015;
-        public static final int title_activity_qp=0x7f06000c;
-        public static final int title_activity_qplist=0x7f060014;
-        public static final int title_activity_qqmain=0x7f060037;
-        public static final int title_activity_qsearch=0x7f060051;
-        public static final int title_createq_basictop=0x7f060028;
-        public static final int title_createq_cat=0x7f06002a;
-        public static final int title_createq_com_place=0x7f060032;
-        public static final int title_createq_comment=0x7f06002b;
-        public static final int title_createq_cor=0x7f060026;
-        public static final int title_createq_diff=0x7f060029;
-        public static final int title_createq_hint=0x7f06002c;
-        public static final int title_createq_hint_place=0x7f060031;
-        public static final int title_createq_hint_title=0x7f06002e;
-        public static final int title_createq_incor=0x7f060027;
-        public static final int title_createq_item_desc=0x7f060030;
-        public static final int title_createq_item_name=0x7f06002f;
-        public static final int title_createq_q=0x7f060025;
-        public static final int title_createq_tag=0x7f06002d;
-        public static final int title_createq_tag_place=0x7f060033;
-        public static final int title_createq_top=0x7f060024;
-        public static final int title_q_answer=0x7f06003c;
-        public static final int title_q_comment=0x7f06003d;
-        public static final int title_q_searchmake=0x7f06003e;
-        public static final int title_q_searchment=0x7f06003f;
-        public static final int title_q_title=0x7f06003b;
-        public static final int title_qi_addq=0x7f060022;
-        public static final int title_qi_detail=0x7f060021;
-        public static final int title_qi_summary=0x7f060020;
-        public static final int title_qmain_myavg=0x7f06001c;
-        public static final int title_qmain_myprog=0x7f06001e;
-        public static final int title_qmain_myreg=0x7f06001d;
-        public static final int title_qmain_myregcnt=0x7f06001b;
-        public static final int title_qmain_now=0x7f060019;
-        public static final int title_qmain_stat=0x7f06001a;
-        public static final int title_qmain_top=0x7f060017;
-        public static final int title_qmain_topcomment=0x7f060018;
-        public static final int title_qmain_topheader=0x7f060016;
-        public static final int title_qp_c=0x7f060013;
-        public static final int title_qp_i=0x7f060011;
-        public static final int title_qp_m=0x7f060010;
-        public static final int title_qp_q=0x7f060012;
-        public static final int title_qplist_top=0x7f06001f;
-        public static final int title_section1=0x7f060005;
-        public static final int title_section2=0x7f060006;
-        public static final int title_section3=0x7f060007;
-        public static final int title_section4=0x7f060008;
-        public static final int txt_create=0x7f060035;
-        public static final int txt_createnext=0x7f060034;
+        public static final int action_search=0x7f070000;
+        public static final int action_settings=0x7f070002;
+        public static final int app_id=0x7f070055;
+        public static final int app_name=0x7f070001;
+        public static final int avg_answer=0x7f07004c;
+        public static final int avg_cor=0x7f07004b;
+        public static final int category=0x7f07004a;
+        public static final int difficulty=0x7f070047;
+        public static final int dmenu_exit=0x7f07005d;
+        public static final int dmenu_fav=0x7f070059;
+        public static final int dmenu_friends=0x7f07005a;
+        public static final int dmenu_hone=0x7f070058;
+        public static final int dmenu_info=0x7f07005b;
+        public static final int dmenu_setting=0x7f07005c;
+        public static final int drawer_close=0x7f070057;
+        public static final int drawer_open=0x7f070056;
+        public static final int email=0x7f07000a;
+        public static final int getcomment=0x7f070041;
+        public static final int hello_world=0x7f070003;
+        public static final int keyword=0x7f070043;
+        public static final int login=0x7f070009;
+        public static final int main_all=0x7f070066;
+        public static final int main_category=0x7f070063;
+        public static final int main_favorite=0x7f070065;
+        public static final int main_make=0x7f070067;
+        public static final int main_popular=0x7f070064;
+        public static final int main_search=0x7f070068;
+        public static final int main_today=0x7f070062;
+        public static final int neadsearchment=0x7f070040;
+        public static final int nextq=0x7f07004f;
+        public static final int password=0x7f07000b;
+        public static final int pref_default_display_name=0x7f070070;
+        public static final int pref_description_social_recommendations=0x7f07006e;
+        /**  Example settings for Data & Sync 
+         */
+        public static final int pref_header_data_sync=0x7f070072;
+        /**  Strings related to Settings 
+ Example General settings 
+         */
+        public static final int pref_header_general=0x7f07006c;
+        /**  Example settings for Notifications 
+         */
+        public static final int pref_header_notifications=0x7f070075;
+        public static final int pref_ringtone_silent=0x7f070078;
+        public static final int pref_title_add_friends_to_messages=0x7f070071;
+        public static final int pref_title_display_name=0x7f07006f;
+        public static final int pref_title_new_message_notifications=0x7f070076;
+        public static final int pref_title_ringtone=0x7f070077;
+        public static final int pref_title_social_recommendations=0x7f07006d;
+        public static final int pref_title_sync_frequency=0x7f070073;
+        public static final int pref_title_system_sync_settings=0x7f070074;
+        public static final int pref_title_vibrate=0x7f070079;
+        public static final int register=0x7f070036;
+        public static final int registermember=0x7f070048;
+        public static final int search=0x7f070046;
+        public static final int showinfo=0x7f07004e;
+        public static final int showinlyasnwered=0x7f070050;
+        public static final int startanswer=0x7f070042;
+        public static final int submitanswer=0x7f07004d;
+        public static final int summary=0x7f070044;
+        public static final int summaryment=0x7f070045;
+        public static final int tags=0x7f070049;
+        public static final int title_activity_dabout=0x7f070061;
+        public static final int title_activity_dfav=0x7f07005e;
+        public static final int title_activity_dfriends=0x7f07005f;
+        public static final int title_activity_dmy_page=0x7f070060;
+        public static final int title_activity_dsetting=0x7f07006b;
+        public static final int title_activity_frag_qanswer=0x7f07003a;
+        public static final int title_activity_frag_qcomment=0x7f070039;
+        public static final int title_activity_frag_qinfo=0x7f070038;
+        public static final int title_activity_package=0x7f070004;
+        public static final int title_activity_pcreate=0x7f070052;
+        public static final int title_activity_qanswer=0x7f070053;
+        public static final int title_activity_qanswer_result=0x7f070054;
+        public static final int title_activity_qc=0x7f07000d;
+        public static final int title_activity_qcategory_list=0x7f07006a;
+        public static final int title_activity_qcreate=0x7f070023;
+        public static final int title_activity_qi=0x7f07000f;
+        public static final int title_activity_qm=0x7f07000e;
+        public static final int title_activity_qmain=0x7f070015;
+        public static final int title_activity_qp=0x7f07000c;
+        public static final int title_activity_qplist=0x7f070014;
+        public static final int title_activity_qqmain=0x7f070037;
+        public static final int title_activity_qquiz_list=0x7f070069;
+        public static final int title_activity_qsearch=0x7f070051;
+        public static final int title_createq_basictop=0x7f070028;
+        public static final int title_createq_cat=0x7f07002a;
+        public static final int title_createq_com_place=0x7f070032;
+        public static final int title_createq_comment=0x7f07002b;
+        public static final int title_createq_cor=0x7f070026;
+        public static final int title_createq_diff=0x7f070029;
+        public static final int title_createq_hint=0x7f07002c;
+        public static final int title_createq_hint_place=0x7f070031;
+        public static final int title_createq_hint_title=0x7f07002e;
+        public static final int title_createq_incor=0x7f070027;
+        public static final int title_createq_item_desc=0x7f070030;
+        public static final int title_createq_item_name=0x7f07002f;
+        public static final int title_createq_q=0x7f070025;
+        public static final int title_createq_tag=0x7f07002d;
+        public static final int title_createq_tag_place=0x7f070033;
+        public static final int title_createq_top=0x7f070024;
+        public static final int title_q_answer=0x7f07003c;
+        public static final int title_q_comment=0x7f07003d;
+        public static final int title_q_searchmake=0x7f07003e;
+        public static final int title_q_searchment=0x7f07003f;
+        public static final int title_q_title=0x7f07003b;
+        public static final int title_qi_addq=0x7f070022;
+        public static final int title_qi_detail=0x7f070021;
+        public static final int title_qi_summary=0x7f070020;
+        public static final int title_qmain_myavg=0x7f07001c;
+        public static final int title_qmain_myprog=0x7f07001e;
+        public static final int title_qmain_myreg=0x7f07001d;
+        public static final int title_qmain_myregcnt=0x7f07001b;
+        public static final int title_qmain_now=0x7f070019;
+        public static final int title_qmain_stat=0x7f07001a;
+        public static final int title_qmain_top=0x7f070017;
+        public static final int title_qmain_topcomment=0x7f070018;
+        public static final int title_qmain_topheader=0x7f070016;
+        public static final int title_qp_c=0x7f070013;
+        public static final int title_qp_i=0x7f070011;
+        public static final int title_qp_m=0x7f070010;
+        public static final int title_qp_q=0x7f070012;
+        public static final int title_qplist_top=0x7f07001f;
+        public static final int title_section1=0x7f070005;
+        public static final int title_section2=0x7f070006;
+        public static final int title_section3=0x7f070007;
+        public static final int title_section4=0x7f070008;
+        public static final int txt_create=0x7f070035;
+        public static final int txt_createnext=0x7f070034;
     }
     public static final class style {
-        public static final int ActionBar=0x7f070000;
         /** 
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    
-
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        
-
         Base application theme for API 11+. This theme completely replaces
         AppBaseTheme from res/values/styles.xml on API 11+ devices.
     
@@ -446,11 +504,16 @@ containing a value of this type.
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070001;
-        /**  Application theme. 
- All customizations that are NOT specific to a particular API-level can go here. 
-         */
-        public static final int AppTheme=0x7f070002;
+        public static final int AppBaseTheme=0x7f090003;
+        public static final int MyActionBarTheme=0x7f090001;
+        public static final int MyActionBarTitleText=0x7f090002;
+        public static final int MyTheme=0x7f090000;
+    }
+    public static final class xml {
+        public static final int pref_data_sync=0x7f040000;
+        public static final int pref_general=0x7f040001;
+        public static final int pref_headers=0x7f040002;
+        public static final int pref_notification=0x7f040003;
     }
     public static final class styleable {
         /** Attributes that can be used with a ProgressWheel.
@@ -500,7 +563,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.mbine.qa:barColor
+          @attr name android:barColor
         */
         public static final int ProgressWheel_barColor = 3;
         /**
@@ -516,7 +579,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.mbine.qa:barLength
+          @attr name android:barLength
         */
         public static final int ProgressWheel_barLength = 10;
         /**
@@ -532,7 +595,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.mbine.qa:barWidth
+          @attr name android:barWidth
         */
         public static final int ProgressWheel_barWidth = 9;
         /**
@@ -547,7 +610,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.mbine.qa:circleColor
+          @attr name android:circleColor
         */
         public static final int ProgressWheel_circleColor = 7;
         /**
@@ -563,7 +626,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.mbine.qa:radius
+          @attr name android:radius
         */
         public static final int ProgressWheel_radius = 8;
         /**
@@ -578,7 +641,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.mbine.qa:rimColor
+          @attr name android:rimColor
         */
         public static final int ProgressWheel_rimColor = 4;
         /**
@@ -594,7 +657,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.mbine.qa:rimWidth
+          @attr name android:rimWidth
         */
         public static final int ProgressWheel_rimWidth = 5;
         /**
@@ -608,7 +671,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.mbine.qa:spinSpeed
+          @attr name android:spinSpeed
         */
         public static final int ProgressWheel_spinSpeed = 6;
         /**
@@ -622,7 +685,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.mbine.qa:text
+          @attr name android:text
         */
         public static final int ProgressWheel_text = 0;
         /**
@@ -637,7 +700,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.mbine.qa:textColor
+          @attr name android:textColor
         */
         public static final int ProgressWheel_textColor = 1;
         /**
@@ -653,7 +716,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.mbine.qa:textSize
+          @attr name android:textSize
         */
         public static final int ProgressWheel_textSize = 2;
     };

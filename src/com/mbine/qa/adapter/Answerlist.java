@@ -21,6 +21,7 @@ public class Answerlist extends ArrayAdapter<HashMap<String, String>> {
 	private static final String TAG_JSON_AREGDATE = "regdate";
 	private static final String TAG_JSON_AMEMBER = "member";
 	private static final String TAG_JSON_AITEM = "item";
+	private static final String TAG_JSON_ISCORNAME = "정답";
 
 	Tools tool = new Tools();
 	Context mContext;
@@ -53,8 +54,8 @@ public class Answerlist extends ArrayAdapter<HashMap<String, String>> {
         txtAItem.setText(mSource.get(position).get(TAG_JSON_AITEM).toString());
         txtIsCor.setText(mSource.get(position).get(TAG_JSON_AISCORRECT).toString());
 
-        txtAItem.setBackgroundResource((txtIsCor.getText().equals("정답")) ? R.drawable.blueborder : R.drawable.redborder);
-        txtIsCor.setBackgroundResource((txtIsCor.getText().equals("정답")) ? R.color.dblue : R.color.dred);
+        txtAItem.setBackgroundResource((txtIsCor.getText().equals(TAG_JSON_ISCORNAME)) ? R.drawable.blueborder : R.drawable.redborder);
+        txtIsCor.setBackgroundResource((txtIsCor.getText().equals(TAG_JSON_ISCORNAME)) ? R.color.dblue : R.color.dred);
 
 		return convertView;  
 	}

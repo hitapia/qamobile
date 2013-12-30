@@ -9,6 +9,7 @@ import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
 import android.os.Bundle;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
@@ -34,8 +35,26 @@ public class LoginActivity extends Activity {
 
         txtEmail.setText("hitapia@gmail.com");
         txtPassword.setText("marduke");
+        
+        SetActionBar();
 
         EventList();
+	}
+	
+	private void SetActionBar(){
+        // 액션바를 가져옴
+        ActionBar bar = getActionBar();
+
+        // 뷰를 가져옴..
+        View v = getLayoutInflater().inflate(R.layout.actionbar_title, null);
+
+        // 액션바에 커스텀뷰를 설정
+        bar.setCustomView(v, new ActionBar.LayoutParams(
+        ActionBar.LayoutParams.MATCH_PARENT,
+        ActionBar.LayoutParams.MATCH_PARENT));
+
+        //커스텀뷰를 써야하므로 옵션에서 설정
+        bar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
 	}
 
     private void EventList(){

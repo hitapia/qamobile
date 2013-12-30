@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="action_search">Search</string>
-    <string name="app_name">qa</string>
+
+    <string name="action_search">Search</string>
+    <string name="app_name">QUIZC</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_package">PackageActivity</string>
@@ -86,5 +87,26 @@
     <string name="title_activity_qanswer">QAnswerActivity</string>
     <string name="title_activity_qanswer_result">QAnswerResultActivity</string>
     <string name="app_id">159081950969245</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="dmenu_hone">Home</string>
+    <string name="dmenu_fav">Favorites</string>
+    <string name="dmenu_friends">Friends</string>
+    <string name="dmenu_info">My Info</string>
+    <string name="dmenu_setting">Setting</string>
+    <string name="dmenu_exit">Exit</string>
+    <string name="title_activity_dfav">DFavActivity</string>
+    <string name="title_activity_dfriends">DFriendsActivity</string>
+    <string name="title_activity_dmy_page">DMyPageActivity</string>
+    <string name="title_activity_dabout">DAboutActivity</string>
+    <string name="main_today">TODAY</string>
+    <string name="main_category">CATEGORY</string>
+    <string name="main_popular">POPULAR</string>
+    <string name="main_favorite">FAVORITES</string>
+    <string name="main_all">ALL</string>
+    <string name="main_make">MAKE QUIZ</string>
+    <string name="main_search">SEARCH QUIZ</string>
+    <string name="title_activity_qquiz_list">QQuizListActivity</string>
+    <string name="title_activity_qcategory_list">QCategoryListActivity</string>
 
 </resources>

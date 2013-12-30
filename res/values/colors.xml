@@ -19,4 +19,7 @@
         <color name="dred">#BA0C00</color>
         <color name="dgreen">#007804</color>
         <color name="lgreen">#40A357</color>
+        <color name="actionbar">#2DB479</color>
+        <color name="drawerbg">#44C287</color>
+        <color name="divider">#326E54</color>
 </resources>
