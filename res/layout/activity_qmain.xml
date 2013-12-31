@@ -22,7 +22,7 @@
         
         <ListView
                 android:id="@+id/main_menu"
-		        android:layout_margin ="14dp"
+		        android:layout_margin ="@dimen/basemargin"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
@@ -35,8 +35,8 @@
                 android:id="@+id/btn_make"
                 android:layout_width="fill_parent"
                 android:layout_height="52dp"
-	        	android:layout_marginLeft ="14dp"
-	        	android:layout_marginRight ="14dp"
+	        	android:layout_marginLeft ="@dimen/basemargin"
+	        	android:layout_marginRight ="@dimen/basemargin"
                 android:text="@string/main_make"
                 android:textColor="@color/headerft"
                 android:focusable="false"

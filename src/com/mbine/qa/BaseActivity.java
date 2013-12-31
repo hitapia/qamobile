@@ -28,11 +28,30 @@ import android.widget.ListView;
  */
 public abstract class BaseActivity extends Activity {
 
+	protected static final String TAG_DB_SEQ = "seq";
+	protected static final String TAG_DB_SUMMARY = "summary";
+	protected static final String TAG_DB_MEMBER = "member";
+	protected static final String TAG_DB_USED = "USED";
+	protected static final String TAG_DB_CORRECT = "correct";
+	protected static final String TAG_DB_INCORRECT = "incorrect";
+	protected static final String TAG_DB_ISCORRECT = "iscorrect";
+	protected static final String TAG_DB_REGDATE = "regdate";
+	protected static final String TAG_DB_NAME = "name";
+	protected static final String TAG_DB_PNO = "pno";
+	protected static final String TAG_DB_PNAME = "pname";
+	protected static final String TAG_QNO = "qno";
+	protected static final String TAG_PNO = "pno";
+	protected static final String TAG_UNO = "uno";
+
     private ArrayList<NavDrawerItem> navDrawerItems;
     private NavDrawerListAdapter draw_adapter;
 	DrawerLayout mDrawerLayout = null;
 	ListView DrawList = null;
     ActionBarDrawerToggle mDrawerToggle;
+    
+    protected String mPNO = null;
+    protected String mQNO = null;
+    protected String mUNO = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

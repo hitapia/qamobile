@@ -9,35 +9,23 @@ import org.json.JSONObject;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 import com.mbine.qa.R;
-import com.mbine.qa.adapter.NavDrawerItem;
-import com.mbine.qa.adapter.NavDrawerListAdapter;
 import com.mbine.qa.controls.QPackageList;
 import com.mbine.qa.tool.Communication;
 import com.mbine.qa.tool.Tools;
 
 import android.os.Bundle;
-import android.app.ActionBar;
-import android.app.Activity;
 import android.content.Intent;
-import android.content.res.Configuration;
-import android.support.v4.app.ActionBarDrawerToggle;
-import android.support.v4.widget.DrawerLayout;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
 public class QMainActivity extends BaseActivity {
 
 	String mUNO = null;
 	private static final String TAG_MAININFO = "q/getmaininfo_";
-	private static final String TAG_UNO = "uno";
 	private static final String TAG_KEYWORD = "keyword";
 	private static final String TAG_LISTTYPE = "gotype";
 	
@@ -75,7 +63,10 @@ public class QMainActivity extends BaseActivity {
 	
 	private void GetData(){
 		tool.ShowLoading(QMainActivity.this);
-        Communication.post(TAG_MAININFO, pack.GetParams(), new JsonHttpResponseHandler() {
+		RequestParams params = pack.GetParams();
+		params.put("kind", "cnt");
+		params.put("show", "");
+        Communication.post(TAG_MAININFO, params, new JsonHttpResponseHandler() {
         	@Override
         	public void onSuccess(JSONObject json) {
                 mMainMenuItems = new ArrayList<HashMap<String, String>>();
@@ -83,7 +74,7 @@ public class QMainActivity extends BaseActivity {
                 menuToday.put("menukey", "1");
                 menuToday.put("menuname", "Today");
                 try {
-					menuToday.put("menucount", json.getString("todayq").toString());
+					menuToday.put("menucount", json.getString("today").toString());
 				} catch (JSONException e) {
 					e.printStackTrace();
 				}
@@ -162,6 +153,7 @@ public class QMainActivity extends BaseActivity {
                         	break;
                         case 4: //category
                         	intent = new Intent(QMainActivity.this, QCategoryListActivity.class);
+                        	intent.putExtra("kind", "category");
                         	break;
                         case 5: //all
                         	intent = new Intent(QMainActivity.this, QQuizListActivity.class);

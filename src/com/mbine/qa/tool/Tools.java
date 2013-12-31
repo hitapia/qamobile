@@ -1,6 +1,8 @@
 package com.mbine.qa.tool;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -68,4 +70,17 @@ public class Tools {
 	    if(diffSeconds > 0){ return diffDays + "초전"; }
 	    return "방금";
 	}
+	
+	public String Shuffle(String input){
+        List<Character> characters = new ArrayList<Character>();
+        for(char c:input.toCharArray()){
+            characters.add(c);
+        }
+        StringBuilder output = new StringBuilder(input.length());
+        while(characters.size()!=0){
+            int randPicker = (int)(Math.random()*characters.size());
+            output.append(characters.remove(randPicker));
+        }
+        return output.toString().replace(" ","");
+    }
 }

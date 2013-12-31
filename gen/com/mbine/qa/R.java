@@ -119,7 +119,7 @@ containing a value of this type.
         public static final int textSize=0x7f010002;
     }
     public static final class color {
-        public static final int actionbar=0x7f050013;
+        public static final int actionbar=0x7f050014;
         public static final int an_co=0x7f05000d;
         public static final int an_inco=0x7f05000c;
         public static final int an_info=0x7f05000e;
@@ -128,15 +128,16 @@ containing a value of this type.
         public static final int btn=0x7f050006;
         public static final int correct=0x7f050007;
         public static final int dblue=0x7f05000f;
-        public static final int dgreen=0x7f050011;
-        public static final int divider=0x7f050015;
-        public static final int drawerbg=0x7f050014;
-        public static final int dred=0x7f050010;
+        public static final int dgreen=0x7f050012;
+        public static final int divider=0x7f050016;
+        public static final int drawerbg=0x7f050015;
+        public static final int dred=0x7f050011;
         public static final int headerbg=0x7f050002;
         public static final int headerft=0x7f050003;
         public static final int incorrect=0x7f050008;
         public static final int itemselect=0x7f05000b;
-        public static final int lgreen=0x7f050012;
+        public static final int lblue=0x7f050010;
+        public static final int lgreen=0x7f050013;
         public static final int mainbg=0x7f050000;
         public static final int prog=0x7f050009;
         public static final int progbg=0x7f05000a;
@@ -183,9 +184,10 @@ containing a value of this type.
         public static final int ic_votedown=0x7f020014;
         public static final int ic_voteup=0x7f020015;
         public static final int list_selector=0x7f020016;
-        public static final int redborder=0x7f020017;
-        public static final int row_selector=0x7f020018;
-        public static final int selector=0x7f020019;
+        public static final int maincolorborder=0x7f020017;
+        public static final int redborder=0x7f020018;
+        public static final int row_selector=0x7f020019;
+        public static final int selector=0x7f02001a;
     }
     public static final class id {
         public static final int ViewColorPickerHelpe4=0x7f0b001f;
@@ -194,8 +196,8 @@ containing a value of this type.
         public static final int ViewColorPickerHelper1=0x7f0b0019;
         public static final int ViewColorPickerHelper2=0x7f0b0023;
         public static final int ViewColorPickerHelper8=0x7f0b0045;
-        public static final int action_search=0x7f0b0066;
-        public static final int action_settings=0x7f0b0065;
+        public static final int action_search=0x7f0b0068;
+        public static final int action_settings=0x7f0b0067;
         public static final int aitem=0x7f0b0050;
         public static final int alist=0x7f0b003e;
         public static final int ans_iscor=0x7f0b004f;
@@ -239,10 +241,10 @@ containing a value of this type.
         public static final int login_txtemail=0x7f0b0011;
         public static final int login_txtpassword=0x7f0b0012;
         public static final int main_menu=0x7f0b0041;
-        public static final int option1=0x7f0b0060;
-        public static final int option2=0x7f0b0061;
-        public static final int option3=0x7f0b0062;
-        public static final int option4=0x7f0b0063;
+        public static final int option1=0x7f0b0062;
+        public static final int option2=0x7f0b0063;
+        public static final int option3=0x7f0b0064;
+        public static final int option4=0x7f0b0065;
         public static final int pager=0x7f0b0014;
         public static final int pager_title_strip=0x7f0b0049;
         public static final int pinfo_summry=0x7f0b0003;
@@ -254,22 +256,22 @@ containing a value of this type.
         public static final int qitem2=0x7f0b0029;
         public static final int qitem3=0x7f0b002b;
         public static final int qitem4=0x7f0b002d;
-        public static final int qitemper=0x7f0b005f;
+        public static final int qitemper=0x7f0b0061;
         public static final int qlist=0x7f0b0044;
-        public static final int qlist_name=0x7f0b005a;
+        public static final int qlist_name=0x7f0b005d;
         public static final int qplist=0x7f0b0048;
         public static final int qsummary=0x7f0b004e;
         public static final int regdate=0x7f0b0052;
         public static final int regemail=0x7f0b0051;
         public static final int register=0x7f0b0024;
-        public static final int regname=0x7f0b005b;
+        public static final int regname=0x7f0b005e;
         public static final int result=0x7f0b001c;
         public static final int sbDiff=0x7f0b002f;
         public static final int section_label=0x7f0b004d;
         public static final int summary=0x7f0b0017;
         public static final int tableRow1=0x7f0b0054;
         public static final int tableRow2=0x7f0b0056;
-        public static final int textView1=0x7f0b0064;
+        public static final int textView1=0x7f0b0066;
         public static final int tgl1=0x7f0b0028;
         public static final int tgl2=0x7f0b002a;
         public static final int tgl3=0x7f0b002c;
@@ -282,11 +284,13 @@ containing a value of this type.
         public static final int txt_difficulty=0x7f0b000d;
         public static final int txt_hint=0x7f0b000f;
         public static final int txt_member=0x7f0b000b;
+        public static final int txtavg=0x7f0b005c;
         public static final int txtcom=0x7f0b0030;
-        public static final int txtcor=0x7f0b005d;
-        public static final int txtcor1=0x7f0b005c;
+        public static final int txtcor=0x7f0b005f;
+        public static final int txtcor1=0x7f0b005b;
         public static final int txthint=0x7f0b0031;
-        public static final int txtincor=0x7f0b005e;
+        public static final int txtincor=0x7f0b0060;
+        public static final int txtpanme=0x7f0b005a;
         public static final int txtsearch=0x7f0b0046;
         public static final int txttags=0x7f0b0032;
         public static final int v5=0x7f0b003b;
@@ -325,13 +329,14 @@ containing a value of this type.
         public static final int lv_comments=0x7f03001d;
         public static final int lv_main_menu=0x7f03001e;
         public static final int lv_plist_normal=0x7f03001f;
-        public static final int lv_q_with_info=0x7f030020;
-        public static final int lv_qitem_normal=0x7f030021;
-        public static final int lv_qitem_only=0x7f030022;
-        public static final int lv_qitemlist_normal=0x7f030023;
-        public static final int lv_qlist_nomal=0x7f030024;
-        public static final int uc_bottombar=0x7f030025;
-        public static final int uc_spinner_item=0x7f030026;
+        public static final int lv_q_hide_list=0x7f030020;
+        public static final int lv_q_with_info=0x7f030021;
+        public static final int lv_qitem_normal=0x7f030022;
+        public static final int lv_qitem_only=0x7f030023;
+        public static final int lv_qitemlist_normal=0x7f030024;
+        public static final int lv_qlist_nomal=0x7f030025;
+        public static final int uc_bottombar=0x7f030026;
+        public static final int uc_spinner_item=0x7f030027;
     }
     public static final class menu {
         public static final int dabout=0x7f0a0000;
