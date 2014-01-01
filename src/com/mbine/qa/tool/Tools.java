@@ -13,6 +13,8 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.text.format.DateFormat;
+import android.text.format.DateUtils;
 
 public class Tools {
 	private ProgressDialog mDialog;
@@ -44,31 +46,24 @@ public class Tools {
 	@SuppressLint("SimpleDateFormat")
 	@SuppressWarnings("deprecation")
 	public String DiffTimeNow(String datetime){
-		SimpleDateFormat  format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  
-		Calendar calold = Calendar.getInstance();
-	    Calendar calnow = Calendar.getInstance();
-		Date date;
-		try {
-			date = format.parse(datetime);
-			calold.set(date.getYear(), date.getMonth(), date.getDay(), date.getHours(), date.getMinutes(), date.getSeconds());
+		SimpleDateFormat formatter ; 
+	    Date curDate ;
+	    Date oldDate ; 
+	    formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	    curDate = Calendar.getInstance().getTime();
+	    String r = "";
+	    try {
+			oldDate = (Date)formatter.parse(datetime);
+			long oldMillis=oldDate.getTime();
+			long curMillis=curDate.getTime();
+			//Log.d("CaseListAdapter", "Date-Milli:Now:"+curDate.toString()+":" +curMillis +" old:"+oldDate.toString()+":" +oldMillis);
+			CharSequence text=DateUtils.getRelativeTimeSpanString(oldMillis, curMillis,0);
+			r = text.toString();
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return "";
 		}
-	    calnow.set(Calendar.YEAR, Calendar.MONTH, Calendar.DAY_OF_MONTH, Calendar.HOUR_OF_DAY, Calendar.MINUTE, Calendar.SECOND);
-	    long milliseconds1 = calnow.getTimeInMillis();
-	    long milliseconds2 = calold.getTimeInMillis();
-	    long diff = milliseconds2 - milliseconds1;
-	    long diffSeconds = diff / 1000;
-	    long diffMinutes = diff / (60 * 1000);
-	    long diffHours = diff / (60 * 60 * 1000);
-	    long diffDays = diff / (24 * 60 * 60 * 1000);
-	    if(diffDays > 0){ return diffDays + "일전"; }
-	    if(diffHours > 0){ return diffDays + "시간전"; }
-	    if(diffMinutes > 0){ return diffDays + "분전"; }
-	    if(diffSeconds > 0){ return diffDays + "초전"; }
-	    return "방금";
+        return r;
 	}
 	
 	public String Shuffle(String input){

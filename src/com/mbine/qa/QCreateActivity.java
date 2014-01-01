@@ -14,6 +14,7 @@ import com.mbine.qa.tool.Communication;
 import com.mbine.qa.tool.Tools;
 
 import android.os.Bundle;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
@@ -23,11 +24,13 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+@SuppressLint({ "UseValueOf", "ResourceAsColor" })
 public class QCreateActivity extends Activity {
 
 	private static final String TAG_RESULT = "result";
@@ -76,10 +79,10 @@ public class QCreateActivity extends Activity {
 	EditText txtItem2 = null;
 	EditText txtItem3 = null;
 	EditText txtItem4 = null;
-	Button btn1 = null;
-	Button btn2 = null;
-	Button btn3 = null;
-	Button btn4 = null;
+	ImageButton btn1 = null;
+	ImageButton btn2 = null;
+	ImageButton btn3 = null;
+	ImageButton btn4 = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -103,14 +106,15 @@ public class QCreateActivity extends Activity {
 		txtItem2 = (EditText)this.findViewById(R.id.qitem2);
 		txtItem3 = (EditText)this.findViewById(R.id.qitem3);
 		txtItem4 = (EditText)this.findViewById(R.id.qitem4);
-		btn1 = (Button)this.findViewById(R.id.tgl1);
-		btn2 = (Button)this.findViewById(R.id.tgl2);
-		btn3 = (Button)this.findViewById(R.id.tgl3);
-		btn4 = (Button)this.findViewById(R.id.tgl4);
+		btn1 = (ImageButton)this.findViewById(R.id.tgl1);
+		btn2 = (ImageButton)this.findViewById(R.id.tgl2);
+		btn3 = (ImageButton)this.findViewById(R.id.tgl3);
+		btn4 = (ImageButton)this.findViewById(R.id.tgl4);
 
 		if(mPNO != null)
 			GetPackageInfo();
 
+		SetAllInCo(btn1, txtItem1);
 		SetEvent();
 		GetCategory();
 	}
@@ -129,28 +133,38 @@ public class QCreateActivity extends Activity {
 		});
 		btn1.setOnClickListener(new View.OnClickListener() {
 			@Override
-			public void onClick(View v) { SetAllInCo(btn1); }
+			public void onClick(View v) { SetAllInCo(btn1, txtItem1); }
 		});
 		btn2.setOnClickListener(new View.OnClickListener() {
 			@Override
-			public void onClick(View v) { SetAllInCo(btn2); }
+			public void onClick(View v) { SetAllInCo(btn2, txtItem2); }
 		});
 		btn3.setOnClickListener(new View.OnClickListener() {
 			@Override
-			public void onClick(View v) { SetAllInCo(btn3); }
+			public void onClick(View v) { SetAllInCo(btn3, txtItem3); }
 		});
 		btn4.setOnClickListener(new View.OnClickListener() {
 			@Override
-			public void onClick(View v) { SetAllInCo(btn4); }
+			public void onClick(View v) { SetAllInCo(btn4, txtItem4); }
 		});
 	}
 	
-	private void SetAllInCo(Button btn){
-        btn1.setText("오답");
-        btn2.setText("오답");
-        btn3.setText("오답");
-        btn4.setText("오답");
-        btn.setText("정답");
+	@SuppressLint({ "UseValueOf" })
+	private void SetAllInCo(ImageButton btn, EditText txt){
+		Boolean unclicked = new Boolean(false);
+		Boolean clicked = new Boolean(true);
+        btn1.setImageResource(R.drawable.ic_item_incor_b); btn1.setTag(unclicked);
+        btn2.setImageResource(R.drawable.ic_item_incor_b); btn2.setTag(unclicked);
+        btn3.setImageResource(R.drawable.ic_item_incor_b); btn3.setTag(unclicked);
+        btn4.setImageResource(R.drawable.ic_item_incor_b); btn4.setTag(unclicked);
+        
+        txtItem1.setTextColor(R.color.dred);
+        txtItem2.setTextColor(R.color.dred);
+        txtItem3.setTextColor(R.color.dred);
+        txtItem4.setTextColor(R.color.dred);
+        
+        btn.setImageResource(R.drawable.ic_item_cor_b); btn.setTag(clicked);
+        txt.setTextColor(R.color.dblue);
 	}
 	
 	private String chkField(EditText ed){
@@ -177,10 +191,10 @@ public class QCreateActivity extends Activity {
 		params.put(TAG_PARAM_ITEMSUMMARY, items);
 
 		ArrayList<String> itemCors = new ArrayList<String>();
-		itemCors.add((btn1.getText().toString() == "정답") ? "Y" : "N");
-		itemCors.add((btn2.getText().toString() == "정답") ? "Y" : "N");
-		itemCors.add((btn3.getText().toString() == "정답") ? "Y" : "N");
-		itemCors.add((btn4.getText().toString() == "정답") ? "Y" : "N");
+		itemCors.add(((Boolean)btn1.getTag() == true) ? "Y" : "N");
+		itemCors.add(((Boolean)btn2.getTag() == true) ? "Y" : "N");
+		itemCors.add(((Boolean)btn3.getTag() == true) ? "Y" : "N");
+		itemCors.add(((Boolean)btn4.getTag() == true) ? "Y" : "N");
 		params.put(TAG_PARAM_ITEMCORRECT, itemCors);
 
         Communication.post(TAG_SUBMIT, params, new JsonHttpResponseHandler() {
@@ -226,10 +240,9 @@ public class QCreateActivity extends Activity {
         	public void onSuccess(JSONObject json) {
         		try {
 					JSONObject pinfo = json.getJSONObject(TAG_CODE_P);
-					mTitle = "Create In " + pinfo.getString(TAG_C_NAME);
+					mTitle = pinfo.getString(TAG_C_NAME) + " - 문제 만들기";
 					mCategory = pinfo.getString(TAG_P_CATEGROY);
-					Intent intent = getIntent();
-					getActionBar().setTitle(intent.getStringExtra(mTitle));
+					getActionBar().setTitle(mTitle);
 				} catch (JSONException e) {
 					e.printStackTrace();
 				}

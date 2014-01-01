@@ -28,10 +28,12 @@ public class QQuizListActivity extends BaseActivity {
 	private static final String TAG_TITLE_POPULAR = "Popular Quiz";
 	private static final String TAG_TITLE_FAVORITE = "My Favorites";
 	private static final String TAG_TITLE_ALL = "All Quiz";
+	private static final String TAG_FNO = "fno";
 
 	QPackage pack = new QPackage();
 	Tools tool = new Tools();
 	String mShowKind = "today";
+	String mFavNo = "";
 	ListView mQList = null;
 	ArrayList<HashMap<String, String>> qList = new ArrayList<HashMap<String, String>>();
 
@@ -41,6 +43,9 @@ public class QQuizListActivity extends BaseActivity {
 		
 		Intent intent = getIntent();
 		mShowKind = intent.getStringExtra(TAG_BUNDLETAG);
+		if(intent.hasExtra(TAG_FNO)){
+			mFavNo = intent.getStringExtra(TAG_FNO);
+		}
 
 		GetControls();
 		SetTitle();
@@ -72,6 +77,7 @@ public class QQuizListActivity extends BaseActivity {
 		RequestParams params = pack.GetParams();
 		params.put("kind", "list");
 		params.put("show", mShowKind);
+		params.put("pno", mFavNo);
         Communication.post(TAG_LISTINFO, params, new JsonHttpResponseHandler() {
         	@Override
         	public void onSuccess(JSONObject json) {

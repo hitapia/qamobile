@@ -2,6 +2,7 @@
 
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="padd_5">5dp</dimen>
+    <dimen name="padd_10">10dp</dimen>
     <dimen name="activity_horizontal_margin">0dp</dimen>
     <dimen name="activity_vertical_margin">0dp</dimen>
     <dimen name="list_item_margintop">10dp</dimen>
@@ -10,5 +11,7 @@
     <dimen name="info_detail_ftsize">20sp</dimen>
     <dimen name="info_main_ftsize">22sp</dimen>
     <dimen name="main_item_title">18sp</dimen>
+    <dimen name="create_q_title">20sp</dimen>
+    <dimen name="ico_item">36dp</dimen>
 
 </resources>

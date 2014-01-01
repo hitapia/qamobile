@@ -5,7 +5,6 @@
     android:layout_marginBottom="@dimen/list_item_marginbottom"
     android:layout_marginTop="@dimen/list_item_margintop"
     android:orientation="vertical"
-   	android:background="@drawable/bg_card"
     android:padding="@dimen/padd_5" >
 
     <TextView
@@ -13,16 +12,18 @@
         android:text="this is a test message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/padd_5"
         android:singleLine="true"
         android:focusable="false"
         android:ellipsize="marquee"
         android:textSize="18sp" />
+        <RelativeLayout
+            android:layout_width="fill_parent" 
+            android:layout_height="wrap_content" >
     <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
             <TextView
-                android:id="@+id/ans_iscor"
+                android:id="@+id/regemail"
                 android:text="정답"
                 android:padding="@dimen/padd_5"
                 android:layout_width="wrap_content"
@@ -40,45 +41,16 @@
                 android:background="@drawable/blueborder" 
                 android:textSize="14sp" />
     </LinearLayout>
-
-    <RelativeLayout 
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-	android:layout_marginTop="@dimen/padd_5"
-	android:layout_marginBottom="@dimen/padd_5"
-    android:layout_alignParentRight="true" 
-    android:orientation="horizontal" >
-            <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" >
             <TextView
-                android:id="@+id/regemail"
-                android:text="reguser"
+                android:id="@+id/regdate"
+                android:gravity="right"
                 android:padding="@dimen/padd_5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentRight="true" 
                 android:textColor="@color/white"
+                android:minWidth="30dip"
                 android:textSize="14sp" 
-                android:background="@color/dgreen"  />
-            </LinearLayout>
-            <LinearLayout
-                	android:layout_alignParentRight="true" 
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" >
-                    <TextView
-                        android:id="@+id/regdate"
-                        android:text="O"
-                        android:gravity="right"
-                        android:padding="@dimen/padd_5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/white"
-                        android:minWidth="30dip"
-                        android:textSize="14sp" 
-                        android:background="@color/dgreen" />
-                
-            </LinearLayout>
-        
-    </RelativeLayout>
-
+                android:background="@color/dgreen" />
+	</RelativeLayout>
 </LinearLayout>

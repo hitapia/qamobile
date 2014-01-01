@@ -3,6 +3,8 @@
         android:id="@+id/textView1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:padding="10dip"
+        android:textSize="18sp"
+        android:padding="@dimen/padd_5"
+        android:layout_marginTop="@dimen/padd_5"
+        android:layout_marginBottom="@dimen/padd_5"
         android:text="TextView" />

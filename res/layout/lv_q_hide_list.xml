@@ -5,7 +5,6 @@
     android:layout_marginBottom="@dimen/list_item_marginbottom"
     android:layout_marginTop="@dimen/list_item_margintop"
     android:orientation="vertical"
-   	android:background="@drawable/bg_card"
     android:padding="@dimen/padd_5" >
 
     <TextView
@@ -16,11 +15,9 @@
         android:singleLine="true"
         android:focusable="false"
         android:ellipsize="marquee"
-        android:textSize="20sp" />
+        android:textSize="18sp" />
 
     <RelativeLayout 
-    android:layout_marginTop="@dimen/padd_5"
-    android:layout_marginBottom="@dimen/padd_5"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal" >

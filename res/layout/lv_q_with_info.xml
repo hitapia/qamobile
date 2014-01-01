@@ -5,7 +5,6 @@
     android:layout_marginBottom="@dimen/list_item_marginbottom"
     android:layout_marginTop="@dimen/list_item_margintop"
     android:orientation="vertical"
-   	android:background="@drawable/bg_card"
     android:padding="@dimen/padd_5" >
 
     <TextView
@@ -13,7 +12,6 @@
         android:text="this is a test message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/padd_5"
         android:singleLine="true"
         android:focusable="false"
         android:ellipsize="marquee"
@@ -22,8 +20,6 @@
     <RelativeLayout 
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-	android:layout_marginTop="@dimen/padd_5"
-	android:layout_marginBottom="@dimen/padd_5"
     android:layout_alignParentRight="true" 
     android:orientation="horizontal" >
             <LinearLayout

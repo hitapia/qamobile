@@ -3,52 +3,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/mainbg"
     tools:context=".QCreateActivity" >
+
 <ScrollView
+    android:padding="@dimen/padd_10"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
-            <LinearLayout 
-                  android:layout_width="fill_parent"
-                  android:layout_height="wrap_content"
-                  android:orientation="vertical">
-    <TextView
-        android:id="@+id/pinfo_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:focusable="false"
-        android:text="@string/title_createq_basictop"
-        android:textColor="@color/headerft"
-        android:textSize="24sp" />
+    <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
 
-    <View
-        android:id="@+id/ViewColorPickerHelper"
-        android:layout_width="fill_parent"
-        android:layout_height="1dip"
-        android:layout_margin="0dip"
-        android:background="?android:attr/dividerVertical" />
-
+    <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/padd_5"
+    android:background="@color/white"
+    android:orientation="vertical" >
+        
     <EditText
         android:id="@+id/txtSummary"
         android:layout_width="match_parent"
-        android:layout_height="70dip"
-        android:ems="10"
+        android:layout_height="wrap_content"
+    	android:layout_marginTop="@dimen/padd_5"
+    	android:layout_marginBottom="@dimen/padd_5"
         android:hint="@string/title_createq_hint_title"
+        android:textSize="@dimen/create_q_title"
         android:inputType="textMultiLine" >
 
         <requestFocus />
     </EditText>
-
-    <View
-        android:id="@+id/ViewColorPickerHelper"
-        android:layout_width="fill_parent"
-        android:layout_height="1dip"
-        android:layout_margin="0dip"
-        android:background="?android:attr/dividerVertical" />
-    
     
 <LinearLayout
     android:layout_width="match_parent"
@@ -62,21 +47,13 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:hint="@string/title_createq_item_name"
-                        android:layout_alignParentLeft="true"
-                        android:textColor="@color/headerft"
-                        android:textSize="20sp" />
-
-    <View
-        android:layout_width="1dip"
-        android:layout_height="fill_parent"
-        android:layout_margin="0dip"
-        android:background="?android:attr/dividerVertical" />
-
-                    <Button
+                        android:textSize="@dimen/main_item_title" />
+                    <ImageButton
                         android:id="@+id/tgl1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="정답" />
+                        android:layout_width="@dimen/ico_item"
+                        android:layout_height="@dimen/ico_item"
+                        android:background="@color/white"
+                        android:src="@drawable/ic_item_cor_b" />
 
         </LinearLayout>
 <LinearLayout
@@ -91,22 +68,13 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:hint="@string/title_createq_item_name"
-                        android:layout_alignParentLeft="true"
-                        android:textColor="@color/headerft"
-                        android:textSize="20sp" />
-
-    <View
-        android:layout_width="1dip"
-        android:layout_height="fill_parent"
-        android:layout_margin="0dip"
-        android:background="?android:attr/dividerVertical" />
-
-                    <Button
+                        android:textSize="@dimen/main_item_title" />
+                    <ImageButton
                         android:id="@+id/tgl2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="오답" />
-
+                        android:layout_width="@dimen/ico_item"
+                        android:layout_height="@dimen/ico_item"
+                        android:background="@color/white"
+                        android:src="@drawable/ic_item_incor_b" />
 
         </LinearLayout>
         <LinearLayout
@@ -121,22 +89,14 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:hint="@string/title_createq_item_name"
-                        android:layout_alignParentLeft="true"
-                        android:textColor="@color/headerft"
-                        android:textSize="20sp" />
+                        android:textSize="@dimen/main_item_title" />
 
-    <View
-        android:layout_width="1dip"
-        android:layout_height="fill_parent"
-        android:layout_margin="0dip"
-        android:background="?android:attr/dividerVertical" />
-
-                    <Button
+                    <ImageButton
                         android:id="@+id/tgl3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="오답" />
-
+                        android:layout_width="@dimen/ico_item"
+                        android:layout_height="@dimen/ico_item"
+                        android:background="@color/white"
+                        android:src="@drawable/ic_item_incor_b" />
 
         </LinearLayout>
          <LinearLayout
@@ -151,106 +111,104 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:hint="@string/title_createq_item_name"
-                        android:layout_alignParentLeft="true"
-                        android:textColor="@color/headerft"
-                        android:textSize="20sp" />
+                        android:textSize="@dimen/main_item_title" />
 
-    <View
-        android:layout_width="1dip"
-        android:layout_height="fill_parent"
-        android:layout_margin="0dip"
-        android:background="?android:attr/dividerVertical" />
-
-                    <Button
+                    <ImageButton
                         android:id="@+id/tgl4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="오답" />
-
+                        android:layout_width="@dimen/ico_item"
+                        android:layout_height="@dimen/ico_item"
+                        android:background="@color/white"
+                        android:src="@drawable/ic_item_incor_b" />
 
         </LinearLayout>
-    <TextView
-        android:id="@+id/pinfo_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:focusable="false"
-        android:layout_marginTop="20dip"
-        android:text="@string/title_createq_cat"
-        android:textColor="@color/headerft"
-        android:textSize="24sp" />
 
     <View
         android:layout_width="fill_parent"
         android:layout_height="1dip"
         android:layout_margin="0dip"
         android:background="?android:attr/dividerVertical" />
+
+    <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/padd_5"
+    android:orientation="horizontal" >
+        <TextView
+            android:id="@+id/textViewTopCate"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+        	android:textSize="@dimen/main_item_title"
+            android:text="@string/title_createq_cat" />
 
          <Spinner
              android:id="@+id/cboCategory"
              android:layout_width="match_parent"
              android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/pinfo_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:focusable="false"
-        android:layout_marginTop="20dip"
-        android:text="@string/title_createq_diff"
-        android:textColor="@color/headerft"
-        android:textSize="24sp" />
+         </LinearLayout>
 
     <View
         android:layout_width="fill_parent"
         android:layout_height="1dip"
         android:layout_margin="0dip"
         android:background="?android:attr/dividerVertical" />
+    <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/padd_5"
+    android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/textViewTopDiff"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+        	android:textSize="@dimen/main_item_title"
+            android:text="@string/title_createq_diff" />
 
          <SeekBar
              android:id="@+id/sbDiff"
              android:max="4"
              android:layout_width="match_parent"
              android:layout_height="wrap_content" />
+         </LinearLayout>
          
-         
-    <TextView
-        android:id="@+id/pinfo_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:focusable="false"
-        android:layout_marginTop="20dip"
-        android:text="@string/title_createq_item_desc"
-        android:textColor="@color/headerft"
-        android:textSize="24sp" />
+    </LinearLayout>
 
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dip"
-        android:layout_margin="0dip"
-        android:background="?android:attr/dividerVertical" />
-         
+        <TextView
+            android:id="@+id/textViewTopOption"
+            android:layout_margin="@dimen/padd_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="@string/title_createq_optiontop" />
+
+    <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/padd_5"
+    android:background="@color/white"
+    android:orientation="vertical" >
 <EditText
         android:id="@+id/txtcom"
-        android:layout_width="match_parent"
-        android:layout_height="70dip"
-        android:hint="@string/title_createq_com_place"
-        android:ems="10"
-        android:inputType="textMultiLine" />
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+    	android:layout_marginTop="@dimen/padd_5"
+    	android:layout_marginBottom="@dimen/padd_5"
+        android:hint="@string/title_createq_com_place" />
 <EditText
         android:id="@+id/txthint"
-        android:layout_width="match_parent"
-        android:layout_height="70dip"
-        android:hint="@string/title_createq_hint_place"
-        android:ems="10"
-        android:inputType="textMultiLine" />
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+    	android:layout_marginBottom="@dimen/padd_5"
+        android:hint="@string/title_createq_hint_place" />
 <EditText
         android:id="@+id/txttags"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/title_createq_tag_place"
-        android:layout_alignParentLeft="true"
-        android:textColor="@color/headerft"
-        android:textSize="20sp" />
+    	android:layout_marginBottom="@dimen/padd_5"
+        android:hint="@string/title_createq_tag_place" />
+    </LinearLayout>
 
 <View
         android:layout_width="fill_parent"
@@ -273,7 +231,8 @@
         android:layout_width="0dip"
         android:layout_height="60dip"
         android:layout_weight="1"
-        android:background="?android:attr/selectableItemBackground"
+        android:textColor="@color/white"
+        android:background="@color/actionbar"
         android:text="@string/txt_createnext" />
 <View
         android:layout_width="1dip"
@@ -285,7 +244,8 @@
         android:layout_width="0dip"
         android:layout_height="60dip"
         android:layout_weight="1"
-        android:background="?android:attr/selectableItemBackground"
+        android:textColor="@color/white"
+        android:background="@color/actionbar"
         android:text="@string/txt_create" />
 <View
         android:layout_width="1dip"

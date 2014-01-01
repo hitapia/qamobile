@@ -46,16 +46,16 @@ public class Answerlist extends ArrayAdapter<HashMap<String, String>> {
         txtEmail = (TextView) convertView.findViewById(R.id.regemail);
         txtRegdate = (TextView) convertView.findViewById(R.id.regdate);
         txtAItem = (TextView) convertView.findViewById(R.id.aitem);
-        txtIsCor = (TextView) convertView.findViewById(R.id.ans_iscor);
         
         txtSummary.setText(mSource.get(position).get(TAG_JSON_ASUMMARY).toString());
         txtEmail.setText(mSource.get(position).get(TAG_JSON_AEMAIL).toString());
-        txtRegdate.setText(mSource.get(position).get(TAG_JSON_AREGDATE).toString());
+        txtRegdate.setText(tool.DiffTimeNow(mSource.get(position).get(TAG_JSON_AREGDATE).toString()));
         txtAItem.setText(mSource.get(position).get(TAG_JSON_AITEM).toString());
-        txtIsCor.setText(mSource.get(position).get(TAG_JSON_AISCORRECT).toString());
 
-        txtAItem.setBackgroundResource((txtIsCor.getText().equals(TAG_JSON_ISCORNAME)) ? R.drawable.blueborder : R.drawable.redborder);
-        txtIsCor.setBackgroundResource((txtIsCor.getText().equals(TAG_JSON_ISCORNAME)) ? R.color.dblue : R.color.dred);
+        String mIsCor = mSource.get(position).get(TAG_JSON_AISCORRECT).toString();
+
+        txtAItem.setBackgroundResource(mIsCor.equals(TAG_JSON_ISCORNAME) ? R.drawable.blueborder : R.drawable.redborder);
+        txtEmail.setBackgroundResource(mIsCor.equals(TAG_JSON_ISCORNAME) ? R.color.dblue : R.color.dred);
 
 		return convertView;  
 	}

@@ -31,6 +31,7 @@ public abstract class BaseActivity extends Activity {
 	protected static final String TAG_DB_SEQ = "seq";
 	protected static final String TAG_DB_SUMMARY = "summary";
 	protected static final String TAG_DB_MEMBER = "member";
+	protected static final String TAG_DB_COUNT = "cnt";
 	protected static final String TAG_DB_USED = "USED";
 	protected static final String TAG_DB_CORRECT = "correct";
 	protected static final String TAG_DB_INCORRECT = "incorrect";

@@ -127,6 +127,10 @@
             android:name="com.mbine.qa.QCategoryListActivity"
             android:label="@string/title_activity_qcategory_list" >
         </activity>
+        <activity
+            android:name="com.mbine.qa.QFavListActivity"
+            android:label="@string/title_activity_qfav_list" >
+        </activity>
     </application>
 
 </manifest>

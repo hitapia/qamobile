@@ -11,24 +11,23 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="50dp"
     android:orientation="vertical" >
 <TextView
         android:id="@+id/pinfo_summry"
+        android:padding="@dimen/padd_5"
+        android:layout_margin="@dimen/padd_5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:focusable="false"
-        android:textSize="20sp"
+        android:textSize="22sp"
         android:textColor="@color/headerft"/>
-<View
-            android:id="@+id/ViewColorPickerHelper"
-            android:layout_width="fill_parent"
-            android:layout_height="1dip"
-            android:layout_marginTop="10dip"
-            android:background="?android:attr/dividerVertical"/>
 
 <ListView
     android:id="@+id/itemlist"
     android:choiceMode="singleChoice"
+    android:layout_margin="@dimen/padd_5"
+    android:background="@drawable/listview_border"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" >
 

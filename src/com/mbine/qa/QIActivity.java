@@ -65,8 +65,6 @@ public class QIActivity extends Fragment {
 			mUNO = bundle.getString(TAG_UNO);
 			mPNO = bundle.getString(TAG_PNO);
 
-			tool.ShowLoading(getActivity());
-
 			mBtnStart.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
@@ -133,8 +131,6 @@ public class QIActivity extends Fragment {
 					e.printStackTrace();
 				}
         		get1 = true;
-        		if(get1 && get2)
-        			tool.ExitLoading();
         	}
         });	
 	}
@@ -149,8 +145,6 @@ public class QIActivity extends Fragment {
         		mSummary.setText(((HashMap<String,String>)pbasic.get(0)).get(TAG_JSON_PCONTENT));
                 ((QPackageActivity)getActivity()).getActionBar().setTitle(((HashMap<String,String>)pbasic.get(0)).get(TAG_JSON_PNAME));
                 get2 = true;
-                if(get1 && get2)
-                	tool.ExitLoading();
         	}
         });	
 	}

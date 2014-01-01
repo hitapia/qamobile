@@ -65,6 +65,8 @@ public class QAnswerActivity extends Activity {
 		mUNO = intent.getStringExtra(TAG_UNO);
 		mPNO = intent.getStringExtra(TAG_PNO);
 		mQNO = intent.getStringExtra(TAG_QNO);
+		
+		this.setTitle("문제 풀기");
 
 		tool.ShowLoading(QAnswerActivity.this);
 
@@ -72,7 +74,6 @@ public class QAnswerActivity extends Activity {
 		mList = (ListView)findViewById(R.id.itemlist);
 		mSubmit = (Button)findViewById(R.id.btnAnswer);
         mList.setClickable(true);
-		mList.setSelector(R.drawable.selector);
         mList.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
 		mSubmit.setOnClickListener(new View.OnClickListener() {
@@ -105,7 +106,8 @@ public class QAnswerActivity extends Activity {
                 public void onItemClick(AdapterView<?> arg0, View arg1,
                         int arg2, long arg3) {
                 	HashMap<String,String> map = (HashMap<String,String>)arg0.getItemAtPosition(arg2);
-                	mList.setItemChecked(arg2, true);
+                	arg1.setSelected(true);
+                	//mList.setItemChecked(arg2, true);
                 	isCor = map.get(TAG_JSON_ACORRECT);
                 	ans = map.get(TAG_JSON_ASEQ);
                 }

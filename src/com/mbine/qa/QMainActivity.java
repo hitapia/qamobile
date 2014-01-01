@@ -66,6 +66,7 @@ public class QMainActivity extends BaseActivity {
 		RequestParams params = pack.GetParams();
 		params.put("kind", "cnt");
 		params.put("show", "");
+		params.put("pno", "");
         Communication.post(TAG_MAININFO, params, new JsonHttpResponseHandler() {
         	@Override
         	public void onSuccess(JSONObject json) {
@@ -144,7 +145,7 @@ public class QMainActivity extends BaseActivity {
                         	intent.putExtra("kind", "today");
                         	break;
                         case 2: //favorite
-                        	intent = new Intent(QMainActivity.this, QQuizListActivity.class);
+                        	intent = new Intent(QMainActivity.this, QFavListActivity.class);
                         	intent.putExtra("kind", "favorite");
                         	break;
                         case 3: //popular

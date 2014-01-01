@@ -17,7 +17,8 @@ import android.view.View;
 import android.widget.EditText;
 
 public class LoginActivity extends Activity {
-	
+
+	private static final String TAG_UNO = "uno";
     JSONObject result;
     Tools tool = new Tools();
 
@@ -28,6 +29,9 @@ public class LoginActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		CheckLogged();
+
 		setContentView(R.layout.activity_login);
 
         txtEmail = (EditText)findViewById(R.id.login_txtemail);
@@ -39,6 +43,16 @@ public class LoginActivity extends Activity {
         SetActionBar();
 
         EventList();
+	}
+	
+	private void CheckLogged(){
+		Storage str = new Storage(this);
+		String mUNO = str.pull(TAG_UNO, "");
+		if(mUNO != null){
+			Intent portal = new Intent(LoginActivity.this, QMainActivity.class);
+			startActivity(portal);
+			finish();
+		}
 	}
 	
 	private void SetActionBar(){

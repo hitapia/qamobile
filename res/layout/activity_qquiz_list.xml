@@ -8,17 +8,16 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/white"
     tools:context=".QQuizListActivity" >
     
 <FrameLayout
 	android:id="@+id/frame_container"
-    android:background="@color/mainbg"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent" >
 
 <ListView
     android:id="@+id/alist"
-	android:layout_margin ="@dimen/basemargin"
     android:choiceMode="singleChoice"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" >

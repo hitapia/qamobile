@@ -41,7 +41,8 @@
     <string name="title_createq_q">Quiz</string>
     <string name="title_createq_cor">정답</string>
     <string name="title_createq_incor">오답</string>
-    <string name="title_createq_basictop">기본 정보 입력</string>
+    <string name="title_createq_basictop">필수 정보</string>
+    <string name="title_createq_optiontop">부가 정보</string>
     <string name="title_createq_diff">난이도</string>
     <string name="title_createq_cat">분류</string>
     <string name="title_createq_comment">설명</string>
@@ -50,9 +51,9 @@
     <string name="title_createq_hint_title">질문을 입력해주세요.</string>
     <string name="title_createq_item_name">답변 입력</string>
     <string name="title_createq_item_desc">내용/힌트/Tag</string>
-    <string name="title_createq_hint_place">힌트를 입력해주세요.</string>
-    <string name="title_createq_com_place">내용을 입력해주세요.(문제 풀고 보입니다.)</string>
-    <string name="title_createq_tag_place">Tag를 입력해주세요.(,로 구분)</string>
+    <string name="title_createq_hint_place">힌트 입력</string>
+    <string name="title_createq_com_place">내용 입력(문제 풀고 보입니다.)</string>
+    <string name="title_createq_tag_place">Tag 입력(,로 구분)</string>
     <string name="txt_createnext">만들고 또 만들기</string>
     <string name="txt_create">만들기</string>
     <string name="register">등록</string>
@@ -108,5 +109,6 @@
     <string name="main_search">SEARCH QUIZ</string>
     <string name="title_activity_qquiz_list">QQuizListActivity</string>
     <string name="title_activity_qcategory_list">QCategoryListActivity</string>
+    <string name="title_activity_qfav_list">QFavListActivity</string>
 
 </resources>
