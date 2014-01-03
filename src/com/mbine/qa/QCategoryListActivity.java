@@ -1,22 +1,95 @@
 package com.mbine.qa;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.mbine.qa.controls.QPackage;
+import com.mbine.qa.tool.Communication;
+import com.mbine.qa.tool.Tools;
+
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.widget.AdapterView.OnItemClickListener;
 
-public class QCategoryListActivity extends Activity {
+public class QCategoryListActivity extends BaseActivity {
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_qcategory_list);
-	}
+        private static final String TAG_LISTINFO = "q/getListCategoryCnt_";
+        private static final String TAG_CNO = "cno";
+        private static final String TAG_CNAME = "cname";
+        QPackage pack = new QPackage();
+        Tools tool = new Tools();
+        ListView mFList = null;
+        SimpleAdapter adapter = null;
+        ArrayList<HashMap<String, String>> qList = new ArrayList<HashMap<String, String>>();
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.qcategory_list, menu);
-		return true;
-	}
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+                super.onCreate(savedInstanceState);
+                
+                this.setTitle("Category");
 
+                GetControls();
+                GetData();
+        }
+
+        private void GetControls(){
+                mFList = (ListView)findViewById(R.id.flist);
+        }
+        
+        private void GetData(){
+                tool.ShowLoading(QCategoryListActivity.this);
+        Communication.post(TAG_LISTINFO, pack.GetParams(), new JsonHttpResponseHandler() {
+                @Override
+                public void onSuccess(JSONObject json) {
+                JSONArray qs;
+                                try {
+                                        qList.clear();
+                                        qs = json.getJSONArray("category");
+
+                                        for(int i = 0; i < qs.length(); i++){
+                                                HashMap<String, String> map = new HashMap<String,String>();
+                                                map.put(TAG_DB_CATEGORYNO, qs.getJSONObject(i).getString(TAG_DB_CATEGORYNO));
+                                                map.put(TAG_DB_CATEGORYNAME, qs.getJSONObject(i).getString(TAG_DB_CATEGORYNAME));
+                                                map.put(TAG_DB_COUNT, qs.getJSONObject(i).getString(TAG_DB_COUNT));
+                        qList.add(map);
+                                        }
+
+                        adapter = new SimpleAdapter(QCategoryListActivity.this, qList, R.layout.lv_title_count,
+                                        new String[] { TAG_DB_CATEGORYNAME, TAG_DB_COUNT }, 
+                                        new int[] { R.id.title, R.id.count });
+                        mFList.setAdapter(adapter);
+                        mFList.setOnItemClickListener(new OnItemClickListener() {
+                                @Override
+                                public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+                                	HashMap<String,String> map = (HashMap<String,String>)arg0.getItemAtPosition(arg2);
+                                    Intent intent = new Intent(QCategoryListActivity.this, QQuizListActivity.class);
+                                    intent.putExtra("kind", "category");
+                                    intent.putExtra(TAG_CNO, map.get(TAG_DB_CATEGORYNO));
+                                    intent.putExtra(TAG_CNAME, map.get(TAG_DB_CATEGORYNAME));
+                                    startActivity(intent);
+                                }
+                        });
+                                } catch (JSONException e) {
+                                        e.printStackTrace();
+                                }
+                tool.ExitLoading();
+                }
+        });	
+        }
+
+        @Override
+        protected int getLayoutResourceId() {
+        return R.layout.activity_qfav_list;
+        }
 }

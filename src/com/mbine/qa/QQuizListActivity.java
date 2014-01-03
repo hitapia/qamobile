@@ -29,11 +29,15 @@ public class QQuizListActivity extends BaseActivity {
 	private static final String TAG_TITLE_FAVORITE = "My Favorites";
 	private static final String TAG_TITLE_ALL = "All Quiz";
 	private static final String TAG_FNO = "fno";
+	private static final String TAG_CNO = "cno";
+	private static final String TAG_CNAME = "cname";
 
 	QPackage pack = new QPackage();
 	Tools tool = new Tools();
 	String mShowKind = "today";
 	String mFavNo = "";
+	String mCatNo = "";
+	String mCatName = "";
 	ListView mQList = null;
 	ArrayList<HashMap<String, String>> qList = new ArrayList<HashMap<String, String>>();
 
@@ -45,6 +49,11 @@ public class QQuizListActivity extends BaseActivity {
 		mShowKind = intent.getStringExtra(TAG_BUNDLETAG);
 		if(intent.hasExtra(TAG_FNO)){
 			mFavNo = intent.getStringExtra(TAG_FNO);
+		}
+		if(intent.hasExtra(TAG_CNO)){
+			mCatNo = intent.getStringExtra(TAG_CNO);
+			mCatName = intent.getStringExtra(TAG_CNAME);
+			mFavNo = mCatNo;
 		}
 
 		GetControls();
@@ -59,6 +68,8 @@ public class QQuizListActivity extends BaseActivity {
 			getActionBar().setTitle(TAG_TITLE_POPULAR);
 		if(mShowKind.equals("favorite"))
 			getActionBar().setTitle(TAG_TITLE_FAVORITE);
+		if(mShowKind.equals("category"))
+			getActionBar().setTitle("분류 - " + mCatName);
 		if(mShowKind.equals("all"))
 			getActionBar().setTitle(TAG_TITLE_ALL);
 	}

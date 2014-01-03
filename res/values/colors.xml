@@ -22,4 +22,5 @@
         <color name="actionbar">#2DB479</color>
         <color name="drawerbg">#44C287</color>
         <color name="divider">#326E54</color>
+        <color name="gray">#424242</color>
 </resources>

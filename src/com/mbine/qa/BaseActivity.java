@@ -38,6 +38,8 @@ public abstract class BaseActivity extends Activity {
 	protected static final String TAG_DB_ISCORRECT = "iscorrect";
 	protected static final String TAG_DB_REGDATE = "regdate";
 	protected static final String TAG_DB_NAME = "name";
+	protected static final String TAG_DB_CATEGORYNO = "cno";
+	protected static final String TAG_DB_CATEGORYNAME = "cname";
 	protected static final String TAG_DB_PNO = "pno";
 	protected static final String TAG_DB_PNAME = "pname";
 	protected static final String TAG_QNO = "qno";
