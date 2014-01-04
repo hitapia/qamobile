@@ -131,6 +131,10 @@
             android:name="com.mbine.qa.QFavListActivity"
             android:label="@string/title_activity_qfav_list" >
         </activity>
+        <activity
+            android:name="com.mbine.qa.ImageCropActivity"
+            android:label="@string/title_activity_image_crop" >
+        </activity>
     </application>
 
 </manifest>

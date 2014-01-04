@@ -1,6 +1,4 @@
 <resources>
-
-    <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="padd_5">5dp</dimen>
     <dimen name="padd_10">10dp</dimen>
     <dimen name="activity_horizontal_margin">0dp</dimen>
@@ -14,5 +12,4 @@
     <dimen name="create_q_title">20sp</dimen>
     <dimen name="ico_item">36dp</dimen>
     <dimen name="avatar">100dp</dimen>
-
 </resources>

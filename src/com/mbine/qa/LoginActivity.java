@@ -48,7 +48,7 @@ public class LoginActivity extends Activity {
 	private void CheckLogged(){
 		Storage str = new Storage(this);
 		String mUNO = str.pull(TAG_UNO, "");
-		if(mUNO != null){
+		if(mUNO != null && !mUNO.equals("")){
 			Intent portal = new Intent(LoginActivity.this, QMainActivity.class);
 			startActivity(portal);
 			finish();

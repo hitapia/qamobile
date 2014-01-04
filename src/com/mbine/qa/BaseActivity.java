@@ -7,11 +7,15 @@ import java.util.ArrayList;
 
 import com.mbine.qa.adapter.NavDrawerItem;
 import com.mbine.qa.adapter.NavDrawerListAdapter;
+import com.mbine.qa.tool.Tools;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
@@ -19,8 +23,12 @@ import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 /**
  * @author Bang
@@ -51,15 +59,23 @@ public abstract class BaseActivity extends Activity {
 	DrawerLayout mDrawerLayout = null;
 	ListView DrawList = null;
     ActionBarDrawerToggle mDrawerToggle;
+    LinearLayout Drawer = null;
+    ImageView mImg = null;
+    TextView mUserName = null, mUserPoint = null;
     
     protected String mPNO = null;
     protected String mQNO = null;
     protected String mUNO = null;
 
+    Tools tool = new Tools();
+    Context mContext;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		mContext = this.getApplicationContext();
 		super.onCreate(savedInstanceState);
         setContentView(getLayoutResourceId());
+        Drawer = (LinearLayout)findViewById(R.id.list_slidermenu);
 		
 		SetActionBar();
 
@@ -102,15 +118,33 @@ public abstract class BaseActivity extends Activity {
         default:
             break;
         }
-        Intent move = new Intent(this.getApplicationContext(), cls);
+        Intent move = new Intent(mContext, cls);
         startActivity(move);
         //finish();
     }
 
 	protected abstract int getLayoutResourceId();
+	
+	protected void SetAvatar(){
+		BitmapDrawable drawable = (BitmapDrawable) getResources().getDrawable(R.drawable.default_avatar);
+		Bitmap bitmap = drawable.getBitmap();
+		
+		mUserName = (TextView) findViewById(R.id.username);
+		mUserPoint = (TextView) findViewById(R.id.userpoint);
+		mImg = (ImageView) findViewById(R.id.avatar);
+		mImg.setImageBitmap(tool.getRoundedShape(bitmap));
+		
+		mImg.setOnClickListener(new OnClickListener() {
+		    public void onClick(View v) {
+                Intent move = new Intent(mContext, DMyPageActivity.class);
+                startActivity(move);
+		    }
+		});
+	}
 
 	protected void SetActionBar(){
         
+		SetAvatar();
         navDrawerItems = new ArrayList<NavDrawerItem>();
         
         navDrawerItems.add(new NavDrawerItem("HOME", R.drawable.ic_home));
@@ -121,7 +155,7 @@ public abstract class BaseActivity extends Activity {
         navDrawerItems.add(new NavDrawerItem("About QUIZC", R.drawable.ic_appinfo));
         draw_adapter = new NavDrawerListAdapter(getApplicationContext(), navDrawerItems);
 
-        DrawList = (ListView)  findViewById(R.id.list_slidermenu);
+        DrawList = (ListView)findViewById(R.id.leftmenu);
         DrawList.setAdapter(draw_adapter);
        
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -156,7 +190,7 @@ public abstract class BaseActivity extends Activity {
 	@Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         // if nav drawer is opened, hide the action items
-        boolean drawerOpen = mDrawerLayout.isDrawerOpen(DrawList);
+        boolean drawerOpen = mDrawerLayout.isDrawerOpen(Drawer);
         menu.findItem(R.id.action_search).setVisible(!drawerOpen);
         return super.onPrepareOptionsMenu(menu);
     }

@@ -61,7 +61,8 @@ public class QuizList extends ArrayAdapter<HashMap<String, String>> {
         avg += "%";
         
         txtPName.setText(mSource.get(position).get(TAG_JSON_QPNAME).toString());
-        txtSummary.setText(tool.Shuffle(mSource.get(position).get(TAG_JSON_QSUMMARY).toString()));
+        //txtSummary.setText(tool.Shuffle(mSource.get(position).get(TAG_JSON_QSUMMARY).toString()));
+        txtSummary.setText(mSource.get(position).get(TAG_JSON_QSUMMARY).toString());
         txtAvg.setText(avg);
 
 		return convertView;  

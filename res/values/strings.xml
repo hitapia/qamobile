@@ -110,5 +110,8 @@
     <string name="title_activity_qquiz_list">QQuizListActivity</string>
     <string name="title_activity_qcategory_list">QCategoryListActivity</string>
     <string name="title_activity_qfav_list">QFavListActivity</string>
+    <string name="title_activity_image_crop">ImageCropActivity</string>
+    <string name="use">선택</string>
+    <string name="reuse">다시 선택</string>
 
 </resources>
