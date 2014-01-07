@@ -3,9 +3,23 @@ package com.mbine.qa.tool;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.io.File;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.*;
+import org.apache.http.client.methods.*;
+import org.apache.http.entity.mime.MultipartEntity;
+import org.apache.http.entity.mime.content.FileBody;
+import org.apache.http.entity.mime.content.StringBody;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.protocol.BasicHttpContext;
+import org.apache.http.protocol.HttpContext;
+import org.apache.http.util.EntityUtils;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -14,11 +28,18 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.*;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.AsyncTask;
+import android.os.StrictMode;
 import android.text.format.DateFormat;
 import android.text.format.DateUtils;
 
+import com.mbine.qa.R;
+
+@SuppressWarnings("deprecation")
 public class Tools {
 	private ProgressDialog mDialog;
+	public String upResult = "";
 
 	public void showPop(Activity act, String comment, String ok){
         AlertDialog.Builder alert = new AlertDialog.Builder(act);
@@ -65,6 +86,39 @@ public class Tools {
 			e.printStackTrace();
 		}
         return r;
+	}
+
+	public void post(String url, List<NameValuePair> nameValuePairs) {
+		upResult = "";
+	    HttpClient httpClient = new DefaultHttpClient();
+	    HttpContext localContext = new BasicHttpContext();
+	    HttpPost httpPost = new HttpPost(url);
+	    try {
+	        MultipartEntity entity = new MultipartEntity();
+
+	        for(int index=0; index < nameValuePairs.size(); index++) {
+	            if(nameValuePairs.get(index).getName().equalsIgnoreCase("image")) {
+	                entity.addPart(nameValuePairs.get(index).getName(), new FileBody(new File (nameValuePairs.get(index).getValue())));
+	            } else {
+	                entity.addPart(nameValuePairs.get(index).getName(), new StringBody(nameValuePairs.get(index).getValue()));
+	            }
+	        }
+	        httpPost.setEntity(entity);
+	        HttpResponse response = httpClient.execute(httpPost, localContext);
+	        upResult =  EntityUtils.toString(response.getEntity());
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	        upResult =  "";
+	    }
+	}
+	
+	
+	public Bitmap getBitmap(String _file){
+		File imgFile = new  File(_file);
+		if(imgFile.exists()){
+		    return BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+		}
+		return null;
 	}
 	
 	public String Shuffle(String input){
