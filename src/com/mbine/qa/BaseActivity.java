@@ -36,6 +36,7 @@ import android.widget.TextView;
  */
 public abstract class BaseActivity extends Activity {
 
+	protected static final String BASE_URL = "http://qa.mbine.com/";
 	protected static final String TAG_DB_SEQ = "seq";
 	protected static final String TAG_DB_SUMMARY = "summary";
 	protected static final String TAG_DB_MEMBER = "member";
@@ -53,6 +54,7 @@ public abstract class BaseActivity extends Activity {
 	protected static final String TAG_QNO = "qno";
 	protected static final String TAG_PNO = "pno";
 	protected static final String TAG_UNO = "uno";
+	protected static final String TAG_IMAGE_UPLOADURL = "tool/put";
 
     private ArrayList<NavDrawerItem> navDrawerItems;
     private NavDrawerListAdapter draw_adapter;

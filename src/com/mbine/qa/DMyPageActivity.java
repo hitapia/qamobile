@@ -2,7 +2,11 @@ package com.mbine.qa;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -16,6 +20,7 @@ import com.mbine.qa.tool.Storage;
 import com.mbine.qa.tool.Tools;
 
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -41,6 +46,7 @@ public class DMyPageActivity extends BaseActivity {
 	private static final String TAG_MAININFO = "member/getuserinfo_";
 	private static final String TAG_SEL_UNO = "checkuserno";
 
+	String photourl  = null;
 	Tools tool = new Tools();
 	Storage storage = null;
 	QPackageList pack = new QPackageList();
@@ -96,10 +102,39 @@ public class DMyPageActivity extends BaseActivity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if (requestCode == TAG_PHOTO_REQ) {
 	          if (resultCode == RESULT_OK) {
-	            String photourl = data.getStringExtra("photourl"); 
-	            tool.showPop(DMyPageActivity.this, photourl, "ok");
+                  photourl = data.getStringExtra("photourl"); 
+                  if(photourl != null)
+                	  upload();
 	          }
 	      }
+	}
+	
+	private void upload(){
+          tool.ShowLoading(DMyPageActivity.this);
+          new UploadTask().execute();
+	}
+
+	private class UploadTask extends AsyncTask<Void, Void, String>{
+		 
+		@Override
+		protected void onPostExecute(String result) {
+		  result = tool.upResult;
+          if(result.equals("")){
+        	  tool.showPop(DMyPageActivity.this, "업로드 과정에 문제가 발생했습니다.", "OK");
+          }else{
+        	  mUserAvatar.setImageBitmap(tool.getRoundedShape(tool.getBitmap(photourl)));
+          }
+          tool.ExitLoading();
+		}
+
+		@Override
+		protected String doInBackground(Void... params) {
+	        List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+	        nameValuePairs.add(new BasicNameValuePair("mno", mUserNo));
+	        nameValuePairs.add(new BasicNameValuePair("image", photourl));
+			tool.post(BASE_URL + TAG_IMAGE_UPLOADURL, nameValuePairs);
+			return null;
+		}
 	}
 
 	private void GetControls(){
