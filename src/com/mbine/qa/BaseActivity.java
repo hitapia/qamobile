@@ -36,7 +36,7 @@ import android.widget.TextView;
  */
 public abstract class BaseActivity extends Activity {
 
-	protected static final String BASE_URL = "http://qa.mbine.com/";
+	protected static final String BASE_URL = "http://www.quizc.com/";
 	protected static final String TAG_DB_SEQ = "seq";
 	protected static final String TAG_DB_SUMMARY = "summary";
 	protected static final String TAG_DB_MEMBER = "member";
@@ -54,14 +54,14 @@ public abstract class BaseActivity extends Activity {
 	protected static final String TAG_QNO = "qno";
 	protected static final String TAG_PNO = "pno";
 	protected static final String TAG_UNO = "uno";
-	protected static final String TAG_IMAGE_UPLOADURL = "tool/put";
+	protected static final String TAG_IMAGE_UPLOADURL = "tools/put";
 
     private ArrayList<NavDrawerItem> navDrawerItems;
     private NavDrawerListAdapter draw_adapter;
 	DrawerLayout mDrawerLayout = null;
 	ListView DrawList = null;
     ActionBarDrawerToggle mDrawerToggle;
-    LinearLayout Drawer = null;
+    LinearLayout Drawer = null, mUInfo;
     ImageView mImg = null;
     TextView mUserName = null, mUserPoint = null;
     
@@ -135,8 +135,10 @@ public abstract class BaseActivity extends Activity {
 		mUserPoint = (TextView) findViewById(R.id.userpoint);
 		mImg = (ImageView) findViewById(R.id.avatar);
 		mImg.setImageBitmap(tool.getRoundedShape(bitmap));
+
+		mUInfo = (LinearLayout) findViewById(R.id.userinfo);
 		
-		mImg.setOnClickListener(new OnClickListener() {
+		mUInfo.setOnClickListener(new OnClickListener() {
 		    public void onClick(View v) {
                 Intent move = new Intent(mContext, DMyPageActivity.class);
                 startActivity(move);
@@ -149,13 +151,14 @@ public abstract class BaseActivity extends Activity {
 		SetAvatar();
         navDrawerItems = new ArrayList<NavDrawerItem>();
         
-        navDrawerItems.add(new NavDrawerItem("HOME", R.drawable.ic_home));
-        navDrawerItems.add(new NavDrawerItem("Favorites", R.drawable.ic_star_b));
-        navDrawerItems.add(new NavDrawerItem("Friends", R.drawable.ic_friends_b));
-        navDrawerItems.add(new NavDrawerItem("My Page", R.drawable.ic_me));
-        navDrawerItems.add(new NavDrawerItem("Setting", R.drawable.ic_setting_b));
-        navDrawerItems.add(new NavDrawerItem("About QUIZC", R.drawable.ic_appinfo));
+        navDrawerItems.add(new NavDrawerItem(getResources().getString(R.string.menu_home), R.drawable.drawer_nav_icon01));
+        navDrawerItems.add(new NavDrawerItem(getResources().getString(R.string.menu_friend), R.drawable.drawer_nav_icon02));
+        navDrawerItems.add(new NavDrawerItem(getResources().getString(R.string.menu_favorite), R.drawable.drawer_nav_icon03));
+        navDrawerItems.add(new NavDrawerItem(getResources().getString(R.string.menu_setting), R.drawable.drawer_nav_icon04));
         draw_adapter = new NavDrawerListAdapter(getApplicationContext(), navDrawerItems);
+
+        ImageView img = (ImageView)findViewById(R.id.img_point);
+        img.setImageResource(R.drawable.drawer_top_point);
 
         DrawList = (ListView)findViewById(R.id.leftmenu);
         DrawList.setAdapter(draw_adapter);

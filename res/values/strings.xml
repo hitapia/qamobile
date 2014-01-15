@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="menu_home">홈</string>
+    <string name="menu_friend">친구들</string>
+    <string name="menu_favorite">즐겨찾기</string>
+    <string name="menu_setting">설정</string>
 
     <string name="action_search">Search</string>
     <string name="app_name">QUIZC</string>

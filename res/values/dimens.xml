@@ -9,6 +9,7 @@
     <dimen name="info_detail_ftsize">20sp</dimen>
     <dimen name="info_main_ftsize">22sp</dimen>
     <dimen name="main_item_title">18sp</dimen>
+    <dimen name="main_item_detail">16sp</dimen>
     <dimen name="create_q_title">20sp</dimen>
     <dimen name="ico_item">36dp</dimen>
     <dimen name="avatar">100dp</dimen>
