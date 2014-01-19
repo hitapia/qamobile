@@ -27,6 +27,7 @@ import android.provider.MediaStore;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.*;
@@ -76,6 +77,7 @@ public class DMyPageActivity extends BaseActivity {
 
         GetControls();
         GetData();
+        GetUserInfo();
 	}
 	
 	private void GetData(){
@@ -88,7 +90,6 @@ public class DMyPageActivity extends BaseActivity {
         		QMember member = new QMember();
         		try {
 					mMemberInfo = member.MakeOneMember(json.getJSONArray("u").getJSONObject(0));
-					
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -131,10 +132,43 @@ public class DMyPageActivity extends BaseActivity {
 		protected String doInBackground(Void... params) {
 	        List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
 	        nameValuePairs.add(new BasicNameValuePair("mno", mUserNo));
-	        nameValuePairs.add(new BasicNameValuePair("image", photourl));
-			tool.post(BASE_URL + TAG_IMAGE_UPLOADURL, nameValuePairs);
+	        nameValuePairs.add(new BasicNameValuePair("file", photourl));
+			String r = tool.post(BASE_URL + TAG_IMAGE_UPLOADAVATARURL + "/avatar", nameValuePairs);
+			try {
+				JSONObject json = new JSONObject(r);
+				String newFileName = json.getString("new");
+                File p = new File(photourl);
+                storage.copyFile(p, storage.mediaStorageDir+"/"+newFileName);
+				storage.put("avatar", newFileName);
+				ImageView mImgAvatar = (ImageView) findViewById(R.id.avatar);
+				mImgAvatar.setImageBitmap(tool.getRoundedShape(tool.getBitmap(p.getAbsolutePath())));
+			} catch (JSONException e) {
+				e.printStackTrace();
+			} 
 			return null;
 		}
+	}
+	
+	private void GetUserInfo(){
+		SetUserAvatar();
+	}
+	
+	private void SetUserAvatar(){
+        String nowavatar = storage.pull("avatar", "");
+        if(!nowavatar.equals(mMemberInfo.get(TAG_JSON_MAVATAR)) && !mMemberInfo.get(TAG_JSON_MAVATAR).equals("null")){
+        	tool.DownloadFromUrl(BASE_URL + TAG_AVATARURL + mMemberInfo.get(TAG_JSON_MAVATAR)
+        			, new File(storage.mediaStorageDir.getPath() + mMemberInfo.get(TAG_JSON_MAVATAR)));
+        }
+        boolean isAvatar = false;
+        if(nowavatar != null && !nowavatar.equals("")){
+        	File f = new File(storage.mediaStorageDir.getPath() + "/" + nowavatar);
+        	if(f.isFile()){
+                isAvatar = true;
+                mUserAvatar.setImageBitmap(tool.getRoundedShape(tool.getBitmap(f.getAbsolutePath())));
+        	}
+        }
+        if(!isAvatar)
+        	mUserAvatar.setImageBitmap(tool.getRoundedShape(DefaultAvatar));
 	}
 
 	private void GetControls(){
@@ -142,6 +176,7 @@ public class DMyPageActivity extends BaseActivity {
 		mUPoint = (TextView)findViewById(R.id.u_userpoint);
 		mUserAvatar = (ImageView)findViewById(R.id.u_avatar);
 		mImgChange = (ImageButton)findViewById(R.id.u_avatarup);
+
 		if(!mMyNo.equals(mUserNo)){
 			mImgChange.setVisibility(View.GONE);
 		}else{

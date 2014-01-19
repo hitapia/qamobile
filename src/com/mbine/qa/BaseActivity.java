@@ -3,10 +3,21 @@
  */
 package com.mbine.qa;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 import com.mbine.qa.adapter.NavDrawerItem;
 import com.mbine.qa.adapter.NavDrawerListAdapter;
+import com.mbine.qa.controls.QPackage;
+import com.mbine.qa.tool.Communication;
+import com.mbine.qa.tool.Storage;
 import com.mbine.qa.tool.Tools;
 
 import android.app.ActionBar;
@@ -28,6 +39,7 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 /**
@@ -54,7 +66,9 @@ public abstract class BaseActivity extends Activity {
 	protected static final String TAG_QNO = "qno";
 	protected static final String TAG_PNO = "pno";
 	protected static final String TAG_UNO = "uno";
-	protected static final String TAG_IMAGE_UPLOADURL = "tools/put";
+	protected static final String TAG_AVATARURL = "data/avatar/";
+	protected static final String TAG_IMAGE_UPLOADAVATARURL = "scripts/upload_avatar.php";
+	protected static final String TAG_USERINFO = "member/getuserinfo_";
 
     private ArrayList<NavDrawerItem> navDrawerItems;
     private NavDrawerListAdapter draw_adapter;
@@ -64,6 +78,7 @@ public abstract class BaseActivity extends Activity {
     LinearLayout Drawer = null, mUInfo;
     ImageView mImg = null;
     TextView mUserName = null, mUserPoint = null;
+    protected Bitmap DefaultAvatar;
     
     protected String mPNO = null;
     protected String mQNO = null;
@@ -79,6 +94,10 @@ public abstract class BaseActivity extends Activity {
         setContentView(getLayoutResourceId());
         Drawer = (LinearLayout)findViewById(R.id.list_slidermenu);
 		
+        //Default Avatar Setting
+		BitmapDrawable drawable = (BitmapDrawable) getResources().getDrawable(R.drawable.default_avatar);
+		DefaultAvatar = drawable.getBitmap();
+
 		SetActionBar();
 
 	    DrawList.setOnItemClickListener(new SlideMenuClickListener());
@@ -102,21 +121,14 @@ public abstract class BaseActivity extends Activity {
         	cls = QMainActivity.class;
             break;
         case 1:
-        	cls = DFavActivity.class;
-            break;
-        case 2:
         	cls = DFriendsActivity.class;
             break;
-        case 3:
-        	cls = DMyPageActivity.class;
+        case 2:
+        	cls = DFavActivity.class;
             break;
-        case 4:
+        case 3:
         	cls = DSettingActivity.class;
             break;
-        case 5:
-        	cls = DAboutActivity.class;
-            break;
- 
         default:
             break;
         }
@@ -128,14 +140,22 @@ public abstract class BaseActivity extends Activity {
 	protected abstract int getLayoutResourceId();
 	
 	protected void SetAvatar(){
-		BitmapDrawable drawable = (BitmapDrawable) getResources().getDrawable(R.drawable.default_avatar);
-		Bitmap bitmap = drawable.getBitmap();
-		
 		mUserName = (TextView) findViewById(R.id.username);
 		mUserPoint = (TextView) findViewById(R.id.userpoint);
 		mImg = (ImageView) findViewById(R.id.avatar);
-		mImg.setImageBitmap(tool.getRoundedShape(bitmap));
-
+		Storage str = new Storage(mContext);
+		String avatar = str.pull("avatar", "");
+		boolean fcheck = false;
+		if(avatar != null && !avatar.equals("")){
+			File f = new File(str.mediaStorageDir.getPath() + "/" + avatar);
+			if(f.isFile()){
+                mImg.setImageBitmap(tool.getRoundedShape(tool.getBitmap(f.getAbsolutePath())));
+                fcheck = true;
+			}
+		}
+		if(!fcheck){
+			GetUserAvatar();
+		}
 		mUInfo = (LinearLayout) findViewById(R.id.userinfo);
 		
 		mUInfo.setOnClickListener(new OnClickListener() {
@@ -144,6 +164,10 @@ public abstract class BaseActivity extends Activity {
                 startActivity(move);
 		    }
 		});
+	}
+	
+	private void GetUserAvatar(){
+        mImg.setImageBitmap(tool.getRoundedShape(DefaultAvatar));
 	}
 
 	protected void SetActionBar(){

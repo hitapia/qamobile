@@ -31,14 +31,12 @@
 
 </FrameLayout>
 
-<ListView
+        <include 
         android:id="@+id/list_slidermenu"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:choiceMode="singleChoice"
-        android:divider="@color/divider"
-        android:dividerHeight="1dp"       
-        android:background="@color/drawerbg"/>
+        android:clickable="true"
+        android:layout_width="200dp"
+        android:layout_height="fill_parent"
+        layout="@layout/drawer_list"/>
 
 </android.support.v4.widget.DrawerLayout>

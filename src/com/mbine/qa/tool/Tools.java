@@ -3,8 +3,13 @@ package com.mbine.qa.tool;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.io.BufferedInputStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -19,6 +24,7 @@ import org.apache.http.entity.mime.content.StringBody;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.HttpContext;
+import org.apache.http.util.ByteArrayBuffer;
 import org.apache.http.util.EntityUtils;
 
 import android.annotation.SuppressLint;
@@ -26,6 +32,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.DialogInterface;
 import android.graphics.*;
 import android.graphics.drawable.BitmapDrawable;
@@ -88,7 +95,7 @@ public class Tools {
         return r;
 	}
 
-	public void post(String url, List<NameValuePair> nameValuePairs) {
+	public String post(String url, List<NameValuePair> nameValuePairs) {
 		upResult = "";
 	    HttpClient httpClient = new DefaultHttpClient();
 	    HttpContext localContext = new BasicHttpContext();
@@ -97,7 +104,7 @@ public class Tools {
 	        MultipartEntity entity = new MultipartEntity();
 
 	        for(int index=0; index < nameValuePairs.size(); index++) {
-	            if(nameValuePairs.get(index).getName().equalsIgnoreCase("image")) {
+	            if(nameValuePairs.get(index).getName().equalsIgnoreCase("file")) {
 	                entity.addPart(nameValuePairs.get(index).getName(), new FileBody(new File (nameValuePairs.get(index).getValue())));
 	            } else {
 	                entity.addPart(nameValuePairs.get(index).getName(), new StringBody(nameValuePairs.get(index).getValue()));
@@ -110,8 +117,30 @@ public class Tools {
 	        e.printStackTrace();
 	        upResult =  "";
 	    }
+	    return upResult;
 	}
-	
+
+	public void DownloadFromUrl(String DownloadUrl, File file) {
+		try {
+           URL url = new URL(DownloadUrl); //you can write here any link
+
+           URLConnection ucon = url.openConnection();
+           InputStream is = ucon.getInputStream();
+           BufferedInputStream bis = new BufferedInputStream(is);
+
+           ByteArrayBuffer baf = new ByteArrayBuffer(5000);
+           int current = 0;
+           while ((current = bis.read()) != -1) {
+              baf.append((byte) current);
+           }
+
+           FileOutputStream fos = new FileOutputStream(file);
+           fos.write(baf.toByteArray());
+           fos.flush();
+           fos.close();
+
+		} catch (IOException e) { }
+	}
 	
 	public Bitmap getBitmap(String _file){
 		File imgFile = new  File(_file);
